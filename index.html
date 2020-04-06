@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>LOM-Applikationsprofil des Open-Edu-Hubs</title>
+  <script src='https://w3c.github.io/respec/builds/respec-dini.js' class='remove' async></script>
+  <script class='remove'>
+    var respecConfig = {
+      specStatus: "ED",
+      editors: [{
+        name: "Your Name",
+        url: "http://your-site.com",
+      }],
+      gitHub: "some-org/mySpec",
+      shortName: "dahut",
+      xref: "web-platform",
+    };
+  </script>
+</head>
+
+<body>
+
+<section id='abstract'>
+
+## Einleitung
+
+Das LOM-Applikationsprofil des Open-Edu-Hubs wird hier dokumentiert.
+
+</section>
+
+<section id="general">
+
+## Allgemeine Beschreibung
+
+<section data-dfn-for="general">
+
+## Das Element <dfn><code>general</code></dfn>
+
+Grundlegende Informationen, die das Lernobjekt als Ganzes beschreiben.
+
+<dl>
+  <dt>Mehrwertigkeit:</dt>
+  <dd>Es MUSS genau 1 Mal vorkommen.</dd>
+  <dt>Elemente:</dt>
+  <dd>
+    <a>identifier</a><br>
+    <a>title</a><br>
+    <a>language</a><br>
+    <a>description</a><br>
+    <a>keyword</a><br>
+    <a>coverage</a><br>
+    <a>structure</a><br>
+    <a>aggregationlevel</a>
+  </dd>
+</dl>
+
+<section data-dfn-for="identifier">
+
+## Das Element <dfn><code>identifier</code></dfn>
+
+Das Element bezeichnet eine innerhalb des Repositoriums eindeutige Identifizierung.
+Es hat Werte vom Typ `String`, die keiner Einschränkung unterliegen.
+
+Bei Anfragen an den OAI-Server eines Repositoriums ist der Wert dieses Elements das
+bestimmende Identifikationsmerkmal für ein Lernobjekt.
+
+<dl>
+  <dt>Mehrwertigkeit:</dt>
+  <dd>Es MUSS genau 1 Mal innerhalb des Elements <a>general</a> vorkommen.</dd>
+  <dt>Attribute:</dt>
+  <dd>keine</dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="title">
+
+## Das Element <dfn><code>title</code></dfn>
+
+Das Element gibt den Namen oder Titel des Lernobjekts an.
+
+<dl>
+  <dt>Mehrwertigkeit:</dt>
+  <dd>Es MUSS ein- oder mehrfach innerhalb des Elements <a>general</a> vorkommen.</dd>
+  <dt>Attribute:</dt>
+  <dd>keine</dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Typisches Format:</dt>
+  <dd><a href="https://schema.org/Text">schema.org/Text</a></dd>
+</dl>
+
+</section>
+
+
+</section>
+</section> 
+
+
+</body>
+
+</html>
