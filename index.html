@@ -5,18 +5,110 @@
   <meta charset='utf-8'>
   <title>LOM-Applikationsprofil des Open-Edu-Hubs</title>
   <script src='https://w3c.github.io/respec/builds/respec-dini.js' class='remove' async></script>
-  <script class='remove'>
-    var respecConfig = {
-      specStatus: "ED",
-      editors: [{
-        name: "Your Name",
-        url: "http://your-site.com",
-      }],
-      gitHub: "some-org/mySpec",
-      shortName: "dahut",
-      xref: "web-platform",
-    };
-  </script>
+ <script class='remove'>
+   var respecConfig = {
+     editors: [{
+         name: "Steffen Rörtgem",
+         mailto: "steffen.roertgen@gwdg.de",
+         company: "Gesellschaft für wissenschaftliche Datenverarbeitung mbH Göttingen",
+         companyURL: "https://www.gwdg.de"
+       }
+     ],
+     authors: [
+     ],
+     format: "markdown",
+     localBiblio: {
+       "CC": {
+         title: "Creative Commons Licenses",
+         href: "https://creativecommons.org/licenses/",
+         publisher: "Creative Commons"
+       },
+       "Crossref": {
+         title: "Crossref",
+         href: "https://www.crossref.org/",
+         publisher: "Publishers International Linking Association, Inc."
+       },
+       "DataCite": {
+         title: "DataCite",
+         href: "https://datacite.org/",
+         publisher: "DataCite –International Data Citation Initiative"
+       },
+       "DDC": {
+         title: "Dewey Decimal Classification",
+         href: "https://www.oclc.org/en/dewey/resources.html",
+         publisher: "OCLC"
+       },
+       "edu-sharing": {
+         title: "Open Source Bildungsinfrastruktur",
+         href: "https://edu-sharing.com/",
+         publisher: "metaVentis GmbH"
+       },
+       "ISO26324": {
+         title: "Information and documentation — Digital object identifier system. ISO 26324:2012",
+         href: "https://www.iso.org/standard/43506.html",
+         status: "Last Reviewed and confirmed in 2017",
+         publisher: "International Organization for Standardization (ISO)"
+       },
+       "GND": {
+         title: "Gemeinsame Normdatei (GND)",
+         href: "https://www.dnb.de/gnd",
+         publisher: "Deutsche Nationalbibliothek"
+       },
+       "LOMv1.0": {
+         title: "IEEE Standard for Learning Object Metadata",
+         href: "https://ieeexplore.ieee.org/document/1032843/",
+         status: "1484.12.1-2002",
+         publisher: "IEEE"
+       },
+       "LOMv1.2": {
+         title: "IMS Learning Resource Meta-data Specification",
+         href: "https://www.imsglobal.org/metadata/index.html",
+         status: "Maintenance Release 1.2.4",
+         publisher: "IMS Global Learning Consortium, Inc."
+       },
+       "MIME": {
+         title: "List of Media Types",
+         href: "http://www.iana.org/assignments/media-types/media-types.xhtml",
+         publisher: "IANA"
+       },
+       "OAI-PMH": {
+         title: "Open Archives Initiative Protocol for Metadata Harvesting",
+         href: "https://www.openarchives.org/OAI/openarchivesprotocol.html",
+         status: "Version 2.0",
+         publisher: "Open Archives Initiative"
+       },
+       "ORCID": {
+         title: "ORCID",
+         href: "https://orcid.org/",
+         publisher: "ORCID, Inc."
+       },
+       "ROR": {
+         title: "Research Organization Registry",
+         href: "https://ror.org/",
+         publisher: "California Digital Library, Crossref, DataCite, and Digital Science"
+       },
+       "SKOS-HS": {
+         title: "Destatis-Systematik der Fächergruppen, Studienbereiche und Studienfächer",
+         href: "https://w3id.org/kim/hochschulfaechersystematik/scheme",
+         publisher: "Statistisches Bundesamt der Bundesrepublik Deutschland"
+       },
+       "SKOS-LRT": {
+         title: "Hochschulcampus Ressourcentypen",
+         href: "https://w3id.org/kim/hcrt/scheme",
+         publisher: "OER-Repo AG der Länder"
+       },
+       "Wikidata": {
+         title: "Wikidata",
+         href: "https://www.wikidata.org/",
+         publisher: "The Wikimedia Foundation, Inc."
+       }
+     },
+     logos: [],
+     otherLinks: [],
+     specStatus: "draft",
+     subtitle: ""
+   };
+ </script>
 </head>
 
 <body>
@@ -73,7 +165,6 @@ bestimmende Identifikationsmerkmal für ein Lernobjekt.
   <dt>Elemente:</dt>
   <dd>keine</dd>
 </dl>
-
 </section>
 
 <section data-dfn-for="title">
@@ -92,13 +183,159 @@ Das Element gibt den Namen oder Titel des Lernobjekts an.
   <dt>Typisches Format:</dt>
   <dd>LangString</dd>
 </dl>
+</section>
+
+<section data-dfn-for="language">
+
+## Das Element <dfn><code>language</code></dfn>
+
+Das Element benennt die Sprache des Inhalts des Lernobjekts.
+
+Der Wert besteht aus einem zweibuchstabigem Kürzel für die Sprache, z. B. `de`,
+nach [[!ISO-639-1]]. Kompliziertere Varianten mit Subtags, z.B. `en-US`, werden bis
+auf weiteres nicht unterstützt.
+
+<dl>
+  <dt>Mehrwertigkeit:</dt>
+  <dd>Es DARF 1 Mal innerhalb des Elements <a>general</a> vorkommen.</dd>
+  <dt>Attribute:</dt>
+  <dd>keine</dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+</dl>
 
 </section>
 
+<section data-dfn-for="description">
+
+## Das Element <dfn><code>description</code></dfn>
+
+
+
+<dl>
+  <dt>Mehrwertigkeit:</dt>
+  <dd>Es DARF 1 Mal innerhalb des Elements <a>general</a> vorkommen.</dd>
+  <dt>Attribute:</dt>
+  <dd>keine</dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="keyword">
+
+## Das Element <dfn><code>keyword</code></dfn>
+
+Das Element enthält eine Sammlung von Schlagwörten oder Phrasen, die das Lernobjekt
+beschreiben.
+
+<dl>
+  <dt>Mehrwertigkeit:</dt>
+  <dd>Es DARF nicht oder ein- oder mehrfach innerhalb des Elements <a>general</a> vorkommen.</dd>
+  <dt>Attribute:</dt>
+  <dd>keine</dd>
+  <dt>Elemente:</dt>
+  <dd><a>LangString</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="coverage">
+
+## Das Element <dfn><code>coverage</code></dfn>
+
+<dl>
+  <dt>Mehrwertigkeit:</dt>
+  <dd>Es DARF nicht oder ein- oder mehrfach innerhalb des Elements <a>general</a> vorkommen.</dd>
+  <dt>Attribute:</dt>
+  <dd>keine</dd>
+  <dt>Elemente:</dt>
+  <dd><a>LangString</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="structure">
+
+## Das Element <dfn><code>structure</code></dfn>
+
+<dl>
+  <dt>Mehrwertigkeit:</dt>
+  <dd>Es DARF nicht oder ein- oder mehrfach innerhalb des Elements <a>general</a> vorkommen.</dd>
+  <dt>Attribute:</dt>
+  <dd>keine</dd>
+  <dt>Elemente:</dt>
+  <dd><a>LangString</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="aggregationlevel">
+
+## Das Element <dfn><code>aggregationlevel</code></dfn>
+
+Das Element beschreibt die Granularität des Lernobjekts nach [[!LOMv1.0]].
+
+<dl>
+  <dt>Mehrwertigkeit:</dt>
+  <dd>Es DARF 1 Mal innerhalb des Elements <a>general</a> vorkommen.</dd>
+  <dt>Attribute:</dt>
+  <dd>keine</dd>
+  <dt>Elemente:</dt>
+  <dd>
+    <a>source</a> mit dem Wert `LOMv1.0`<br>
+    <a>value</a> - Es benennt die Granularität des Lernobjekts.
+
+    Die von [[!LOMv1.0]] erlaubten Werte sind:
+
+- `1` - für einzelne, atomare Materialien
+
+- `2` - für eine Anzahl zusammengehöriger atomarer Materialien, z. B. eine
+HTML-Seite mit eingefügten Bildern, oder ein Übungsblatt mit Erläuterungen und
+Lösungen
+
+- `3` - für eine Sammlung von Lernobjekten des 2. Levels, z. B. ein Webportal oder
+ein Lernkurs
+
+- `4` - höchster Level, z. B. für einen ganzen Satz von Kursen, die zu einem
+Abschluss führen
+  </dd>
+</dl>
+
+</section>
 
 </section>
 </section> 
 
+<section id="glossary" class="appendix">
+
+  ## Glossar
+
+<dl>
+  <dt><abbr title="Learning Object Metadata">LOM</abbr></dt>
+  <dd>Learning Object Metadata</dd>
+  <dt><abbr title="Open Archives Initiative">OAI</abbr></dt>
+  <dd>Open Archives Initiative</dd>
+  <dt><abbr title="OAI Protocol for Metadata Harvesting">OAI-PMH</abbr></dt>
+  <dd>OAI Protocol for Metadata Harvesting</dd>
+  <dt><abbr title="Open Educational Resource">OER</abbr></dt>
+  <dd>Open Educational Resource</dd>
+  <dt><abbr title="Uniform Resource Identifier">URI</abbr></dt>
+  <dd>Uniform Resource Identifier</dd>
+  <dt><abbr title="Uniform Resource Locator">URL</abbr></dt>
+  <dd>Uniform Resource Locator</dd>
+  <dt><abbr title="World Wide Web">WWW</abbr></dt>
+  <dd>World Wide Web</dd>
+  <dt><abbr title="Extensible Markup Language">XML</abbr></dt>
+  <dd>Extensible Markup Language</dd>
+  <dt><abbr title="XML Schema Instance">XSI</abbr></dt>
+  <dd>XML Schema Instance</dd>
+  <dt><abbr title="Zentrales OER-Repositorium der Hochschulen In Baden-Württemberg">ZOERR</abbr></dt>
+  <dd><a href="https://www.oerbw.de/">Zentrales OER-Repositorium der Hochschulen In Baden-Württemberg</a></dd>
+</dl>
+
+</section>
 
 </body>
 
