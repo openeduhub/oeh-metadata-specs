@@ -13,4 +13,4 @@ Bisher wurden keine Versionen veröffentlicht.
 
 Die Pflege der Spezifikation erfolgt auf Github. Dort kann der jeweils aktuelle Arbeitsstand eingesehen werden und Verbesserungsvorschläge eingebracht werden. Zudem kann der aktuelle Arbeitsentwurf der Spezifikation unter folgendem Permalink betrachtet und kommentiert werden:
 
-[`https://sroertgen.github.io/oer-metadata-hub-scheme/draft_version/`][draft_version]
+[https://sroertgen.github.io/oer-metadata-hub-scheme/draft_version/index.html](https://github.com/sroertgen/oer-metadata-hub-scheme/blob/master/docs/draft_version/index.html)
