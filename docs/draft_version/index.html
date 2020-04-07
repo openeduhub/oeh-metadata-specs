@@ -193,7 +193,7 @@ Das Element benennt den Katalog, d.h. das Identifizierungssystem.
   <dt>Verpflichtungsgrad:</dt>
   <dd>Obligatorisch</dd>
   <dt>Datentyp:</dt>
-  <dd>CharacterString (CS)</dd>
+  <dd><a>characterstring</a></dd>
   <dt>Elemente:</dt>
   <dd>keine</dd>
   <dt>Beispielwerte:</dt>
@@ -224,7 +224,7 @@ Objekt von dritter Seite gesucht und gefunden werden können.
   <dt>Verpflichtungsgrad</dt>
   <dd>Obligatorisch</dd>
   <dt>Datentyp</dt>
-  <dd>CharacterString (CS)</dd>
+  <dd><a>characterstring</a></dd>
   <dt>Elemente:</dt>
   <dd>keine</dd>
   <dt>Beispielwerte:</dt>
@@ -252,7 +252,7 @@ Das Element gibt den Namen oder Titel des Lernobjekts an.
   <dt>Verpflichtungsgrad:</dt>
   <dd>Obligatorisch</dd>
   <dt>Datentyp:</dt>
-  <dd>LanguageString (LS)</dd>
+  <dd><a>langstring</a></dd>
   <dt>Elemente:</dt>
   <dd>keine</dd>
 </dl>
@@ -275,7 +275,7 @@ auf weiteres nicht unterstützt.
   <dt>Verpflichtungsgrad:</dt>
   <dd>Obligatorisch</dd>
   <dt>Datentyp:</dt>
-  <dd>CharacterString (CS)</dd>
+  <dd><a>characterstring</a></dd>
   <dt>Elemente:</dt>
   <dd>keine</dd>
   <dt>Beispielwerte:</dt>
@@ -302,13 +302,13 @@ Beschreibt das Element.
   <dt>Verpflichtungsgrad:</dt>
   <dd>Obligatorisch</dd>
   <dt>Datentyp:</dt>
-  <dd>LangString (LS)</dd>
+  <dd><a>langstring</a></dd>
   <dt>Elemente:</dt>
   <dd>keine</dd>
   <dt>Beispielwerte:</dt>
   <dd>
 
-- (“en,” “In this video clip, the life and works of Leonardo da Vinci are briefly presented. The focus is on his artistic production, most notably the Mona Lisa.”)
+- "en," "In this video clip, the life and works of Leonardo da Vinci are briefly presented. The focus is on his artistic production, most notably the Mona Lisa."
 
   </dd>
 </dl>
@@ -328,13 +328,13 @@ Das Element enthält eine Sammlung von Schlagwörten oder Phrasen, die das Lerno
   <dt>Verpflichtungsgrad:</dt>
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
-  <dd>LangString (LS)</dd>
+  <dd><a>langstring</a></dd>
   <dt>Elemente:</dt>
   <dd>keine</dd>
   <dt>Beispielwerte:</dt>
   <dd>
 
-- ("de", "Kunst")
+- "de", "Kunst"
 
   </dd>
 </dl>
@@ -353,13 +353,13 @@ Epoche, Region, Kultur oder Ort auf die sich die Ressource bezieht.
   <dt>Verpflichtungsgrad:</dt>
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
-  <dd>LangString (LS)</dd>
+  <dd><a>langstring</a></dd>
   <dt>Elemente:</dt>
   <dd>keine</dd>
   <dt>Beispielwerte:</dt>
   <dd>
 
-- ("de", "Künstler im 16. Jahrhundert")
+- "de", "Künstler im 16. Jahrhundert"
 
   </dd>
 </dl>
@@ -480,13 +480,13 @@ Das Element bezeichnet die Version des Lernobjektes
   <dt>Verpflichtungsgrad:</dt>
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
-  <dd>LangString (LS)</dd>
+  <dd><a>langstring</a> (LS)</dd>
   <dt>Elemente:</dt>
   <dd>keine</dd>
   <dt>Beispielwerte:</dt>
   <dd>
 
-    - ("de", "1.2")
+    - "de", "1.2"
 
   </dd>
 </dl>
@@ -496,9 +496,50 @@ Das Element bezeichnet die Version des Lernobjektes
 </section>
 </section>
 
+<section id="datatypes">
+
+## Datentypen
+
+<section data-dfn-for="langstring">
+
+## Der Datentyp <dfn><code>langstring</code></dfn>
+
+Ein LangString besteht aus zwei Elementen: Sprache und Zeichenkette. 
+Die Kombination ermöglicht die Beschreibung von Ressourcen in mehreren, 
+nach ISO-Norm gekennzeichneten Sprachen. Bei der Übersetzung wird die Zeichenkette übersetzt und mit dem 
+zugehörigen Sprachcode gespeichert.
+
+<dl>
+  <dt>Beispiel:</dt>
+  <dd>
+
+- "en", "some text"
+
+- "de", "irgendein Text"
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="characterstring">
+
+## Der Datentyp <dfn><code>characterstring</code></dfn>
+
+Der Datentyp CharacterString wird per Default für alle Metadatenelemente verwendet. Er besteht aus einer Kette von
+Zeichen, die direkt in den Metadatenelementen gespeichert werden kann. CharacterString
+dient als formaler Identifikator oder Name und ist im UTF-8 Format kodifiziert. Ist dies eine URL, soll die
+absolute URL der Ressource angegeben werden.
+
+</section>
+
+
+
+</section>
+
 <section id="glossary" class="appendix">
 
-  ## Glossar
+## Glossar
 
 <dl>
   <dt><abbr title="Learning Object Metadata">LOM</abbr></dt>
