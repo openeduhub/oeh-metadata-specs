@@ -2,13 +2,12 @@
 
 ## Versionen der Spezifikation
 
-Die aktuelle Draft-Fassung der Spezifikation findet sich unter folgendem Permalink:
+Die aktuelle Draft-Fassung der Spezifikation findet sich unter folgendem Link:
 
-[`https://sroertgen.github.io/oer-metadata-hub-scheme/draft_version/`][draft_version]
+[https://sroertgen.github.io/oer-metadata-hub-scheme/docs/draft_version/index.html](docs/draft_version/index.html)
 
-Bisher wurden folgende Versionen veröffentlicht:
+Bisher wurden keine Versionen veröffentlicht.
 
-- [`draft_version`][draft_version]
 
 ## Mitwirkung
 
