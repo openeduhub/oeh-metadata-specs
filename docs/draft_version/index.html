@@ -163,8 +163,7 @@ Grundlegende Informationen, die das Lernobjekt als Ganzes beschreiben.
 
 ## Das Element <dfn><code>identifier</code></dfn>
 
-Das Element bezeichnet eine innerhalb des Repositoriums eindeutige Identifizierung.
-Es hat Werte vom Typ `String`, die keiner Einschränkung unterliegen.
+Das Element bezeichnet eine eindeutige Identifizierung.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -349,7 +348,7 @@ Epoche, Region, Kultur oder Ort auf die sich die Ressource bezieht.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
-  <dd>n</dd>
+  <dd>n</a></dd>
   <dt>Verpflichtungsgrad:</dt>
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
@@ -376,9 +375,10 @@ Epoche, Region, Kultur oder Ort auf die sich die Ressource bezieht.
   <dt>Verpflichtungsgrad:</dt>
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
-  <dd>Vocabulary (VC)</dd>
+  <dd><a>vocabulary</a></dd>
   <dt>Elemente:</dt>
-  <dd><a>source</a>></dd>
+  <dd><a>source</a></dd>
+  <dd><a>id</a></dd>
   <dd><a>value</a></dd>
   <dt>Vokabular:</dt>
   <dd><a>source</a>: [[LOMv1.0]]</dd>
@@ -414,6 +414,7 @@ Das Element beschreibt die Granularität des Lernobjekts nach [[LOMv1.0]].
   <dd><a>vocabulary</a></dd>
   <dt>Elemente:</dt>
   <dd><a>source</a></dd>
+  <dd><a>id</a></dd>
   <dd><a>value</a></dd>
   <dt>Vokabular:</dt>
   <dd><a>source</a>: [[LOMv1.0]]</dd>
@@ -472,7 +473,7 @@ Erstellung beteiligt waren.
 
 ## Das Element <dfn><code>version</code></dfn>
 
-Das Element bezeichnet die Version des Lernobjektes
+Das Element bezeichnet die Version des Lernobjektes.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -493,8 +494,167 @@ Das Element bezeichnet die Version des Lernobjektes
 
 </section>
 
+<section data-dfn-for="status">
+
+## Das Element <dfn><code>status</code></dfn>
+
+Das Element bezeichnet die Status des Lernobjektes.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Elemente:</dt>
+  <dd><a>source</a></dd>
+  <dd><a>id</a></dd>
+  <dd><a>value</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[LOMv1.0]]</dd>
+  <dd><a>value</a>: 
+
+- draft 
+- final
+- revised
+- unavailable
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="contribute">
+
+## Das Element <dfn><code>contribute</code></dfn>
+
+Das Element beschreibt die Personen oder Organisationen, die an der Entstehung der Ressource mitgewirkt haben.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a>role</a></dd>
+  <dd><a>entity</a></dd>
+  <dd><a>date</a></dd>
+
+</dl>
+
+<section data-dfn-for="role">
+
+## Das Element <dfn><code>role</code></dfn>
+
+Das Element bezeichnet die Rolle der Person oder Institution, die zur Ressource beigetragen hat.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Elemente:</dt>
+  <dd><a>source</a></dd>
+  <dd><a>id</a></dd>
+  <dd><a>value</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[LOMv1.0]]</dd>
+  <dd><a>value</a>: 
+
+- author
+- publisher
+- unknown
+- initiator
+- terminator
+- validator
+- editor
+- graphical designer
+- technical implementer
+- content provider
+- technical validator
+- educational validator
+- script writer
+- instructional designer
+- subject matter expert
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="entity">
+
+## Das Element <dfn><code>entity</code></dfn>
+
+Das Element beschreibt die Person und/oder Institution, die zur Ressource beigetragen hat.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Elemente:</dt>
+  <dd><a>source</a>></dd>
+  <dd><a>id</a>></dd>
+  <dd><a>value</a>></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[LOMv1.0]]</dd>
+  <dd><a>value</a>:
+
+- draft
+- final
+- revised
+- unavailable
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="date">
+
+## Das Element <dfn><code>date</code></dfn>
+
+Das Element bezeichnet das Datum des Beitrags zur Lernressource nach ISO8601 im Format YYYY-MM-DD.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>datetime</a></dd>
+  <dt>Beispielwert:</dt>
+  <dd>
+
+- 2020-04-20
+
+  </dd>
+</dl>
+
 </section>
 </section>
+</section>
+
+
+<section id="metametadata"> 
+
+## Metametadata
+
+<section data-dfn-for="metametadata">
+
+## Das Element <dfn><code>metametadata</code></dfn>
+
+</section>
+</section>
+
 
 <section id="datatypes">
 
@@ -506,6 +666,7 @@ Das Element bezeichnet die Version des Lernobjektes
     <a>langstring</a><br>
     <a>characterstring</a><br>
     <a>vocabulary</a><br>
+    <a>datetime</a><br>
   </dd>
 </dl>
 
@@ -577,9 +738,9 @@ definierten Vokabulars gesetzt werden.
   <dt>Beispielwerte:</dt>
   <dd>
 
-- LOMv1.0
-- https://w3id.org/kim/hcrt/scheme
-- https://w3id.org/kim/hochschulfaechersystematik/scheme
+- `LOMv1.0`
+- `https://w3id.org/kim/hcrt/scheme`
+- `https://w3id.org/kim/hochschulfaechersystematik/scheme`
 
   </dd>
 </dl>
@@ -592,19 +753,69 @@ definierten Vokabulars gesetzt werden.
 
 Das Element <a>id</a> bezeichnet, falls vorhanden, die ID des Eintrags <a>value</a> in dem festgelegtem Vokabular.
 
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- TODO
+
+  </dd>
+</dl>
+
 </section>
 
 <section data-dfn-for="value">
 
 ## Das Element <dfn><code>value</code></dfn>
 
-Das Element <a>value</a> enthält den Eintrag aus dem in <a>source</a> festgelegtem Vokabular.
+Das Element <a>value</a> enthält den Eintrag aus dem in <a>source</a> festgelegtem Vokabular 
+inklusive Sprachbezeichnung nach [[ISO-639-1]]
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "de", "Autor"
+- "en", worksheet
+
+  </dd>
+</dl>
+
+</section>
+</section>
+
+
+<section data-dfn-for="datetime">
+
+## Der Datentyp <dfn><code>datetime</code></dfn>
+
+Dieser Datentyp gibt das Datum nach dem Format JJJJ-MM-TT an. Er richtet sich nach der Norm [[ISO8601]].
+
+<dl>
+  <dt>Beispiel:</dt>
+  <dd>2020-04-20</dd>
+</dl>
 
 </section>
 
 </section>
 
-</section>
 
 <section id="glossary" class="appendix">
 
