@@ -132,11 +132,17 @@ Das LOM-Applikationsprofil des Open-Edu-Hubs wird hier dokumentiert.
 Grundlegende Informationen, die das Lernobjekt als Ganzes beschreiben.
 
 <dl>
-  <dt>Mehrwertigkeit:</dt>
-  <dd>Es MUSS genau 1 Mal vorkommen.</dd>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp</dt>
+  <dd>/</dd>
   <dt>Elemente:</dt>
   <dd>
     <a>identifier</a><br>
+    <a>catalog</a><br>
+    <a>catalogentry</a><br>
     <a>title</a><br>
     <a>language</a><br>
     <a>description</a><br>
@@ -154,17 +160,68 @@ Grundlegende Informationen, die das Lernobjekt als Ganzes beschreiben.
 Das Element bezeichnet eine innerhalb des Repositoriums eindeutige Identifizierung.
 Es hat Werte vom Typ `String`, die keiner Einschränkung unterliegen.
 
-Bei Anfragen an den OAI-Server eines Repositoriums ist der Wert dieses Elements das
-bestimmende Identifikationsmerkmal für ein Lernobjekt.
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd>
+    <a>catalog</a><br>
+    <a>catalogentry</a>
+  </dd>
+</dl>
+
+
+<section data-dfn-for="catalog">
+
+## Das Element <dfn><code>catalog</code></dfn>
+
+Das Element benennt den Katalog, d.h. das Identifizierungssystem.
 
 <dl>
   <dt>Mehrwertigkeit:</dt>
-  <dd>Es MUSS genau 1 Mal innerhalb des Elements <a>general</a> vorkommen.</dd>
+  <dd>Es MUSS genau 1 Mal innerhalb des Elements <a>catalogentry</a> vorkommen.</dd>
   <dt>Attribute:</dt>
   <dd>keine</dd>
   <dt>Elemente:</dt>
   <dd>keine</dd>
+  <dd>
+    Die erlaubten Werte sind:
+
+    - `DOI` - für Digital Object Identifiers [[!ISO26324]]
+
+    - `HDL` - für Handles [[!RFC3650]]
+
+    - `URN` - für Uniform Resource Names [[!RFC8141]]
+  </dd>
 </dl>
+
+</section>
+
+<section data-dfn-for="catalogentry">
+
+## Das Element <dfn><code>catalogentry</code></dfn>
+
+Das Element bezeichnet einen Eintrag in einem Katalog, d. h. einem
+Identifizierungssystem, der dem Objekt zugeordnet ist. Durch den Eintrag soll das
+Objekt von dritter Seite gesucht und gefunden werden können.
+
+<dl>
+  <dt>Mehrwertigkeit:</dt>
+  <dd>Es DARF nicht oder ein- oder mehrfach innerhalb des Elements <a>general</a> vorkommen.</dd>
+  <dt>Attribute:</dt>
+  <dd>keine</dd>
+  <dt>Elemente:</dt>
+  <dd>
+    <a>catalog</a><br>
+    <a>entry</a> - Es bezeichnet den Eintrag des Objekts (ID) im Katalog, d. h. Identifizierungssystem.
+  </dd>
+</dl>
+
+</section>
 </section>
 
 <section data-dfn-for="title">
