@@ -104,8 +104,14 @@
        }
      },
      logos: [],
-     otherLinks: [],
-     specStatus: "draft",
+     otherLinks: [{
+       key: "Mitmachen",
+        data: [{
+          value: "GitHub-Repository",
+          href: "https://github.com/sroertgen/oer-metadata-hub-scheme"
+        }]
+     }],
+     specStatus: "unofficial",
      subtitle: ""
    };
  </script>
@@ -185,7 +191,7 @@ Das Element benennt den Katalog, d.h. das Identifizierungssystem.
   <dt>Maximale Häufigkeit:</dt>
   <dd>1</a> vorkommen.</dd>
   <dt>Verpflichtungsgrad:</dt>
-  <dd>Fakultativ</dd>
+  <dd>Obligatorisch</dd>
   <dt>Datentyp:</dt>
   <dd>CharacterString (CS)</dd>
   <dt>Elemente:</dt>
@@ -198,6 +204,7 @@ Das Element benennt den Katalog, d.h. das Identifizierungssystem.
 - `HDL` - für Handles [[RFC3650]]
 
 - `URI` - für Uniform Resource Identifiers [[RFC3986]]
+
   </dd>
 </dl>
 
@@ -215,7 +222,7 @@ Objekt von dritter Seite gesucht und gefunden werden können.
   <dt>Maximale Häufigkeit:</dt>
   <dd>1</dd>
   <dt>Verpflichtungsgrad</dt>
-  <dd>Fakultativ</dd>
+  <dd>Obligatorisch</dd>
   <dt>Datentyp</dt>
   <dd>CharacterString (CS)</dd>
   <dt>Elemente:</dt>
@@ -226,8 +233,6 @@ Objekt von dritter Seite gesucht und gefunden werden können.
 - "https://doi.org/10.1109/5.771073"
 
 - "http://www.ieee.org/documents/1234"
-
-
 
   </dd>
 </dl>
@@ -245,7 +250,7 @@ Das Element gibt den Namen oder Titel des Lernobjekts an.
   <dt>Maximale Häufigkeit:</dt>
   <dd>1</a> vorkommen.</dd>
   <dt>Verpflichtungsgrad:</dt>
-  <dd>Fakultativ</dd>
+  <dd>Obligatorisch</dd>
   <dt>Datentyp:</dt>
   <dd>LanguageString (LS)</dd>
   <dt>Elemente:</dt>
@@ -268,7 +273,7 @@ auf weiteres nicht unterstützt.
   <dt>Maximale Häufigkeit:</dt>
   <dd>n</dd>
   <dt>Verpflichtungsgrad:</dt>
-  <dd>Fakultativ</dd>
+  <dd>Obligatorisch</dd>
   <dt>Datentyp:</dt>
   <dd>CharacterString (CS)</dd>
   <dt>Elemente:</dt>
@@ -279,6 +284,7 @@ auf weiteres nicht unterstützt.
 - "en"
 
 - "de"
+
   </dd>
 </dl>
 
@@ -387,8 +393,7 @@ between them.
 
 - linear: a set of objects that are fully ordered. (Example: A
 set of objects that are connected by “previous” and “next” relationships.)
-</dd>
-  
+
   </dd>
 </dl>
 
@@ -398,19 +403,21 @@ set of objects that are connected by “previous” and “next” relationships
 
 ## Das Element <dfn><code>aggregationlevel</code></dfn>
 
-Das Element beschreibt die Granularität des Lernobjekts nach [[!LOMv1.0]].
+Das Element beschreibt die Granularität des Lernobjekts nach [[LOMv1.0]].
 
 <dl>
-  <dt>Mehrwertigkeit:</dt>
-  <dd>Es DARF 1 Mal innerhalb des Elements <a>general</a> vorkommen.</dd>
-  <dt>Attribute:</dt>
-  <dd>keine</dd>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>Vocabulary (VC)</dd>
   <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Vokabular:</dt>
   <dd>
-    <a>source</a> mit dem Wert `LOMv1.0`<br>
-    <a>value</a> - Es benennt die Granularität des Lernobjekts.
 
-    Die von [[LOMv1.0]] erlaubten Werte sind:
+Die von [[LOMv1.0]] erlaubten Werte sind:
 
 - `1` - für einzelne, atomare Materialien
 
@@ -423,13 +430,71 @@ ein Lernkurs
 
 - `4` - höchster Level, z. B. für einen ganzen Satz von Kursen, die zu einem
 Abschluss führen
+
+  </dd>
+</dl>
+
+</section>
+</section>
+</section> 
+
+<section id="lifecycle">
+
+## Angaben zum Lebenszyklus
+
+<section data-dfn-for="lifecycle">
+
+## Das Element <dfn><code>lifecycle</code></dfn>
+
+Das Element beschreibt Eigenschaften zu Historie und aktuellem Status des
+Lernobjekts. Es bezeichnet außerdem die Personen und Organisationen, die an seiner
+Erstellung beteiligt waren.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd>
+    <a>version</a><br>
+    <a>status</a><br>
+    <a>contribute</a><br>
+    <a>role</a><br>
+    <a>entity</a><br>
+    <a>date</a><br>
+  </dd>
+</dl>
+
+<section data-dfn-for="version">
+
+## Das Element <dfn><code>version</code></dfn>
+
+Das Element bezeichnet die Version des Lernobjektes
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</a> vorkommen.</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>LangString (LS)</dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+    - ("de", "1.2")
+
   </dd>
 </dl>
 
 </section>
 
 </section>
-</section> 
+</section>
 
 <section id="glossary" class="appendix">
 
