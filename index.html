@@ -142,7 +142,7 @@ Grundlegende Informationen, die das Lernobjekt als Ganzes beschreiben.
   <dd>
     <a>identifier</a><br>
     <a>catalog</a><br>
-    <a>catalogentry</a><br>
+    <a>entry</a><br>
     <a>title</a><br>
     <a>language</a><br>
     <a>description</a><br>
@@ -170,7 +170,7 @@ Es hat Werte vom Typ `String`, die keiner Einschränkung unterliegen.
   <dt>Elemente:</dt>
   <dd>
     <a>catalog</a><br>
-    <a>catalogentry</a>
+    <a>entry</a>
   </dd>
 </dl>
 
@@ -182,42 +182,53 @@ Es hat Werte vom Typ `String`, die keiner Einschränkung unterliegen.
 Das Element benennt den Katalog, d.h. das Identifizierungssystem.
 
 <dl>
-  <dt>Mehrwertigkeit:</dt>
-  <dd>Es MUSS genau 1 Mal innerhalb des Elements <a>catalogentry</a> vorkommen.</dd>
-  <dt>Attribute:</dt>
-  <dd>keine</dd>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</a> vorkommen.</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>CharacterString (CS)</dd>
   <dt>Elemente:</dt>
   <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
   <dd>
-    Die erlaubten Werte sind:
 
-    - `DOI` - für Digital Object Identifiers [[!ISO26324]]
+- `DOI` - für Digital Object Identifiers [[ISO26324]]
 
-    - `HDL` - für Handles [[!RFC3650]]
+- `HDL` - für Handles [[RFC3650]]
 
-    - `URN` - für Uniform Resource Names [[!RFC8141]]
+- `URI` - für Uniform Resource Identifiers [[RFC3986]]
   </dd>
 </dl>
 
 </section>
 
-<section data-dfn-for="catalogentry">
+<section data-dfn-for="entry">
 
-## Das Element <dfn><code>catalogentry</code></dfn>
+## Das Element <dfn><code>entry</code></dfn>
 
 Das Element bezeichnet einen Eintrag in einem Katalog, d. h. einem
 Identifizierungssystem, der dem Objekt zugeordnet ist. Durch den Eintrag soll das
 Objekt von dritter Seite gesucht und gefunden werden können.
 
 <dl>
-  <dt>Mehrwertigkeit:</dt>
-  <dd>Es DARF nicht oder ein- oder mehrfach innerhalb des Elements <a>general</a> vorkommen.</dd>
-  <dt>Attribute:</dt>
-  <dd>keine</dd>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp</dt>
+  <dd>CharacterString (CS)</dd>
   <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
   <dd>
-    <a>catalog</a><br>
-    <a>entry</a> - Es bezeichnet den Eintrag des Objekts (ID) im Katalog, d. h. Identifizierungssystem.
+
+- "https://doi.org/10.1109/5.771073"
+
+- "http://www.ieee.org/documents/1234"
+
+
+
   </dd>
 </dl>
 
@@ -231,15 +242,16 @@ Objekt von dritter Seite gesucht und gefunden werden können.
 Das Element gibt den Namen oder Titel des Lernobjekts an.
 
 <dl>
-  <dt>Mehrwertigkeit:</dt>
-  <dd>Es MUSS ein- oder mehrfach innerhalb des Elements <a>general</a> vorkommen.</dd>
-  <dt>Attribute:</dt>
-  <dd>keine</dd>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</a> vorkommen.</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>LanguageString (LS)</dd>
   <dt>Elemente:</dt>
   <dd>keine</dd>
-  <dt>Typisches Format:</dt>
-  <dd>LangString</dd>
 </dl>
+
 </section>
 
 <section data-dfn-for="language">
@@ -249,16 +261,25 @@ Das Element gibt den Namen oder Titel des Lernobjekts an.
 Das Element benennt die Sprache des Inhalts des Lernobjekts.
 
 Der Wert besteht aus einem zweibuchstabigem Kürzel für die Sprache, z. B. `de`,
-nach [[!ISO-639-1]]. Kompliziertere Varianten mit Subtags, z.B. `en-US`, werden bis
+nach [[ISO-639-1]]. Kompliziertere Varianten mit Subtags, z.B. `en-US`, werden bis
 auf weiteres nicht unterstützt.
 
 <dl>
-  <dt>Mehrwertigkeit:</dt>
-  <dd>Es DARF 1 Mal innerhalb des Elements <a>general</a> vorkommen.</dd>
-  <dt>Attribute:</dt>
-  <dd>keine</dd>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>CharacterString (CS)</dd>
   <dt>Elemente:</dt>
   <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "en"
+
+- "de"
+  </dd>
 </dl>
 
 </section>
@@ -267,16 +288,25 @@ auf weiteres nicht unterstützt.
 
 ## Das Element <dfn><code>description</code></dfn>
 
-
+Beschreibt das Element.
 
 <dl>
-  <dt>Mehrwertigkeit:</dt>
-  <dd>Es DARF 1 Mal innerhalb des Elements <a>general</a> vorkommen.</dd>
-  <dt>Attribute:</dt>
-  <dd>keine</dd>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>LangString (LS)</dd>
   <dt>Elemente:</dt>
   <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- (“en,” “In this video clip, the life and works of Leonardo da Vinci are briefly presented. The focus is on his artistic production, most notably the Mona Lisa.”)
+
+  </dd>
 </dl>
+
 
 </section>
 
@@ -284,16 +314,23 @@ auf weiteres nicht unterstützt.
 
 ## Das Element <dfn><code>keyword</code></dfn>
 
-Das Element enthält eine Sammlung von Schlagwörten oder Phrasen, die das Lernobjekt
-beschreiben.
+Das Element enthält eine Sammlung von Schlagwörten oder Phrasen, die das Lernobjekt beschreiben.
 
 <dl>
-  <dt>Mehrwertigkeit:</dt>
-  <dd>Es DARF nicht oder ein- oder mehrfach innerhalb des Elements <a>general</a> vorkommen.</dd>
-  <dt>Attribute:</dt>
-  <dd>keine</dd>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</a> vorkommen.</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>LangString (LS)</dd>
   <dt>Elemente:</dt>
-  <dd><a>LangString</a></dd>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- ("de", "Kunst")
+
+  </dd>
 </dl>
 
 </section>
@@ -302,13 +339,23 @@ beschreiben.
 
 ## Das Element <dfn><code>coverage</code></dfn>
 
+Epoche, Region, Kultur oder Ort auf die sich die Ressource bezieht.
+
 <dl>
-  <dt>Mehrwertigkeit:</dt>
-  <dd>Es DARF nicht oder ein- oder mehrfach innerhalb des Elements <a>general</a> vorkommen.</dd>
-  <dt>Attribute:</dt>
-  <dd>keine</dd>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</a> vorkommen.</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>LangString (LS)</dd>
   <dt>Elemente:</dt>
-  <dd><a>LangString</a></dd>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- ("de", "Künstler im 16. Jahrhundert")
+
+  </dd>
 </dl>
 
 </section>
@@ -318,12 +365,31 @@ beschreiben.
 ## Das Element <dfn><code>structure</code></dfn>
 
 <dl>
-  <dt>Mehrwertigkeit:</dt>
-  <dd>Es DARF nicht oder ein- oder mehrfach innerhalb des Elements <a>general</a> vorkommen.</dd>
-  <dt>Attribute:</dt>
-  <dd>keine</dd>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>Vocabulary (VC)</dd>
   <dt>Elemente:</dt>
-  <dd><a>LangString</a></dd>
+  <dd>keine</dd>
+  <dt>Vokabular:</dt>
+  <dd>
+
+Die von [[LOMv1.0]] erlaubten Werte sind:
+
+- atomic: an object that is indivisible (in this context). collection: a set of objects with no specified relationship
+between them.
+
+- networked: a set of objects with relationships that are unspecified.
+
+- hierarchical: a set of objects whose relationships can be represented by a tree structure.
+
+- linear: a set of objects that are fully ordered. (Example: A
+set of objects that are connected by “previous” and “next” relationships.)
+</dd>
+  
+  </dd>
 </dl>
 
 </section>
@@ -344,7 +410,7 @@ Das Element beschreibt die Granularität des Lernobjekts nach [[!LOMv1.0]].
     <a>source</a> mit dem Wert `LOMv1.0`<br>
     <a>value</a> - Es benennt die Granularität des Lernobjekts.
 
-    Die von [[!LOMv1.0]] erlaubten Werte sind:
+    Die von [[LOMv1.0]] erlaubten Werte sind:
 
 - `1` - für einzelne, atomare Materialien
 
