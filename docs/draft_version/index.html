@@ -189,7 +189,7 @@ Das Element benennt den Katalog, d.h. das Identifizierungssystem.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
-  <dd>1</a> vorkommen.</dd>
+  <dd>1</dd>
   <dt>Verpflichtungsgrad:</dt>
   <dd>Obligatorisch</dd>
   <dt>Datentyp:</dt>
@@ -199,11 +199,11 @@ Das Element benennt den Katalog, d.h. das Identifizierungssystem.
   <dt>Beispielwerte:</dt>
   <dd>
 
-- `DOI` - für Digital Object Identifiers [[ISO26324]]
+- "`DOI`" - für Digital Object Identifiers [[ISO26324]]
 
-- `HDL` - für Handles [[RFC3650]]
+- "`HDL`" - für Handles [[RFC3650]]
 
-- `URI` - für Uniform Resource Identifiers [[RFC3986]]
+- "`URI`" - für Uniform Resource Identifiers [[RFC3986]]
 
   </dd>
 </dl>
@@ -248,7 +248,7 @@ Das Element gibt den Namen oder Titel des Lernobjekts an.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
-  <dd>1</a> vorkommen.</dd>
+  <dd>1</dd>
   <dt>Verpflichtungsgrad:</dt>
   <dd>Obligatorisch</dd>
   <dt>Datentyp:</dt>
@@ -324,7 +324,7 @@ Das Element enthält eine Sammlung von Schlagwörten oder Phrasen, die das Lerno
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
-  <dd>n</a> vorkommen.</dd>
+  <dd>n</dd>
   <dt>Verpflichtungsgrad:</dt>
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
@@ -349,7 +349,7 @@ Epoche, Region, Kultur oder Ort auf die sich die Ressource bezieht.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
-  <dd>n</a> vorkommen.</dd>
+  <dd>n</dd>
   <dt>Verpflichtungsgrad:</dt>
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
@@ -378,20 +378,20 @@ Epoche, Region, Kultur oder Ort auf die sich die Ressource bezieht.
   <dt>Datentyp:</dt>
   <dd>Vocabulary (VC)</dd>
   <dt>Elemente:</dt>
-  <dd>keine</dd>
+  <dd><a>source</a>></dd>
+  <dd><a>value</a></dd>
   <dt>Vokabular:</dt>
-  <dd>
+  <dd><a>source</a>: [[LOMv1.0]]</dd>
+  <dd><a>value</a>: 
 
-Die von [[LOMv1.0]] erlaubten Werte sind:
-
-- atomic: an object that is indivisible (in this context). collection: a set of objects with no specified relationship
+- `atomic`: an object that is indivisible (in this context). collection: a set of objects with no specified relationship
 between them.
 
-- networked: a set of objects with relationships that are unspecified.
+- `networked`: a set of objects with relationships that are unspecified.
 
-- hierarchical: a set of objects whose relationships can be represented by a tree structure.
+- `hierarchical`: a set of objects whose relationships can be represented by a tree structure.
 
-- linear: a set of objects that are fully ordered. (Example: A
+- `linear`: a set of objects that are fully ordered. (Example: A
 set of objects that are connected by “previous” and “next” relationships.)
 
   </dd>
@@ -411,13 +411,13 @@ Das Element beschreibt die Granularität des Lernobjekts nach [[LOMv1.0]].
   <dt>Verpflichtungsgrad:</dt>
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
-  <dd>Vocabulary (VC)</dd>
+  <dd><a>vocabulary</a></dd>
   <dt>Elemente:</dt>
-  <dd>keine</dd>
+  <dd><a>source</a></dd>
+  <dd><a>value</a></dd>
   <dt>Vokabular:</dt>
-  <dd>
-
-Die von [[LOMv1.0]] erlaubten Werte sind:
+  <dd><a>source</a>: [[LOMv1.0]]</dd>
+  <dd><a>value</a>: 
 
 - `1` - für einzelne, atomare Materialien
 
@@ -476,11 +476,11 @@ Das Element bezeichnet die Version des Lernobjektes
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
-  <dd>1</a> vorkommen.</dd>
+  <dd>1</dd>
   <dt>Verpflichtungsgrad:</dt>
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
-  <dd><a>langstring</a> (LS)</dd>
+  <dd><a>langstring</a></dd>
   <dt>Elemente:</dt>
   <dd>keine</dd>
   <dt>Beispielwerte:</dt>
@@ -499,6 +499,15 @@ Das Element bezeichnet die Version des Lernobjektes
 <section id="datatypes">
 
 ## Datentypen
+
+<dl>
+  <dt>Vorkommende Datentypen:</dt>
+  <dd>
+    <a>langstring</a><br>
+    <a>characterstring</a><br>
+    <a>vocabulary</a><br>
+  </dd>
+</dl>
 
 <section data-dfn-for="langstring">
 
@@ -533,7 +542,67 @@ absolute URL der Ressource angegeben werden.
 
 </section>
 
+<section data-dfn-for="vocabulary">
 
+## Der Datentyp <dfn><code>vocabulary</code></dfn>
+
+Der Datentyp Vocabulary wird bei der Nutzung von kontrollierten Vokabularen und bei vorgegebenen Terminologie- oder
+Zahlenlisten eingesetzt. Er besteht aus zwei Teilen: einer Quelle (Identifikator in einem
+Bezugssystem) und einem Wert (aus diesem Bezugssystem). Um die Interoperabilität zu gewährleisten,
+muss der Wert innerhalb eines bekannten, von einer breiten Gemeinschaft geteilten, Bezugssystems gewählt werden.
+
+<dl>
+  <dt>Elemente</dt>
+  <dd><a>source</a></dd>
+  <dd><a>id</a></dd>
+  <dd><a>value</a></dd>
+</dl>
+
+<section data-dfn-for="source">
+
+## Das Element <dfn><code>source</code></dfn>
+
+Das Element <a>source</a> nennt die Quelle des Vokabulars. Es kann auf LOMv1.0 oder die URI eines
+definierten Vokabulars gesetzt werden.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- LOMv1.0
+- https://w3id.org/kim/hcrt/scheme
+- https://w3id.org/kim/hochschulfaechersystematik/scheme
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="id">
+
+## Das Element <dfn><code>id</code></dfn>
+
+Das Element <a>id</a> bezeichnet, falls vorhanden, die ID des Eintrags <a>value</a> in dem festgelegtem Vokabular.
+
+</section>
+
+<section data-dfn-for="value">
+
+## Das Element <dfn><code>value</code></dfn>
+
+Das Element <a>value</a> enthält den Eintrag aus dem in <a>source</a> festgelegtem Vokabular.
+
+</section>
+
+</section>
 
 </section>
 
