@@ -584,6 +584,23 @@ auf weiteres nicht unterstützt.
 
 Das Element beschreibt die technischen Anforderungen und Eigenschaften des Objektes.
 
+<dl>
+  <dt>Maximale Häufigkeit</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a>format</a></dd>
+  <dd><a>size</a></dd>
+  <dd><a>location</a></dd>
+  <dd><a>requirement</a></dd>
+  <dd><a>installationremarks</a></dd>
+  <dd><a>otherplatformrequirements</a></dd>
+  <dd><a>length</a></dd>
+</dl>
+
 <section data-dfn-for="format">
 
 ## Das Element <dfn><code>format</code></dfn>
@@ -669,6 +686,10 @@ Das erste Element in einer Liste gibt den bevorzugten Standort des Elementes an.
 Das Element beschreibt die technischen Voraussetzungen, um das Lernobjekt 
 nutzen zu können.
 
+Wenn mehrere Elemente <a>requirement</a> genannt werden,
+sind alle Elemente notwendige Voraussetzungen, d.h. der logische
+Konnektor ist "AND".
+
 <dl>
   <dt>Maximale Häufigkeit</dt>
   <dd>n</dd>
@@ -680,9 +701,223 @@ nutzen zu können.
   <dd><a>orcomposite</a></dd>
 </dl>
 
+<section data-dfn-for="orcomposite">
+
+## Das Element <dfn><code>orcomposite</code></dfn>
+
+Das Element gruppiert mehrfache Voraussetzungen. Die Voraussetzungen
+gelten dabei als erfüllt, wenn <strong>EINE</strong> der Voraussetzungen
+erfüllt ist. Der logische Konnektor zwischen diesen Elementen ist "OR".
+
+<dl>
+  <dt>Maximale Häufigkeit</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a>type</a></dd>
+  <dd><a>name</a></dd>
+  <dd><a>minimumversion</a></dd>
+  <dd><a>maximumversion</a></dd>
+</dl>
+
+<section data-dfn-for="type">
+
+## Das Element <dfn><code>type</code></dfn>
+
+Das Element beschreibt die Art der technischen Anforderungen für die 
+Verwendung des Objektes.
+
+TODO - Verweis auf Vokabular
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="name">
+
+## Das Element <dfn><code>name</code></dfn>
+
+Das Element beschreibt den Namen der benötigten Technologie.
+
+TODO - Verweis auf Vokabular
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="minimumversion">
+
+## Das Element <dfn><code>minimumversion</code></dfn>
+
+Das Element beschreibt die niedrigste mögliche Version der benötigten
+technischen Voraaussetzung.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "`1.0`"
+- "`4.2`"
+
+</section>
+
+<section data-dfn-for="maximumversion">
+
+## Das Element <dfn><code>maximumversion</code></dfn>
+
+Das Element beschreibt die höchste mögliche Version der benötigten
+technischen Voraaussetzung.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "`1.1`"
+- "`4.3`"
+
+  </dd>
+</dl>
+</section>
+
+<!-- end section orcomposite -->
+</section>
+
+<!-- end section requirement -->
+</section>
+
+<section data-dfn-for="installationremarks">
+
+## Das Element <dfn><code>installationremarks</code></dfn>
+
+Das Element beschreibt, wie das Objekt installiert werden kann.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="otherplatformrequirements">
+
+## Das Element <dfn><code>otherplatformrequirements</code></dfn>
+
+Das Element beschreibt weitere Soft- oder Hardware-Voraussetzungen.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="length">
+
+## Das Element <dfn><code>length</code></dfn>
+
+Das Element beschreibt die Dauer, die das Objekt benötigt, wenn
+es bei mit der vorgeschriebenen Geschwindigkeit abgespielt wird.
+
+Das Element wird in [[LOMv1.0]] mit "Duration" bezeichnet.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>duration</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="thumbnail">
+
+## Das Element <dfn><code>thumbnail</code></dfn>
+
+Hier kann ein Vorschaubild hinterlegt werden.
+
+Hinweis: Dieses Element ist nich im urpsürnlichen LOM oder LOM-DE vorhanden.
+
+<section data-dfn-for="image">
+
+## Das Element <dfn><code>image</code></dfn>
+
+Das Element enthält das Bild oder dessen Pfad.
+
+</section>
+
+<section data-dfn-for="imagetype">
+
+## Das Element <dfn><code>imagetype</code></dfn>
+
+Das Element enthält Informationen über den Typ des Vorschaubildes
+
+</section>
+
+<section data-dfn-for="imagelicense">
+
+## Das Element <dfn><code>imagelicense</code></dfn>
+
+Das Element enthält Informationen über den Urherberrechtshinweis des
+Vorschaubildes.
+
 </section>
 
 </section>
+
+<!-- end of technical -->
+</section>
+</section>
+
+
+<section id="educational">
+
+## Pädagogische Informationen
+
+
+
 </section>
 
 
@@ -1045,6 +1280,19 @@ Dieser Datentyp gibt das Datum nach dem Format JJJJ-MM-TT an. Er richtet sich na
 <dl>
   <dt>Beispiel:</dt>
   <dd>2020-04-20</dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="duration">
+
+## Der Datentyp <dfn><code>duration</code></dfn>
+
+Dieser Datentyp gibt die Dauer nach dem Format [[ISO8601]] an.
+
+<dl>
+  <dt>Beispiel:</dt>
+  <dd>PT1M45S</dd>
 </dl>
 
 </section>
