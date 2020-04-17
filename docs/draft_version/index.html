@@ -589,6 +589,22 @@ aus [[LOMv1.0]] für <a>role</a> sind:
 
 </section>
 
+
+<aside class="example" title='general'>
+  <p>Hier ein Beispiel zur Abbildung in JSON:
+    <pre>
+  {
+    "lifecycle": {
+     "version": {"de": "1.2"},
+     "status": {
+       "source": "LOMv1.0",
+       "value": "final"
+     }
+    }
+  }
+  </pre>
+</aside>
+
 </section>
 </section>
 
@@ -1923,10 +1939,12 @@ absolute URL der Ressource angegeben werden.
 
 ## Der Datentyp <dfn><code>vocabulary</code></dfn>
 
-Der Datentyp Vocabulary wird bei der Nutzung von kontrollierten Vokabularen und bei vorgegebenen Terminologie- oder
-Zahlenlisten eingesetzt. Er besteht aus zwei Teilen: einer Quelle (Identifikator in einem
-Bezugssystem) und einem Wert (aus diesem Bezugssystem). Um die Interoperabilität zu gewährleisten,
-muss der Wert innerhalb eines bekannten, von einer breiten Gemeinschaft geteilten, Bezugssystems gewählt werden.
+Der Datentyp Vocabulary wird bei der Nutzung von kontrollierten Vokabularen und
+bei vorgegebenen Terminologie- oder Zahlenlisten eingesetzt. Er besteht aus zwei 
+Teilen: einer Quelle (Identifikator in einemBezugssystem) und einem Wert 
+(aus diesem Bezugssystem). Um die Interoperabilität zu gewährleisten,muss der 
+Wert innerhalb eines bekannten, von einer breiten Gemeinschaft geteilten, 
+Bezugssystems gewählt werden.
 
 <dl>
   <dt>Elemente</dt>
@@ -1938,8 +1956,8 @@ muss der Wert innerhalb eines bekannten, von einer breiten Gemeinschaft geteilte
 
 ## Das Element <dfn><code>source</code></dfn>
 
-Das Element <a>source</a> nennt die Quelle des Vokabulars. Es kann auf LOMv1.0 oder die URI eines
-definierten Vokabulars gesetzt werden.
+Das Element <a>source</a> nennt die Quelle des Vokabulars. Er soll auf die URI eines
+definierten Vokabulars gesetzt werden, bestenfalls auf eine URL.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
