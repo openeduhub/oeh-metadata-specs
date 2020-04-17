@@ -55,6 +55,12 @@
          href: "https://www.dnb.de/gnd",
          publisher: "Deutsche Nationalbibliothek"
        },
+       "SKOS-OEH": {
+         title: "OEH-Vokabular in SKOS",
+         href: "https://github.com/openeduhub/oeh-metadata-vocabs",
+         status: "draft",
+         publisher: "Open-Edu-Hub"
+       },
        "LOMv1.0": {
          title: "IEEE Standard for Learning Object Metadata",
          href: "https://ieeexplore.ieee.org/document/1032843/",
@@ -150,11 +156,11 @@ Grundlegende Informationen, die das Lernobjekt als Ganzes beschreiben.
     <a>identifier</a> - Das Element besteht aus den Elementen <a>catalog</a> und <a>entry</a>.<br>
     <a>title</a><br>
     <a>language</a><br>
-    <a>generalDescription</a><br>
+    <a>description</a><br>
     <a>keyword</a><br>
-    <a>coverage</a><br>
+    <!-- <a>coverage</a><br>
     <a>structure</a><br>
-    <a>aggregationlevel</a>
+    <a>aggregationlevel</a> -->
   </dd>
 </dl>
 
@@ -162,9 +168,82 @@ Grundlegende Informationen, die das Lernobjekt als Ganzes beschreiben.
 
 ## Das Element <a>identifier</a>
 
-Das Element besteht aus den Elementen <a>catalog</a> und <a>entry</a> und wird in <a href="#multiple-occuring-elements">Mehrfach vorkommende Elemente</a>
+Das Element besteht aus den Elementen <a>catalog</a> und <a>entry</a>.
+Es dient der eindeutigen Identifizierung des Objektes.
+Das Element wird <a href="#dfn-identifier">hier</a>
 näher definiert.
 
+<dl>
+  <dt>Maximale Häufigkeit: </dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <!-- in LOMv1.0 fakultativ -->
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a href="#dfn-catalog">catalog</a></dd>
+  <dd><a href="#dfn-entry">entry</a></dd>
+
+</dl>
+
+<section>
+
+## Das Element <a><code>catalog</code></a>
+
+Das Element benennt den Katalog, d.h. das Identifizierungssystem.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "`DOI`" - für Digital Object Identifiers [[ISO26324]]
+
+- "`HDL`" - für Handles [[RFC3650]]
+
+- "`URI`" - für Uniform Resource Identifiers [[RFC3986]]
+
+  </dd>
+</dl>
+
+</section>
+
+<section>
+
+## Das Element <a><code>entry</code></a>
+
+Das Element bezeichnet einen Eintrag in einem Katalog, d. h. einem
+Identifizierungssystem, der dem Objekt zugeordnet ist. Durch den Eintrag soll das
+Objekt von dritter Seite gesucht und gefunden werden können.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "https://doi.org/10.1109/5.771073"
+
+- "http://www.ieee.org/documents/1234"
+
+  </dd>
+</dl>
+
+</section>
 </section>
 
 
@@ -192,7 +271,7 @@ Das Element gibt den Namen oder Titel des Lernobjekts an.
 ## Das Element <a>language</a>
 
 Das Element benennt die Sprache des Inhalts des Lernobjekts.
-Das Element wird in <a href="#multiple-occuring-elements">Mehrfach vorkommende Elemente</a> genauer beschrieben.
+Das Element wird <a href="#dfn-identifier">hier</a> genauer beschrieben.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -216,9 +295,9 @@ Das Element wird in <a href="#multiple-occuring-elements">Mehrfach vorkommende E
 </section>
 
 
-<section id="generalDescription">
+<section>
 
-## Das Element <dfn><code>generalDescription</code></dfn>
+## Das Element <a><code>description</code></a>
 
 Beschreibt das Element.
 
@@ -267,6 +346,7 @@ Das Element enthält eine Sammlung von Schlagwörten oder Phrasen, die das Lerno
 
 </section>
 
+<!-- 
 <section data-dfn-for="coverage">
 
 ## Das Element <dfn><code>coverage</code></dfn>
@@ -360,7 +440,7 @@ Abschluss führen
   </dd>
 </dl>
 
-</section>
+</section> -->
 </section>
 </section> 
 
@@ -393,35 +473,6 @@ Erstellung beteiligt waren.
 
   </dd>
 </dl>
-
-<section>
-
-## Das Element <a>contribute</a>
-
-Das Element beschreibt die Personen und
-Organisationen, die an der Erstellung des Lernobjekts beteiligt waren. Es
-MUSS mindestens ein <code>contribute</code> mit Angabe der Autoren
-geben. Innerhalb jedes <code>contribute</code>-Elements MUSS genau
-einmal ein <code>role</code>-Element vorkommen. Die erlaubten Werte
-aus [[LOMv1.0]] für <a>role</a> sind:
-
-- author
-- publisher
-- unknown
-- initiator
-- terminator
-- validator
-- editor
-- graphical designer
-- technical implementer
-- content provider
-- technical validator
-- educational validator
-- script writer
-- instructional designer
-- subject matter expert
-
-</section>
 
 <section data-dfn-for="version">
 
@@ -478,8 +529,40 @@ Das Element bezeichnet die Status des Lernobjektes.
 
 </section>
 
+<section>
+
+## Das Element <a>contribute</a>
+
+Das Element beschreibt die Personen und
+Organisationen, die an der Erstellung des Lernobjekts beteiligt waren. Es
+MUSS mindestens ein <code>contribute</code> mit Angabe der Autoren
+geben. Innerhalb jedes <code>contribute</code>-Elements MUSS genau
+einmal ein <code>role</code>-Element vorkommen. Die erlaubten Werte
+aus [[LOMv1.0]] für <a>role</a> sind:
+
+- TODO Vokabular verlinken [[SKOS-OEH]]
+
+- author
+- publisher
+- unknown
+- initiator
+- terminator
+- validator
+- editor
+- graphical designer
+- technical implementer
+- content provider
+- technical validator
+- educational validator
+- script writer
+- instructional designer
+- subject matter expert
+
+</section>
+
 </section>
 </section>
+
 
 <section id="metametadata"> 
 
@@ -502,7 +585,7 @@ Spezifische Informationen zur Speicherung der Metadaten.
   <dd><a>identifier</a></dd>
   <dd><a>contribute</a></dd>
   <dd><a>metadataschema</a></dd>
-  <dd><a>language</a></dd>
+  <!-- <dd><a>language</a></dd> -->
 
 </dl>
 
@@ -510,10 +593,130 @@ Spezifische Informationen zur Speicherung der Metadaten.
 
 ## Das Element <a>identifier</a>
 
-Das Element besteht aus den Elementen <a>catalog</a> und <a>entry</a> und wird in 
-<a href="#multiple-occuring-elements">Mehrfach vorkommende Elemente</a> näher beschrieben.
+Das Element besteht aus den Elementen <a>catalog</a> und <a>entry</a>.
+Es dient der eindeutigen Identifizierung des Metadateneintrags.
+Das Element wird <a href="#dfn-identifier">hier</a>
+näher definiert.
+
+<dl>
+  <dt>Maximale Häufigkeit: </dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <!-- in LOMv1.0 fakultativ -->
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a href="#dfn-catalog">catalog</a></dd>
+  <dd><a href="#dfn-entry">entry</a></dd>
+
+</dl>
+
+<section>
+
+## Das Element <a><code>catalog</code></a>
+
+Bezeichnung des Referenzsystems, 
+das zur Identifizierung des Metadatensatzes dient.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "`DOI`" - für Digital Object Identifiers [[ISO26324]]
+
+- "`HDL`" - für Handles [[RFC3650]]
+
+- "`URI`" - für Uniform Resource Identifiers [[RFC3986]]
+
+  </dd>
+</dl>
 
 </section>
+
+<section>
+
+## Das Element <a><code>entry</code></a>
+
+Wert des Identifikators des Metadatensatzes.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "http://metadatascheme.wirlernenonline.de"
+
+  </dd>
+</dl>
+
+</section>
+</section>
+
+<section>
+
+## Das Element <a>contribute</a>
+
+Das Element beschreibt die Personen und
+Organisationen, die an der Erstellung des Lernobjekts beteiligt waren. Es
+MUSS mindestens ein <code>contribute</code> mit Angabe der Autoren
+geben. Innerhalb jedes <code>contribute</code>-Elements MUSS genau
+einmal ein <code>role</code>-Element vorkommen. 
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a><code>role</code></a></dd>
+  <dd><a><code>entity</code></a></dd>
+  <dd><a><code>date</code></a></dd>
+</dl>
+
+
+<section>
+
+## Das Element <a><code>role</code></a>
+
+Die erlaubten Werte aus [[LOMv1.0]] für <a>role</a> sind:
+
+- TODO Vokabular verlinken
+
+- creator
+- validator
+
+</section>
+
+<section>
+
+## Das Element <a><code>entity</code></a>
+
+</section>
+
+<section>
+
+## Das Element <a><code>date</code></a>
+
+</section>
+</section
 
 <section data-dfn-for="metadataschema">
 
@@ -531,6 +734,7 @@ Name und Version des Applikationsprofils, nach welchem die Metadaten erfasst wer
   <dt>Beispiel:</dt>
   <dd>
 
+- "LOM-OEHv0.1"
 - "LOM-DEv1.0"
 - "LREv4.0"
 
@@ -538,6 +742,7 @@ Name und Version des Applikationsprofils, nach welchem die Metadaten erfasst wer
 </dl>
 </section>
 
+<!-- 
 <section>
 
 ## Das Element <a>language</a>
@@ -563,12 +768,10 @@ auf weiteres nicht unterstützt.
   </dd>
 </dl>
 
-</section>
+</section> -->
 
 </section>
 
-</section>
-</section>
 
 
 <section id="technical">
@@ -591,7 +794,7 @@ Das Element beschreibt die technischen Anforderungen und Eigenschaften des Objek
   <dt>Elemente:</dt>
   <dd><a>format</a></dd>
   <!-- <dd><a>size</a></dd> -->
-  <!-- <dd><a>location</a></dd> -->
+  <dd><a>location</a></dd>
   <dd><a>requirement</a></dd>
   <!-- <dd><a>installationremarks</a></dd>
   <dd><a>otherplatformrequirements</a></dd> -->
@@ -649,7 +852,7 @@ Das Element beschreibt die Größe des Objektes in Bytes.
 </dl>
 
 </section> -->
-<!-- 
+
 <section data-dfn-for="location">
 
 ## Das Element <dfn><code>location</code></dfn>
@@ -674,7 +877,7 @@ Das erste Element in einer Liste gibt den bevorzugten Standort des Elementes an.
   </dd>
 </dl>
 
-</section> -->
+</section>
 
 <section data-dfn-for="requirement">
 
@@ -727,7 +930,7 @@ erfüllt ist. Der logische Konnektor zwischen diesen Elementen ist "OR".
 Das Element beschreibt die Art der technischen Anforderungen für die 
 Verwendung des Objektes.
 
-TODO - Verweis auf Vokabular
+TODO - Verweis auf Vokabular (operating system, browser)
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -746,7 +949,9 @@ TODO - Verweis auf Vokabular
 
 Das Element beschreibt den Namen der benötigten Technologie.
 
-TODO - Verweis auf Vokabular
+- TODO - Verweis auf Vokabular 
+  - (if type = "operating system" ...)
+  - (if type = "browser" ...)
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -1510,13 +1715,9 @@ Das Element beschreibt die Person und/oder Institution, die zur Ressource beiget
 
 ## Das Element <dfn><code>identifier</code></dfn>
 
-Das Element beschreibt eine eindeutige Identifizierung des Objektes.
+Das Element dient der eindeutigen Identifizierung des Objektes.
 
 <dl>
-  <dt>Maximale Häufigkeit:</dt>
-  <dd>n</dd>
-  <dt>Verpflichtungsgrad:</dt>
-  <dd>Obligatorisch</dd>
   <dt>Datentyp</dt>
   <dd>/</dd>
   <dt>Elemente:</dt>
