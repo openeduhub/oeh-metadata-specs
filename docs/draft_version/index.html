@@ -152,12 +152,11 @@ Grundlegende Informationen, die das Lernobjekt als Ganzes beschreiben.
   <dt>Datentyp</dt>
   <dd>/</dd>
   <dt>Elemente:</dt>
-  <dd>
-    <a>identifier</a> - Das Element besteht aus den Elementen <a>catalog</a> und <a>entry</a>.<br>
-    <a>title</a><br>
-    <a>language</a><br>
-    <a>description</a><br>
-    <a>keyword</a><br>
+  <dd><a>identifier</a></dd>
+  <dd><a>title</a></dd>
+  <dd><a>language</a></dd>
+  <dd><a>description</a></dd>
+  <dd><a>keyword</a></dd>
     <!-- <a>coverage</a><br>
     <a>structure</a><br>
     <a>aggregationlevel</a> -->
@@ -170,8 +169,8 @@ Grundlegende Informationen, die das Lernobjekt als Ganzes beschreiben.
 
 Das Element besteht aus den Elementen <a>catalog</a> und <a>entry</a>.
 Es dient der eindeutigen Identifizierung des Objektes.
-Das Element wird <a href="#dfn-identifier">hier</a>
-näher definiert.
+Das Element kommt mehrfach vor und wird <a href="#dfn-identifier">hier</a>
+definiert.
 
 <dl>
   <dt>Maximale Häufigkeit: </dt>
@@ -262,6 +261,12 @@ Das Element gibt den Namen oder Titel des Lernobjekts an.
   <dd><a>langstring</a></dd>
   <dt>Elemente:</dt>
   <dd>keine</dd>
+  <dt>Beispiel:</dt>
+  <dd>
+
+- "de", "Sprich los! — Der, die, das"
+
+  </dd>
 </dl>
 
 </section>
@@ -441,6 +446,30 @@ Abschluss führen
 </dl>
 
 </section> -->
+
+<aside class="example" title='general'>
+  <p>Hier ein Beispiel zur Abbildung in JSON:
+    <pre>
+  {
+    "general": {
+      "identifier": {
+        "catalog": "URI",
+        "entry": "https://www.planet-schule.de/sf/php/sendungen.php?sendung=10575"
+      },
+      "title": {"de", "Sprich los! — Der, die, das"},
+      "language": "de",
+      "description": {"de": "Eine Beschreibung des Objektes"},
+      "keyword": [
+        {"de": "Grammatik"},
+        {"de": "Deutsch als Fremdsprache"},
+        {"de": "Deutsch als Zweitsprache"}
+      ]
+    }
+  }
+  </pre>
+</aside>
+
+<!-- end of general -->
 </section>
 </section> 
 
@@ -771,7 +800,7 @@ auf weiteres nicht unterstützt.
 </section> -->
 
 </section>
-
+</section>
 
 
 <section id="technical">
@@ -1846,10 +1875,11 @@ auf weiteres nicht unterstützt.
 
 ## Der Datentyp <dfn><code>langstring</code></dfn>
 
-Ein LangString besteht aus zwei Elementen: Sprache und Zeichenkette. 
+Ein LangString besteht aus zwei Elementen: Angabe der Sprache und Zeichenkette. 
 Die Kombination ermöglicht die Beschreibung von Ressourcen in mehreren, 
 nach ISO-Norm gekennzeichneten Sprachen. Bei der Übersetzung wird die Zeichenkette übersetzt und mit dem 
 zugehörigen Sprachcode gespeichert.
+Innerhalb des Elements dard es für jede Sprache darf es nur eine zugehörige Zeichenkette geben.
 
 <dl>
   <dt>Beispiel:</dt>
@@ -1861,6 +1891,20 @@ zugehörigen Sprachcode gespeichert.
 
   </dd>
 </dl>
+
+<aside class="example" title='langstring'>
+  <p>Hier ein Beispiel zur Abbildung in JSON:
+    <pre>
+
+      {"de": "Deutsch als Zweitsprache"},
+
+      // innerhalb eines Elementes, können auch verschiedene Sprachen verwendet werden:
+      {
+        "en": "Deutsch als Fremdsprache",
+        "de": "German as foreign language"
+      }
+  </pre>
+</aside>
 
 </section>
 
