@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>LOM-Applikationsprofil des Open-Edu-Hubs</title>
+  <script src="https://hypothes.is/embed.js" async></script>
+  <script src='https://w3c.github.io/respec/builds/respec-dini.js' class='remove' async></script>
+ <script class='remove'>
+   var respecConfig = {
+     editors: [{
+         name: "Steffen Rörtgem",
+         mailto: "steffen.roertgen@gwdg.de",
+         company: "Gesellschaft für wissenschaftliche Datenverarbeitung mbH Göttingen",
+         companyURL: "https://www.gwdg.de"
+       }
+     ],
+     authors: [
+     ],
+     format: "markdown",
+     localBiblio: {
+       "CC": {
+         title: "Creative Commons Licenses",
+         href: "https://creativecommons.org/licenses/",
+         publisher: "Creative Commons"
+       },
+       "Crossref": {
+         title: "Crossref",
+         href: "https://www.crossref.org/",
+         publisher: "Publishers International Linking Association, Inc."
+       },
+       "DataCite": {
+         title: "DataCite",
+         href: "https://datacite.org/",
+         publisher: "DataCite –International Data Citation Initiative"
+       },
+       "DDC": {
+         title: "Dewey Decimal Classification",
+         href: "https://www.oclc.org/en/dewey/resources.html",
+         publisher: "OCLC"
+       },
+       "edu-sharing": {
+         title: "Open Source Bildungsinfrastruktur",
+         href: "https://edu-sharing.com/",
+         publisher: "metaVentis GmbH"
+       },
+       "ISO26324": {
+         title: "Information and documentation — Digital object identifier system. ISO 26324:2012",
+         href: "https://www.iso.org/standard/43506.html",
+         status: "Last Reviewed and confirmed in 2017",
+         publisher: "International Organization for Standardization (ISO)"
+       },
+       "GND": {
+         title: "Gemeinsame Normdatei (GND)",
+         href: "https://www.dnb.de/gnd",
+         publisher: "Deutsche Nationalbibliothek"
+       },
+       "SKOS-OEH": {
+         title: "OEH-Vokabular in SKOS",
+         href: "https://github.com/openeduhub/oeh-metadata-vocabs",
+         status: "draft",
+         publisher: "Open-Edu-Hub"
+       },
+       "LOMv1.0": {
+         title: "IEEE Standard for Learning Object Metadata",
+         href: "https://ieeexplore.ieee.org/document/1032843/",
+         status: "1484.12.1-2002",
+         publisher: "IEEE"
+       },
+       "LOMv1.2": {
+         title: "IMS Learning Resource Meta-data Specification",
+         href: "https://www.imsglobal.org/metadata/index.html",
+         status: "Maintenance Release 1.2.4",
+         publisher: "IMS Global Learning Consortium, Inc."
+       },
+       "MIME": {
+         title: "List of Media Types",
+         href: "http://www.iana.org/assignments/media-types/media-types.xhtml",
+         publisher: "IANA"
+       },
+       "OAI-PMH": {
+         title: "Open Archives Initiative Protocol for Metadata Harvesting",
+         href: "https://www.openarchives.org/OAI/openarchivesprotocol.html",
+         status: "Version 2.0",
+         publisher: "Open Archives Initiative"
+       },
+       "ORCID": {
+         title: "ORCID",
+         href: "https://orcid.org/",
+         publisher: "ORCID, Inc."
+       },
+       "ROR": {
+         title: "Research Organization Registry",
+         href: "https://ror.org/",
+         publisher: "California Digital Library, Crossref, DataCite, and Digital Science"
+       },
+       "SKOS-HS": {
+         title: "Destatis-Systematik der Fächergruppen, Studienbereiche und Studienfächer",
+         href: "https://w3id.org/kim/hochschulfaechersystematik/scheme",
+         publisher: "Statistisches Bundesamt der Bundesrepublik Deutschland"
+       },
+       "SKOS-LRT": {
+         title: "Hochschulcampus Ressourcentypen",
+         href: "https://w3id.org/kim/hcrt/scheme",
+         publisher: "OER-Repo AG der Länder"
+       },
+       "Wikidata": {
+         title: "Wikidata",
+         href: "https://www.wikidata.org/",
+         publisher: "The Wikimedia Foundation, Inc."
+       }
+     },
+     logos: [],
+     otherLinks: [{
+       key: "Mitmachen",
+        data: [{
+          value: "GitHub-Repository",
+          href: "https://github.com/sroertgen/oer-metadata-hub-scheme"
+        }]
+     }],
+     specStatus: "unofficial",
+     subtitle: ""
+   };
+ </script>
+</head>
+
+<body>
+
+<section id='abstract'>
+
+## Einleitung
+
+Das LOM-Applikationsprofil des Open-Edu-Hubs wird hier dokumentiert.
+
+</section>
+
+<section id="general">
+
+## Allgemeine Beschreibung
+
+<section data-dfn-for="general">
+
+## Das Element <dfn><code>general</code></dfn>
+
+Grundlegende Informationen, die das Lernobjekt als Ganzes beschreiben.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a>identifier</a></dd>
+  <dd><a>title</a></dd>
+  <dd><a>language</a></dd>
+  <dd><a>description</a></dd>
+  <dd><a>keyword</a></dd>
+    <!-- <a>coverage</a><br>
+    <a>structure</a><br>
+    <a>aggregationlevel</a> -->
+  </dd>
+</dl>
+
+<section>
+
+## Das Element <a>identifier</a>
+
+Das Element besteht aus den Elementen <a>catalog</a> und <a>entry</a>.
+Es dient der eindeutigen Identifizierung des Objektes.
+Das Element kommt mehrfach vor und wird <a href="#dfn-identifier">hier</a>
+definiert.
+
+<dl>
+  <dt>Maximale Häufigkeit: </dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <!-- in LOMv1.0 fakultativ -->
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a href="#dfn-catalog">catalog</a></dd>
+  <dd><a href="#dfn-entry">entry</a></dd>
+
+</dl>
+
+<section>
+
+## Das Element <a><code>catalog</code></a>
+
+Das Element benennt den Katalog, d.h. das Identifizierungssystem.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "`DOI`" - für Digital Object Identifiers [[ISO26324]]
+
+- "`HDL`" - für Handles [[RFC3650]]
+
+- "`URI`" - für Uniform Resource Identifiers [[RFC3986]]
+
+  </dd>
+</dl>
+
+</section>
+
+<section>
+
+## Das Element <a><code>entry</code></a>
+
+Das Element bezeichnet einen Eintrag in einem Katalog, d. h. einem
+Identifizierungssystem, der dem Objekt zugeordnet ist. Durch den Eintrag soll das
+Objekt von dritter Seite gesucht und gefunden werden können.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "https://doi.org/10.1109/5.771073"
+
+- "http://www.ieee.org/documents/1234"
+
+  </dd>
+</dl>
+
+</section>
+</section>
+
+
+<section data-dfn-for="title">
+
+## Das Element <dfn><code>title</code></dfn>
+
+Das Element gibt den Namen oder Titel des Lernobjekts an.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispiel:</dt>
+  <dd>
+
+- "de", "Sprich los! — Der, die, das"
+
+  </dd>
+</dl>
+
+</section>
+
+<section>
+
+## Das Element <a>language</a>
+
+Das Element benennt die Sprache des Inhalts des Lernobjekts.
+Das Element wird <a href="#dfn-identifier">hier</a> genauer beschrieben.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "en"
+
+- "de"
+
+  </dd>
+</dl>
+
+</section>
+
+
+<section>
+
+## Das Element <a><code>description</code></a>
+
+Beschreibt das Element.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "en," "In this video clip, the life and works of Leonardo da Vinci are briefly presented. The focus is on his artistic production, most notably the Mona Lisa."
+
+  </dd>
+</dl>
+
+
+</section>
+
+<section data-dfn-for="keyword">
+
+## Das Element <dfn><code>keyword</code></dfn>
+
+Das Element enthält eine Sammlung von Schlagwörten oder Phrasen, die das Lernobjekt beschreiben.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "de", "Kunst"
+
+  </dd>
+</dl>
+
+</section>
+
+<!-- 
+<section data-dfn-for="coverage">
+
+## Das Element <dfn><code>coverage</code></dfn>
+
+Epoche, Region, Kultur oder Ort auf die sich die Ressource bezieht.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</a></dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "de", "Künstler im 16. Jahrhundert"
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="structure">
+
+## Das Element <dfn><code>structure</code></dfn>
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Elemente:</dt>
+  <dd><a>source</a></dd>
+  <dd><a>value</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[LOMv1.0]]</dd>
+  <dd><a>value</a>: 
+
+- `atomic`: an object that is indivisible (in this context). collection: a set of objects with no specified relationship
+between them.
+
+- `networked`: a set of objects with relationships that are unspecified.
+
+- `hierarchical`: a set of objects whose relationships can be represented by a tree structure.
+
+- `linear`: a set of objects that are fully ordered. (Example: A
+set of objects that are connected by “previous” and “next” relationships.)
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="aggregationlevel">
+
+## Das Element <dfn><code>aggregationlevel</code></dfn>
+
+Das Element beschreibt die Granularität des Lernobjekts nach [[LOMv1.0]].
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Elemente:</dt>
+  <dd><a>source</a></dd>
+  <dd><a>value</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[LOMv1.0]]</dd>
+  <dd><a>value</a>: 
+
+- `1` - für einzelne, atomare Materialien
+
+- `2` - für eine Anzahl zusammengehöriger atomarer Materialien, z. B. eine
+HTML-Seite mit eingefügten Bildern, oder ein Übungsblatt mit Erläuterungen und
+Lösungen
+
+- `3` - für eine Sammlung von Lernobjekten des 2. Levels, z. B. ein Webportal oder
+ein Lernkurs
+
+- `4` - höchster Level, z. B. für einen ganzen Satz von Kursen, die zu einem
+Abschluss führen
+
+  </dd>
+</dl>
+
+</section> -->
+
+<aside class="example" title='general'>
+  <p>Hier ein Beispiel zur Abbildung in JSON:
+    <pre>
+  {
+    "general": {
+      "identifier": {
+        "catalog": "URI",
+        "entry": "https://www.planet-schule.de/sf/php/sendungen.php?sendung=10575"
+      },
+      "title": {"de", "Sprich los! — Der, die, das"},
+      "language": "de",
+      "description": {"de": "Eine Beschreibung des Objektes"},
+      "keyword": [
+        {"de": "Grammatik"},
+        {"de": "Deutsch als Fremdsprache"},
+        {"de": "Deutsch als Zweitsprache"}
+      ]
+    }
+  }
+  </pre>
+</aside>
+
+<!-- end of general -->
+</section>
+</section> 
+
+
+<section id="lifecycle">
+
+## Angaben zum Lebenszyklus
+
+<section data-dfn-for="lifecycle">
+
+## Das Element <dfn><code>lifecycle</code></dfn>
+
+Das Element beschreibt Eigenschaften zu Historie und aktuellem Status des
+Lernobjekts. Es bezeichnet außerdem die Personen und Organisationen, die an seiner
+Erstellung beteiligt waren.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd>
+    <a>version</a><br>
+    <a>status</a><br>
+    <a>contribute</a> 
+
+
+  </dd>
+</dl>
+
+<section data-dfn-for="version">
+
+## Das Element <dfn><code>version</code></dfn>
+
+Das Element bezeichnet die Version des Lernobjektes.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+    - "de", "1.2"
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="status">
+
+## Das Element <dfn><code>status</code></dfn>
+
+Das Element bezeichnet die Status des Lernobjektes.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Elemente:</dt>
+  <dd><a>source</a></dd>
+  <dd><a>value</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[LOMv1.0]]</dd>
+  <dd><a>value</a>: 
+
+- draft 
+- final
+- revised
+- unavailable
+
+  </dd>
+</dl>
+
+</section>
+
+<section>
+
+## Das Element <a>contribute</a>
+
+Das Element beschreibt die Personen und
+Organisationen, die an der Erstellung des Lernobjekts beteiligt waren. Es
+MUSS mindestens ein <code>contribute</code> mit Angabe der Autoren
+geben. Innerhalb jedes <code>contribute</code>-Elements MUSS genau
+einmal ein <code>role</code>-Element vorkommen. Die erlaubten Werte
+aus [[LOMv1.0]] für <a>role</a> sind:
+
+- TODO Vokabular verlinken [[SKOS-OEH]]
+
+- author
+- publisher
+- unknown
+- initiator
+- terminator
+- validator
+- editor
+- graphical designer
+- technical implementer
+- content provider
+- technical validator
+- educational validator
+- script writer
+- instructional designer
+- subject matter expert
+
+</section>
+
+
+<aside class="example" title='general'>
+  <p>Hier ein Beispiel zur Abbildung in JSON:
+    <pre>
+  {
+    "lifecycle": {
+     "version": {"de": "1.2"},
+     "status": {
+       "source": "LOMv1.0",
+       "value": "final"
+     }
+    }
+  }
+  </pre>
+</aside>
+
+</section>
+</section>
+
+
+<section id="metametadata"> 
+
+## Meta-Metadata
+
+<section data-dfn-for="metametadata">
+
+## Das Element <dfn><code>metametadata</code></dfn>
+
+Spezifische Informationen zur Speicherung der Metadaten.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a>identifier</a></dd>
+  <dd><a>contribute</a></dd>
+  <dd><a>metadataschema</a></dd>
+  <!-- <dd><a>language</a></dd> -->
+
+</dl>
+
+<section>
+
+## Das Element <a>identifier</a>
+
+Das Element besteht aus den Elementen <a>catalog</a> und <a>entry</a>.
+Es dient der eindeutigen Identifizierung des Metadateneintrags.
+Das Element wird <a href="#dfn-identifier">hier</a>
+näher definiert.
+
+<dl>
+  <dt>Maximale Häufigkeit: </dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <!-- in LOMv1.0 fakultativ -->
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a href="#dfn-catalog">catalog</a></dd>
+  <dd><a href="#dfn-entry">entry</a></dd>
+
+</dl>
+
+<section>
+
+## Das Element <a><code>catalog</code></a>
+
+Bezeichnung des Referenzsystems, 
+das zur Identifizierung des Metadatensatzes dient.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "`DOI`" - für Digital Object Identifiers [[ISO26324]]
+
+- "`HDL`" - für Handles [[RFC3650]]
+
+- "`URI`" - für Uniform Resource Identifiers [[RFC3986]]
+
+  </dd>
+</dl>
+
+</section>
+
+<section>
+
+## Das Element <a><code>entry</code></a>
+
+Wert des Identifikators des Metadatensatzes.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "http://metadatascheme.wirlernenonline.de"
+
+  </dd>
+</dl>
+
+</section>
+</section>
+
+<section>
+
+## Das Element <a>contribute</a>
+
+Das Element beschreibt die Personen und
+Organisationen, die an der Erstellung des Lernobjekts beteiligt waren. Es
+MUSS mindestens ein <code>contribute</code> mit Angabe der Autoren
+geben. Innerhalb jedes <code>contribute</code>-Elements MUSS genau
+einmal ein <code>role</code>-Element vorkommen. 
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a><code>role</code></a></dd>
+  <dd><a><code>entity</code></a></dd>
+  <dd><a><code>date</code></a></dd>
+</dl>
+
+
+<section>
+
+## Das Element <a><code>role</code></a>
+
+Die erlaubten Werte aus [[LOMv1.0]] für <a>role</a> sind:
+
+- TODO Vokabular verlinken
+
+- creator
+- validator
+
+</section>
+
+<section>
+
+## Das Element <a><code>entity</code></a>
+
+</section>
+
+<section>
+
+## Das Element <a><code>date</code></a>
+
+</section>
+</section
+
+<section data-dfn-for="metadataschema">
+
+## Das Element <dfn><code>metadataschema</code></dfn>
+
+Name und Version des Applikationsprofils, nach welchem die Metadaten erfasst werden.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>characterstring</dd>
+  <dt>Beispiel:</dt>
+  <dd>
+
+- "LOM-OEHv0.1"
+- "LOM-DEv1.0"
+- "LREv4.0"
+
+  </dd>
+</dl>
+</section>
+
+<!-- 
+<section>
+
+## Das Element <a>language</a>
+
+Das Element bezeichnet die Originalsprache des Metadatensatzes. 
+Der Wert besteht aus einem zweibuchstabigem Kürzel für die Sprache, z. B. `de`,
+nach [[ISO-639-1]]. Kompliziertere Varianten mit Subtags, z.B. `en-US`, werden bis
+auf weiteres nicht unterstützt.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>characterstring</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "en"
+
+- "de"
+  </dd>
+</dl>
+
+</section> -->
+
+</section>
+</section>
+
+
+<section id="technical">
+
+## Technische Anforderungen
+
+<section data-dfn-for="technical">
+
+## Das Element <dfn><code>technical</code></dfn>
+
+Das Element beschreibt die technischen Anforderungen und Eigenschaften des Objektes.
+
+<dl>
+  <dt>Maximale Häufigkeit</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a>format</a></dd>
+  <!-- <dd><a>size</a></dd> -->
+  <dd><a>location</a></dd>
+  <dd><a>requirement</a></dd>
+  <!-- <dd><a>installationremarks</a></dd>
+  <dd><a>otherplatformrequirements</a></dd> -->
+  <dd><a>duration</a></dd>
+</dl>
+
+<section data-dfn-for="format">
+
+## Das Element <dfn><code>format</code></dfn>
+
+Das Element beschreibt das technische Format der Ressource.
+
+<dl>
+  <dt>Maximale Häufigkeit</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "video/mpeg"
+
+- "text/docx"
+
+  </dd>
+</dl>
+
+</section>
+<!-- 
+<section data-dfn-for="size">
+
+## Das Element <dfn><code>size</code></dfn>
+
+Das Element beschreibt die Größe des Objektes in Bytes.
+
+<dl>
+  <dt>Maximale Häufigkeit</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "4096"
+
+  </dd>
+</dl>
+
+</section> -->
+
+<section data-dfn-for="location">
+
+## Das Element <dfn><code>location</code></dfn>
+
+Das Element beschreibt den Standort (physisch oder virtuell) des Objektes.
+Das erste Element in einer Liste gibt den bevorzugten Standort des Elementes an.
+
+<dl>
+  <dt>Maximale Häufigkeit</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "http://a-nice-url.com/"
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="requirement">
+
+## Das Element <dfn><code>requirement</code></dfn>
+
+Das Element beschreibt die technischen Voraussetzungen, um das Lernobjekt 
+nutzen zu können.
+
+Wenn mehrere Elemente <a>requirement</a> genannt werden,
+sind alle Elemente notwendige Voraussetzungen, d.h. der logische
+Konnektor ist "AND".
+
+<dl>
+  <dt>Maximale Häufigkeit</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a>orcomposite</a></dd>
+</dl>
+
+<section data-dfn-for="orcomposite">
+
+## Das Element <dfn><code>orcomposite</code></dfn>
+
+Das Element gruppiert mehrfache Voraussetzungen. Die Voraussetzungen
+gelten dabei als erfüllt, wenn <strong>EINE</strong> der Voraussetzungen
+erfüllt ist. Der logische Konnektor zwischen diesen Elementen ist "OR".
+
+<dl>
+  <dt>Maximale Häufigkeit</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a>type</a></dd>
+  <dd><a>name</a></dd>
+  <!-- <dd><a>minimumversion</a></dd>
+  <dd><a>maximumversion</a></dd> -->
+</dl>
+
+<section data-dfn-for="type">
+
+## Das Element <dfn><code>type</code></dfn>
+
+Das Element beschreibt die Art der technischen Anforderungen für die 
+Verwendung des Objektes.
+
+TODO - Verweis auf Vokabular (operating system, browser)
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="name">
+
+## Das Element <dfn><code>name</code></dfn>
+
+Das Element beschreibt den Namen der benötigten Technologie.
+
+- TODO - Verweis auf Vokabular 
+  - (if type = "operating system" ...)
+  - (if type = "browser" ...)
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+</dl>
+
+</section>
+<!-- 
+<section data-dfn-for="minimumversion">
+
+## Das Element <dfn><code>minimumversion</code></dfn>
+
+Das Element beschreibt die niedrigste mögliche Version der benötigten
+technischen Voraaussetzung.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "`1.0`"
+- "`4.2`"
+
+</section>
+
+<section data-dfn-for="maximumversion">
+
+## Das Element <dfn><code>maximumversion</code></dfn>
+
+Das Element beschreibt die höchste mögliche Version der benötigten
+technischen Voraaussetzung.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "`1.1`"
+- "`4.3`"
+
+  </dd>
+</dl>
+</section> -->
+
+<!-- end section orcomposite -->
+</section>
+
+<!-- end section requirement -->
+</section>
+<!-- 
+<section data-dfn-for="installationremarks">
+
+## Das Element <dfn><code>installationremarks</code></dfn>
+
+Das Element beschreibt, wie das Objekt installiert werden kann.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="otherplatformrequirements">
+
+## Das Element <dfn><code>otherplatformrequirements</code></dfn>
+
+Das Element beschreibt weitere Soft- oder Hardware-Voraussetzungen.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+</dl>
+
+</section> -->
+
+<section data-dfn-for="duration">
+
+## Das Element <dfn><code>duration</code></dfn>
+
+Das Element beschreibt die Dauer, die das Objekt benötigt, wenn
+es bei mit der vorgeschriebenen Geschwindigkeit abgespielt wird.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>duration_type</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="thumbnail">
+
+## Das Element <dfn><code>thumbnail</code></dfn>
+
+Hier kann ein Vorschaubild hinterlegt werden.
+
+Hinweis: Dieses Element ist nich im urpsürnlichen LOM oder LOM-DE vorhanden.
+
+<section data-dfn-for="image">
+
+## Das Element <dfn><code>image</code></dfn>
+
+Das Element enthält das Bild oder dessen Pfad.
+
+</section>
+
+<section data-dfn-for="imagetype">
+
+## Das Element <dfn><code>imagetype</code></dfn>
+
+Das Element enthält Informationen über den Typ des Vorschaubildes
+
+</section>
+
+<section data-dfn-for="imagelicense">
+
+## Das Element <dfn><code>imagelicense</code></dfn>
+
+Das Element enthält Informationen über den Urherberrechtshinweis des
+Vorschaubildes.
+
+</section>
+
+</section>
+
+<!-- end of technical -->
+</section>
+</section>
+
+
+<section id="educational">
+
+## Pädagogische Informationen
+
+<section data-dfn-for="educational">
+
+## Das Element <dfn><code>educational</code></dfn>
+
+
+Dieses Element beschreibt die pädagogischen und didaktischen Eigenschaften
+des Objektes.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a>interactivitytype</a></dd>
+  <dd><a>learningresourcetype</a></dd>
+  <dd><a>learningresourcetype</a></dd>
+  <dd><a>intendedenduserrole</a></dd>
+  <dd><a>context</a></dd>
+  <dd><a>typicalagerange</a></dd>
+  <dd><a><code>description</code></a></dd>
+  <dd><a><code>language</code></a></dd>
+</dl>
+
+
+<section data-dfn-for="interactivitytype">
+
+## Das Element <dfn><code>interactivitytype</code></dfn>
+
+Das Element beschreibt den vorherrschenden Interaktivitätsmodus bei der
+Bearbeitung des Objektes.
+
+- TODO Verweis auf Vokabular
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="learningresourcetype">
+
+## Das Element <dfn><code>learningresourcetype</code></dfn>
+
+Das Element beschreibt die Art des Objektes. Die vorherrschende Art
+wird zuerst genannt.
+
+- TODO Verweis auf Vokabular
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>10</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="intendedenduserrole">
+
+## Das Element <dfn><code>intendedenduserrole</code></dfn>
+
+Das Element beschreibt die Zielgruppe für das Lernobjekt. Die vorherrschende
+Zielgruppe wird zuerst genannt.
+
+- TODO Verweis auf Vokabular
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>7</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="context">
+
+## Das Element <dfn><code>context</code></dfn>
+
+Das Element beschreibt die Umgebung, in der das Objekt zu Einsatz kommt.
+
+- TODO Verweis auf Vokabular
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>12</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="typicalagerange">
+
+## Das Element <dfn><code>typicalagerange</code></dfn>
+
+Das Element beschreibt, wie das Objekt genutzt werden soll.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+</dl>
+
+</section>
+
+<section>
+
+## Das Element <a><code>description</code></a>
+
+Das Element beschreibt, wie das Objekt genutzt werden soll. 
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>7</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+</dl>
+
+</section>
+
+<section>
+
+## Das Element <a><code>language</code></a>
+
+Das Element beschreibt, welche Sprachen für die typische Zielgruppe dieses
+Objektes bereitgestellt werden.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>10</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Beispiel:</dt>
+  <dd>
+
+- "en"
+- "de"
+
+  </dd>
+</dl>
+
+</section>
+
+<!-- end of section educational -->
+</section>
+</section>
+
+
+<section id="rights">
+
+## Urherberrechte
+
+<section data-dfn-for="rights">
+
+## Das Element <dfn><code>rights</code></dfn>
+
+Beschreibung der Eigentums-, Nutzungs- und Verwendungsrechte.
+
+bjektes.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <!-- new Element -->
+  <dd><a>license</a></dd>
+</dl>
+
+<section id="license">
+
+## Das Element <dfn><code>license</code></dfn>
+
+Das Element beschreibt die Lizenz des Objektes.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <!-- LOMv1.0 6.3 -->
+  <dd><a><code>licenseDescription</code></a></dd>
+  <!-- new Element -->
+  <dd><a><code>licenseIdentifier</code></a></dd>
+</dl>
+
+<section>
+
+## Das Element <dfn><code>licenseDescription</code></dfn>
+
+Beschreibt die Lizenz des Objektes.
+
+</section>
+
+<section>
+
+## Das Element <dfn><code>licenseIdentifier</code></dfn>
+
+Hier kann ein Identifikator die Lizenz, bspw. ein Link hinterlegt werden.
+
+</section>
+
+<!-- end of license -->
+</section>
+
+<!-- End of rights section -->
+</section>
+</section>
+
+
+<section id="relation">
+
+## Relationen
+
+<section data-dfn-for="relation">
+
+## Das Element <dfn><code>relations</code></dfn>
+
+Beschreibt die Relationen zwischen diesem Objekt und anderen Objekten.
+
+<section data-dfn-for="kind">
+
+## Das Element <dfn><code>kind</code></dfn>
+
+Das Element beschreibt die Art der Relation. 
+
+- TODO Vocabulary verlinken.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="resource">
+
+## Das Element <dfn><code>resource</code></dfn>
+
+Das Element beschreibt die Ziel-Ressource, auf die die Relation zutrifftbundleRenderer.renderToStream
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+</dl>
+
+</section>
+
+<section>
+
+## Das Element <a><code>identifier</code></a>
+
+Beschreibt einen global eindeutigen Identifikator für das Objekt.
+Das Element wird in <a href="#multiple-occuring-elements">Mehrfach vorkommende Elemente</a>
+genauer beschrieben.
+
+</section>
+
+<section>
+
+## Das Element <a><code>description</code></a>
+
+Das Element beschrreibt das Zielobjekt der Relation.
+Das Element wird in <a href="#multiple-occuring-elements">Mehrfach vorkommende Elemente</a>
+genauer beschrieben.
+
+</section>
+
+<!-- End of relations -->
+</section>
+</section>
+
+
+<section id="annotation">
+
+## Kommentar
+
+<section data-dfn-for="annotation">
+
+## Das Element <dfn><code>annotation</code></dfn>
+
+Die Kategorie ermöglicht das Anbringen von Bemerkungen zum pädagogischen
+Einsatz eines Objektes.
+
+<section>
+
+## Das Element <a><code>entity</code></a>
+
+Beschreibt die Person oder Einrichtung, die den Kommentar verfasst hat.
+Das Element wird in <a href="#dfn-entity">hier</a>
+genauer beschrieben.
+
+</section>
+
+<section>
+
+## Das Element <a><code>date</code></a>
+
+Beschreibt das Datum, an dem der Kommentar verfasst wurde.
+Das Element wird in <a href="#dfn-date">hier</a>
+genauer beschrieben.
+
+</section>
+
+<section>
+
+## Das Element <a><code>description</code></a>
+
+Beschreibt den Inhalt des Kommentars.
+Das Element wird in <a href="#dfn-description">hier</a>
+genauer beschrieben.
+
+</section>
+
+<!-- End of Annotation -->
+</section>
+</section>
+
+
+<section id="classification">
+
+## Klassifikation
+
+<section data-dfn-for="classification">
+
+## Das Element <dfn><code>classification</code></dfn>
+
+Diese Kategorie dient der Herstellung einer Verbindung zwischen dem
+Objekt und einem oder mehreren Klassifikationssystemen.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a>purpose</a></dd>
+  <dd><a>taxonpath</a></dd>
+  <dd><a>description</a></dd>
+</dl>
+
+<section data-dfn-for="purpose">
+
+## Das Element <dfn><code>purpose</code></dfn>
+
+Das Element bestimmt die Art der verwendeten Klassifikation.
+
+- TODO Vokabular verlinken
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Datentyp:</dt>
+  <dd>Vokabular</dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="taxonpath">
+
+## Das Element <dfn><code>taxonpath</code></dfn>
+
+Das Element beschreibt den taxonomischen Pfad in einem spezifischen
+Klassifikationssystem.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>15</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a>source</a></dd>
+  <dd><a>taxon</a></dd>
+</dl>
+
+<section>
+
+## Das Element <a><code>source</code></a>
+
+Das Element beschreibt den Namen des Klassifikationssystems.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="taxon">
+
+## Das Element <dfn><code>taxon</code></dfn>
+
+Ein eindeutiger Ausdruck innerhalb des 
+Klassifikationssystems (Taxonomie).
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>15</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a>identifier</a>></dd>
+  <!-- in LOMv1.0 steht entry -->
+  <dd><a>label</a></dd>
+</dl>
+
+<section>
+
+## Das Element <a><code>identifier</code></a>
+
+Das Element beschreibt das Taxon mit einem eindeutigen Identifier
+innerhalb des Klassifikationssystems.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="label">
+
+## Das Element <dfn><code>label</code></dfn>
+
+Die Beschriftung des Taxons.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verplfichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+</dl>
+
+</section>
+
+<!-- End of Taxon -->
+</section>
+
+<!-- End of section taxonpath -->
+</section>
+
+<section>
+
+## Das Element <a><code>description</code></a>
+
+Beschreibt das Objekt relativ zu dem gewählten Element in <a>purpose</a>.
+
+</section>
+
+<section>
+
+## Das Element <a><code>keyword</code></a>
+
+Enthält Schlagwörter in Bezug auf das in <a>purpose</a> gewählte
+Klassifikationssystem.
+
+</section>
+
+<!-- End of classification -->
+</section>
+</section>
+
+
+<section id="multiple-occuring-elements">
+
+## Mehrfach vorkommende Elemente 
+
+<section data-dfn-for="contribute">
+
+## Das Element <dfn><code>contribute</code></dfn>
+
+Das Element beschreibt die Personen oder Organisationen, die an der Entstehung der Ressource mitgewirkt haben.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a>role</a></dd>
+  <dd><a>entity</a></dd>
+  <dd><a>date</a></dd>
+
+</dl>
+
+<section data-dfn-for="role">
+
+## Das Element <dfn><code>role</code></dfn>
+
+Das Element bezeichnet die Rolle der Person oder Institution, die zur Ressource beigetragen hat.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="entity">
+
+## Das Element <dfn><code>entity</code></dfn>
+
+Das Element beschreibt die Person und/oder Institution, die zur Ressource beigetragen hat.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vcard</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispiel</dt>
+
+<p class="example">
+  BEGIN:VCARD <br>
+  VERSION:3.0 <br>
+  N:Kolb;Annika <br>
+  FN: Annika Kolb <br>
+  URL: https://orcid.org/0000-0003-3456-7812 <br>
+  END:VCARD
+</p>
+
+  </dd>
+</dl>
+
+</section>
+</section>
+
+<section data-dfn-for="date">
+
+  ## Das Element <dfn><code>date</code></dfn>
+
+  Das Element bezeichnet das Datum des Beitrags zur Lernressource nach [[ISO8601]] im Format YYYY-MM-DD.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>datetime</a></dd>
+  <dt>Beispielwert:</dt>
+  <dd>
+
+- 2020-04-20
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="identifier">
+
+## Das Element <dfn><code>identifier</code></dfn>
+
+Das Element dient der eindeutigen Identifizierung des Objektes.
+
+<dl>
+  <dt>Datentyp</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd>
+    <a>catalog</a><br>
+    <a>entry</a>
+  </dd>
+</dl>
+
+
+<section data-dfn-for="catalog">
+
+## Das Element <dfn><code>catalog</code></dfn>
+
+Das Element benennt den Katalog, d.h. das Identifizierungssystem.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "`DOI`" - für Digital Object Identifiers [[ISO26324]]
+
+- "`HDL`" - für Handles [[RFC3650]]
+
+- "`URI`" - für Uniform Resource Identifiers [[RFC3986]]
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="entry">
+
+## Das Element <dfn><code>entry</code></dfn>
+
+Das Element bezeichnet einen Eintrag in einem Katalog, d. h. einem
+Identifizierungssystem, der dem Objekt zugeordnet ist. Durch den Eintrag soll das
+Objekt von dritter Seite gesucht und gefunden werden können.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "https://doi.org/10.1109/5.771073"
+
+- "http://www.ieee.org/documents/1234"
+
+  </dd>
+</dl>
+
+</section>
+</section>
+
+<section data-dfn-for="description">
+
+## Das Element <dfn><code>description</code></dfn>
+
+Das Element dient der Beschreibung.
+
+<dl>
+  <dt>Datentyp</dt>
+  <dd><a>characterstring</a></dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="language">
+
+## Das Element <dfn><code>language</code></dfn>
+
+Der Wert besteht aus einem zweibuchstabigem Kürzel für die Sprache, z. B. `de`,
+nach [[ISO-639-1]]. Kompliziertere Varianten mit Subtags, z.B. `en-US`, werden bis
+auf weiteres nicht unterstützt.
+
+<dl>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "en"
+
+- "de"
+
+  </dd>
+</dl>
+
+</section>
+
+</section>
+
+
+<section id="datatypes">
+
+## Datentypen
+
+<dl>
+  <dt>Vorkommende Datentypen:</dt>
+  <dd>
+    <a>langstring</a><br>
+    <a>characterstring</a><br>
+    <a>vocabulary</a><br>
+    <a>datetime</a><br>
+  </dd>
+</dl>
+
+<section data-dfn-for="langstring">
+
+## Der Datentyp <dfn><code>langstring</code></dfn>
+
+Ein LangString besteht aus zwei Elementen: Angabe der Sprache und Zeichenkette. 
+Die Kombination ermöglicht die Beschreibung von Ressourcen in mehreren, 
+nach ISO-Norm gekennzeichneten Sprachen. Bei der Übersetzung wird die Zeichenkette übersetzt und mit dem 
+zugehörigen Sprachcode gespeichert.
+Innerhalb des Elements dard es für jede Sprache darf es nur eine zugehörige Zeichenkette geben.
+
+<dl>
+  <dt>Beispiel:</dt>
+  <dd>
+
+- "en", "some text"
+
+- "de", "irgendein Text"
+
+  </dd>
+</dl>
+
+<aside class="example" title='langstring'>
+  <p>Hier ein Beispiel zur Abbildung in JSON:
+    <pre>
+
+      {"de": "Deutsch als Zweitsprache"},
+
+      // innerhalb eines Elementes, können auch verschiedene Sprachen verwendet werden:
+      {
+        "en": "Deutsch als Fremdsprache",
+        "de": "German as foreign language"
+      }
+  </pre>
+</aside>
+
+</section>
+
+<section data-dfn-for="characterstring">
+
+## Der Datentyp <dfn><code>characterstring</code></dfn>
+
+Der Datentyp CharacterString wird per Default für alle Metadatenelemente verwendet. Er besteht aus einer Kette von
+Zeichen, die direkt in den Metadatenelementen gespeichert werden kann. CharacterString
+dient als formaler Identifikator oder Name und ist im UTF-8 Format kodifiziert. Ist dies eine URL, soll die
+absolute URL der Ressource angegeben werden.
+
+</section>
+
+<section data-dfn-for="vocabulary">
+
+## Der Datentyp <dfn><code>vocabulary</code></dfn>
+
+Der Datentyp Vocabulary wird bei der Nutzung von kontrollierten Vokabularen und
+bei vorgegebenen Terminologie- oder Zahlenlisten eingesetzt. Er besteht aus zwei 
+Teilen: einer Quelle (Identifikator in einemBezugssystem) und einem Wert 
+(aus diesem Bezugssystem). Um die Interoperabilität zu gewährleisten,muss der 
+Wert innerhalb eines bekannten, von einer breiten Gemeinschaft geteilten, 
+Bezugssystems gewählt werden.
+
+<dl>
+  <dt>Elemente</dt>
+  <dd><a>source</a></dd>
+  <dd><a>value</a></dd>
+</dl>
+
+<section data-dfn-for="source">
+
+## Das Element <dfn><code>source</code></dfn>
+
+Das Element <a>source</a> nennt die Quelle des Vokabulars. Er soll auf die URI eines
+definierten Vokabulars gesetzt werden, bestenfalls auf eine URL.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- `LOMv1.0`
+- `https://w3id.org/kim/hcrt/scheme`
+- `https://w3id.org/kim/hochschulfaechersystematik/scheme`
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="value">
+
+## Das Element <dfn><code>value</code></dfn>
+
+Das Element <a>value</a> enthält den Eintrag aus dem in <a>source</a> festgelegtem Vokabular 
+inklusive Sprachbezeichnung nach [[ISO-639-1]]
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "de", "Autor"
+- "en", worksheet
+
+  </dd>
+</dl>
+
+</section>
+</section>
+
+
+<section data-dfn-for="datetime">
+
+## Der Datentyp <dfn><code>datetime</code></dfn>
+
+Dieser Datentyp gibt das Datum nach dem Format JJJJ-MM-TT an. Er richtet sich nach der Norm [[ISO8601]].
+
+<dl>
+  <dt>Beispiel:</dt>
+  <dd>2020-04-20</dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="duration_type">
+
+## Der Datentyp <dfn><code>duration_type</code></dfn>
+
+Dieser Datentyp gibt die Dauer nach dem Format [[ISO8601]] an.
+
+<dl>
+  <dt>Beispiel:</dt>
+  <dd>PT1M45S</dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="vcard">
+
+## Das Element <dfn><code>vcard</code></dfn>
+
+Der vCard-Eintrag erfolgt in einfacher Textform und richtet sich nach [[RFC6350]],
+wie in den Beispielen zu sehen. Er beschreibt eine Person oder Organisation.
+
+Anzumerken ist die Möglichkeit, die [[?ORCID]] oder die [[?GND]] -ID der Person
+als Tag `URL` mit anzugeben, die genutzt werden SOLL, wenn die Information zur Verfügung steht.
+Der entsprechende Identifier MUSS bei Angabe als HTTP-URI angegeben werden, z.B.
+`https://orcid.org/0000-0001-9083-7442` oder `https://d-nb.info/gnd/14326723X`.
+
+Für Organisationen gilt ein ähnlicher Vorschlag, hier SOLL als `URL` der URI des
+entsprechenden [[?Wikidata]]-Items genannt werden oder die [[?GND]]-URI,
+also z. B. für die Universität Tübingen `http://www.wikidata.org/entity/Q153978`
+oder `https://d-nb.info/gnd/36187-2`.
+<br>
+Alternativ können auch die IDs der Research Organization Registry [[?ROR]] genutzt
+werden.
+
+<p class="note">[[?ROR]] ist noch relativ neu und Geschäftsmodell und Weg sind noch nicht klar.
+  Bei der Abdeckung konnten stichprobenartig keine deutlichen Unterschiede festgestellt
+  werden. Es muss aber bedacht werden, dass sich [[?ROR]] nur mit
+  Forschungsorganisationen – allerdings im weitesten Sinne – befasst. Mehrere
+  wissenschaftliche Serviceangebote wollen aber allem Anschein nach zukünftig ROR-IDs
+  ebenfalls nutzen, wie [[?Crossref]], [[?DataCite]] und [[?ORCID]]. Das spricht sehr
+  stark für eine Unterstützung.</p>
+
+</section>
+
+</section>
+
+
+<section id="glossary" class="appendix">
+
+## Glossar
+
+<dl>
+  <dt><abbr title="Learning Object Metadata">LOM</abbr></dt>
+  <dd>Learning Object Metadata</dd>
+  <dt><abbr title="Open Archives Initiative">OAI</abbr></dt>
+  <dd>Open Archives Initiative</dd>
+  <dt><abbr title="OAI Protocol for Metadata Harvesting">OAI-PMH</abbr></dt>
+  <dd>OAI Protocol for Metadata Harvesting</dd>
+  <dt><abbr title="Open Educational Resource">OER</abbr></dt>
+  <dd>Open Educational Resource</dd>
+  <dt><abbr title="Uniform Resource Identifier">URI</abbr></dt>
+  <dd>Uniform Resource Identifier</dd>
+  <dt><abbr title="Uniform Resource Locator">URL</abbr></dt>
+  <dd>Uniform Resource Locator</dd>
+  <dt><abbr title="World Wide Web">WWW</abbr></dt>
+  <dd>World Wide Web</dd>
+  <dt><abbr title="Extensible Markup Language">XML</abbr></dt>
+  <dd>Extensible Markup Language</dd>
+  <dt><abbr title="XML Schema Instance">XSI</abbr></dt>
+  <dd>XML Schema Instance</dd>
+  <dt><abbr title="Zentrales OER-Repositorium der Hochschulen In Baden-Württemberg">ZOERR</abbr></dt>
+  <dd><a href="https://www.oerbw.de/">Zentrales OER-Repositorium der Hochschulen In Baden-Württemberg</a></dd>
+</dl>
+
+</section>
+
+</body>
+
+</html>
