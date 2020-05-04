@@ -67,6 +67,11 @@
          status: "1484.12.1-2002",
          publisher: "IEEE"
        },
+       "LOM-DEv1.0": {
+         title: "Deutches LOM-Applikationsprofil",
+         href: "http://sodis.de/lom-de/LOM-DE.doc",
+         status: "0.9",
+       },
        "LOMv1.2": {
          title: "IMS Learning Resource Meta-data Specification",
          href: "https://www.imsglobal.org/metadata/index.html",
@@ -83,6 +88,35 @@
          href: "https://www.openarchives.org/OAI/openarchivesprotocol.html",
          status: "Version 2.0",
          publisher: "Open Archives Initiative"
+       },
+       "OEH-EducationalContext": {
+          title: "OEH-Vokabular für Lifecycle Contribute Role in SKOS",
+          href: "https://w3id.org/openeduhub/vocabs/educationalContext/",
+          status: "draft",
+          publisher: "Open-Edu-Hub"
+       },
+       "OEH-LifecycleContributeRole": {
+          title: "OEH-Vokabular für Lifecycle Contribute Role in SKOS",
+          href: "https://w3id.org/openeduhub/vocabs/lifecycleContributeRole/",
+          status: "draft",
+          publisher: "Open-Edu-Hub"
+       },
+       "OEH-LearningResourceType": {
+          title: "OEH-Vokabular für Learning Resource Type in SKOS",
+          href: "https://w3id.org/openeduhub/vocabs/learningResourceType/",
+          status: "draft",
+          publisher: "Open-Edu-Hub"
+       },
+       "OEH-IntendedEndUserRole": {
+          title: "OEH-Vokabular für Learning Resource Type in SKOS",
+          href: "https://w3id.org/openeduhub/vocabs/intendedEndUserRole/",
+          status: "draft",
+          publisher: "Open-Edu-Hub"
+       },
+       "OER-Worldmap-Licenses": {
+         title: "Lizenz-Vokabular der OER-Worldmap",
+         href: "https://oerworldmap.org/assets/json/licenses.json",
+         publisher: "OER Worldmap"
        },
        "ORCID": {
          title: "ORCID",
@@ -323,8 +357,8 @@ Beschreibt das Element.
   </dd>
 </dl>
 
-
 </section>
+
 
 <section data-dfn-for="keyword">
 
@@ -447,6 +481,10 @@ Abschluss führen
 
 </section> -->
 
+<section>
+
+## Beispiel-Eintrag
+
 <aside class="example" title='general'>
   <p>Hier ein Beispiel zur Abbildung in JSON:
     <pre>
@@ -468,6 +506,7 @@ Abschluss führen
   }
   </pre>
 </aside>
+</section>
 
 <!-- end of general -->
 </section>
@@ -498,8 +537,6 @@ Erstellung beteiligt waren.
     <a>version</a><br>
     <a>status</a><br>
     <a>contribute</a> 
-
-
   </dd>
 </dl>
 
@@ -527,6 +564,7 @@ Das Element bezeichnet die Version des Lernobjektes.
 </dl>
 
 </section>
+
 
 <section data-dfn-for="status">
 
@@ -558,6 +596,7 @@ Das Element bezeichnet die Status des Lernobjektes.
 
 </section>
 
+
 <section>
 
 ## Das Element <a>contribute</a>
@@ -566,47 +605,92 @@ Das Element beschreibt die Personen und
 Organisationen, die an der Erstellung des Lernobjekts beteiligt waren. Es
 MUSS mindestens ein <code>contribute</code> mit Angabe der Autoren
 geben. Innerhalb jedes <code>contribute</code>-Elements MUSS genau
-einmal ein <code>role</code>-Element vorkommen. Die erlaubten Werte
-aus [[LOMv1.0]] für <a>role</a> sind:
+einmal ein <code>role</code>-Element und ein <code>name</code>-Element vorkommen.
 
-- TODO Vokabular verlinken [[SKOS-OEH]]
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a><code>role</code></a></dd>
+  <dd><a><code>name</code></a></dd>
+  <dd><a><code>date</code></a></dd>
+</dl>
 
-- author
-- publisher
-- unknown
-- initiator
-- terminator
-- validator
-- editor
-- graphical designer
-- technical implementer
-- content provider
-- technical validator
-- educational validator
-- script writer
-- instructional designer
-- subject matter expert
+
+<section>
+
+## Das Element <a><code>role</code></a>
+
+Die erlaubten Werte für <a>role</a> sind hier definiert: [[OEH-LifecycleContributeRole]]
+Die Werte wurden [[LOMv1.0]] mit den Übersetzungen aus [[LOM-DEv1.0]] entnommen.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>Vokabular</dd>
+  <dt>Vokabular:</dt>
+  <dd><a><code>source</code></a>: [[OEH-LifecycleContributeRole]]</dd>
+  <dd><a><code>value</code></a>: TODO WERTE DES VOKABULARS verlinken</dd>
+</dl>
 
 </section>
 
+<section>
 
-<aside class="example" title='general'>
+## Das Element <a><code>name</code></a>
+
+Enthält den Namen der Person oder Organisation.
+
+</section>
+
+<section>
+
+## Das Element <a><code>date</code></a>
+
+Das Datum des Beitrags.
+
+</section>
+</section>
+</section>
+
+<section>
+
+## Beispiel-Eintrag
+
+<aside class="example" title='lifecycle'>
   <p>Hier ein Beispiel zur Abbildung in JSON:
     <pre>
   {
     "lifecycle": {
-     "version": {"de": "1.2"},
-     "status": {
-       "source": "LOMv1.0",
-       "value": "final"
-     }
+      "version": {"de": "1.2"},
+      "status": {
+        "source": "LOMv1.0",
+        "value": "final"
+      },
+      "contribute": {
+      "role": {
+        "source": "https://w3id.org/openeduhub/vocabs/lifecycleContributeRole/",
+        "value": "author"
+      },
+      "name": "Martina Musterfrau",
+      "date": "2020-04-20"
+      }
     }
   }
   </pre>
 </aside>
+</section>
 
 </section>
 </section>
+
 
 
 <section id="metametadata"> 
@@ -629,11 +713,13 @@ Spezifische Informationen zur Speicherung der Metadaten.
   <dt>Elemente:</dt>
   <dd><a>identifier</a></dd>
   <dd><a>contribute</a></dd>
-  <dd><a>metadataschema</a></dd>
+  <dd><a>metadatascheme</a></dd>
+  <dd><a>license</a></dd>
   <!-- <dd><a>language</a></dd> -->
 
 </dl>
 
+<!-- Identifier -->
 <section>
 
 ## Das Element <a>identifier</a>
@@ -657,6 +743,7 @@ näher definiert.
 
 </dl>
 
+<!-- Catalogue -->
 <section>
 
 ## Das Element <a><code>catalog</code></a>
@@ -687,6 +774,7 @@ das zur Identifizierung des Metadatensatzes dient.
 
 </section>
 
+<!-- entry -->
 <section>
 
 ## Das Element <a><code>entry</code></a>
@@ -713,6 +801,7 @@ Wert des Identifikators des Metadatensatzes.
 </section>
 </section>
 
+<!-- Contribute -->
 <section>
 
 ## Das Element <a>contribute</a>
@@ -732,7 +821,7 @@ einmal ein <code>role</code>-Element vorkommen.
   <dd>/</dd>
   <dt>Elemente:</dt>
   <dd><a><code>role</code></a></dd>
-  <dd><a><code>entity</code></a></dd>
+  <dd><a><code>name</code></a></dd>
   <dd><a><code>date</code></a></dd>
 </dl>
 
@@ -741,18 +830,30 @@ einmal ein <code>role</code>-Element vorkommen.
 
 ## Das Element <a><code>role</code></a>
 
-Die erlaubten Werte aus [[LOMv1.0]] für <a>role</a> sind:
+Die erlaubten Werte für <a>role</a> sind hier definiert: [[OEH-LifecycleContributeRole]]
+Die Werte wurden [[LOMv1.0]] mit den Übersetzungen aus [[LOM-DEv1.0]] entnommen.
 
-- TODO Vokabular verlinken
 
-- creator
-- validator
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>Vokabular</dd>
+  <dt>Vokabular:</dt>
+  <dd><a><code>source</code></a>: [[OEH-LifecycleContributeRole]]</dd>
+  <dd><a><code>value</code></a>: TODO WERTE DES VOKABULARS verlinken</dd>
+</dl>
 
 </section>
 
+
 <section>
 
-## Das Element <a><code>entity</code></a>
+## Das Element <a><code>name</code></a>
+
+Der Name der beitragenden Person oder Organisation.
 
 </section>
 
@@ -760,14 +861,18 @@ Die erlaubten Werte aus [[LOMv1.0]] für <a>role</a> sind:
 
 ## Das Element <a><code>date</code></a>
 
+Das Datum des Beitrags.
+
 </section>
 </section
 
-<section data-dfn-for="metadataschema">
 
-## Das Element <dfn><code>metadataschema</code></dfn>
+<section data-dfn-for="metadatascheme">
+
+## Das Element <dfn><code>metadatascheme</code></dfn>
 
 Name und Version des Applikationsprofils, nach welchem die Metadaten erfasst werden.
+Nach Möglichkeit als URI.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -782,12 +887,34 @@ Name und Version des Applikationsprofils, nach welchem die Metadaten erfasst wer
 - "LOM-OEHv0.1"
 - "LOM-DEv1.0"
 - "LREv4.0"
+- "https://w3id.org/openeduhub/metadatascheme"
 
   </dd>
 </dl>
 </section>
 
-<!-- 
+<!-- License -->
+<section>
+
+## Das Element <a><code>license</code></a>
+
+Bezeichnet die Lizenz des Elements nach [[OER-Worldmap-Licenses]]
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>Vokabular</dd>
+  <dt>Vokabular:</dt>
+  <dd><a><code>source</code></a>: [[OER-Worldmap-Licenses]]</dd>
+  <dd><a><code>value</code></a>: TODO WERTE DES VOKABULARS</dd>
+</dl>
+
+</section>
+
+<!-- Language
 <section>
 
 ## Das Element <a>language</a>
@@ -815,10 +942,41 @@ auf weiteres nicht unterstützt.
 
 </section> -->
 
+<!-- Beispiel -->
+<section>
+
+## Beispiel-Eintrag
+
+<aside class="example" title='metametadata'>
+  <p>Hier ein Beispiel zur Abbildung in JSON:
+    <pre>
+  {
+    "metametadata": {
+      "identifier": {
+        "catalog": "URI"
+        "entry": "www.example-url.de/to-metadataentry"
+      },
+      "contribute": {
+        "role": {
+          "source": "https://w3id.org/openeduhub/vocabs/lifecycleContributeRole/",
+          "value": "author"
+        },
+        "name": "Martina Musterfrau",
+        "date": "2020-04-20"
+      },
+      "metadatascheme": "https://w3id.org/openeduhub/metadatascheme",
+      "license": "cc0"
+    }
+  }
+  </pre>
+</aside>
+
+</section>
 </section>
 </section>
 
 
+<!-- technical -->
 <section id="technical">
 
 ## Technische Anforderungen
@@ -844,8 +1002,10 @@ Das Element beschreibt die technischen Anforderungen und Eigenschaften des Objek
   <!-- <dd><a>installationremarks</a></dd>
   <dd><a>otherplatformrequirements</a></dd> -->
   <dd><a>duration</a></dd>
+  <dd><a>thumbnail</a></dd>
 </dl>
 
+<!-- format -->
 <section data-dfn-for="format">
 
 ## Das Element <dfn><code>format</code></dfn>
@@ -898,16 +1058,17 @@ Das Element beschreibt die Größe des Objektes in Bytes.
 
 </section> -->
 
+<!-- location -->
 <section data-dfn-for="location">
 
 ## Das Element <dfn><code>location</code></dfn>
 
-Das Element beschreibt den Standort (physisch oder virtuell) des Objektes.
+Das Element beschreibt den Standort des Objektes.
 Das erste Element in einer Liste gibt den bevorzugten Standort des Elementes an.
 
 <dl>
   <dt>Maximale Häufigkeit</dt>
-  <dd>1</dd>
+  <dd>n</dd>
   <dt>Verpflichtungsgrad</dt>
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
@@ -924,6 +1085,7 @@ Das erste Element in einer Liste gibt den bevorzugten Standort des Elementes an.
 
 </section>
 
+<!-- requirement -->
 <section data-dfn-for="requirement">
 
 ## Das Element <dfn><code>requirement</code></dfn>
@@ -946,6 +1108,7 @@ Konnektor ist "AND".
   <dd><a>orcomposite</a></dd>
 </dl>
 
+<!-- orcomposite -->
 <section data-dfn-for="orcomposite">
 
 ## Das Element <dfn><code>orcomposite</code></dfn>
@@ -968,6 +1131,7 @@ erfüllt ist. Der logische Konnektor zwischen diesen Elementen ist "OR".
   <dd><a>maximumversion</a></dd> -->
 </dl>
 
+<!-- type of technical requirement -->
 <section data-dfn-for="type">
 
 ## Das Element <dfn><code>type</code></dfn>
@@ -984,19 +1148,21 @@ TODO - Verweis auf Vokabular (operating system, browser)
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
   <dd><a>vocabulary</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><code>operating system</code></dd>
+    <dd><code>browser</code></dd>
 </dl>
 
 </section>
 
+<!-- name of technical requirement -->
 <section data-dfn-for="name">
 
 ## Das Element <dfn><code>name</code></dfn>
 
 Das Element beschreibt den Namen der benötigten Technologie.
 
-- TODO - Verweis auf Vokabular 
-  - (if type = "operating system" ...)
-  - (if type = "browser" ...)
+- TODO Vokabular? Aktualisieren?
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -1005,6 +1171,21 @@ Das Element beschreibt den Namen der benötigten Technologie.
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
   <dd><a>vocabulary</a></dd>
+  <dt>Vokabular: (if type == "operating system")</dt>
+  <dd>pc-dos</dd>
+  <dd>ms-windows</dd>
+  <dd>macos</dd>
+  <dd>unix</dd>
+  <dd>multi-os</dd>
+  <dd>none</dd>
+  <dt>Vokabular: (if type == "browser")</dt>
+  <dd>any</dd>
+  <dd>netscape communicator</dd>
+  <dd>ms-internet explorer</dd>
+  <dd>opera</dd>
+  <dd>amaya</dd>
+
+
 </dl>
 
 </section>
@@ -1099,6 +1280,7 @@ Das Element beschreibt weitere Soft- oder Hardware-Voraussetzungen.
 
 </section> -->
 
+<!-- duration -->
 <section data-dfn-for="duration">
 
 ## Das Element <dfn><code>duration</code></dfn>
@@ -1117,6 +1299,7 @@ es bei mit der vorgeschriebenen Geschwindigkeit abgespielt wird.
 
 </section>
 
+<!-- thumbnail -->
 <section data-dfn-for="thumbnail">
 
 ## Das Element <dfn><code>thumbnail</code></dfn>
@@ -1133,22 +1316,53 @@ Das Element enthält das Bild oder dessen Pfad.
 
 </section>
 
-<section data-dfn-for="imagetype">
+<!-- license -->
+<section>
 
-## Das Element <dfn><code>imagetype</code></dfn>
-
-Das Element enthält Informationen über den Typ des Vorschaubildes
-
-</section>
-
-<section data-dfn-for="imagelicense">
-
-## Das Element <dfn><code>imagelicense</code></dfn>
+## Das Element <a><code>license</code></a>
 
 Das Element enthält Informationen über den Urherberrechtshinweis des
-Vorschaubildes.
+Vorschaubildes. Es ist ein Eintrag aus [[OER-Worldmap-Licenses]].
 
 </section>
+
+</section>
+</section>
+
+<!-- Beispiel -->
+<section>
+
+## Beispiel-Eintrag
+
+<aside class="example" title='technical'>
+  <p>Hier ein Beispiel zur Abbildung in JSON:
+    <pre>
+{
+  "technical": {
+    "format": "text/docx",
+    "location": [
+      "www.example.org",
+      "www.another-nice-location.org"
+    ],
+    "requirement": [{
+      "orcomposite": {
+        "type": "operating system",
+        "name": "unix"
+      },
+      "orcomposite": {
+        "type": "operating system",
+        "name": "macos"
+      }
+    }],
+    "duration": "",
+    "thumbnail": {
+      "image": "www.pictures.com/picture1.jpg",
+      "license": "cc0"
+    }
+  }
+}
+</pre>
+</aside>
 
 </section>
 
@@ -1179,7 +1393,6 @@ des Objektes.
   <dt>Elemente:</dt>
   <dd><a>interactivitytype</a></dd>
   <dd><a>learningresourcetype</a></dd>
-  <dd><a>learningresourcetype</a></dd>
   <dd><a>intendedenduserrole</a></dd>
   <dd><a>context</a></dd>
   <dd><a>typicalagerange</a></dd>
@@ -1193,9 +1406,8 @@ des Objektes.
 ## Das Element <dfn><code>interactivitytype</code></dfn>
 
 Das Element beschreibt den vorherrschenden Interaktivitätsmodus bei der
-Bearbeitung des Objektes.
-
-- TODO Verweis auf Vokabular
+Bearbeitung des Objektes. Die unter <code>value</code> genannten Werte 
+können eingesetzt werden.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -1204,6 +1416,15 @@ Bearbeitung des Objektes.
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
   <dd><a>vocabulary</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a><code>source</code></a>: [[LOM-DEv1.0]]</dd>
+  <dd><a><code>value</code></a>: 
+
+  - aktiv
+  - darstellend
+  - gemischt
+
+  </dd>
 </dl>
 
 </section>
@@ -1215,7 +1436,9 @@ Bearbeitung des Objektes.
 Das Element beschreibt die Art des Objektes. Die vorherrschende Art
 wird zuerst genannt.
 
-- TODO Verweis auf Vokabular
+Das Vokabular wurde von [[LOM-DEv1.0]] übernommen und ist hier in
+SKOS dargestellt: [[OEH-LearningResourceType]].
+
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -1224,6 +1447,9 @@ wird zuerst genannt.
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
   <dd><a>vocabulary</a></dd>
+  <dt>Vokabular</dt>
+  <dd><a><code>source</code></a>: [[OEH-LearningResourceType]]</dd>
+  <dd><a><code>value</code></a>: TODO Werte eintragen</dd>
 </dl>
 
 </section>
@@ -1235,7 +1461,9 @@ wird zuerst genannt.
 Das Element beschreibt die Zielgruppe für das Lernobjekt. Die vorherrschende
 Zielgruppe wird zuerst genannt.
 
-- TODO Verweis auf Vokabular
+Das Vokabular wurde von [[LOM-DEv1.0]] übernommen und wird hier
+in SKOS dargestellt [[OEH-IntendedEndUserRole]]
+
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -1244,6 +1472,9 @@ Zielgruppe wird zuerst genannt.
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
   <dd><a>vocabulary</a></dd>
+  <dt>Vokabular</dt>
+  <dd><a><code>source</code></a>: [[OEH-IntendedEndUserRole]]</dd>
+  <dd><a><code>value</code></a>: TODO Werte eintragen</dd>
 </dl>
 
 </section>
@@ -1254,7 +1485,8 @@ Zielgruppe wird zuerst genannt.
 
 Das Element beschreibt die Umgebung, in der das Objekt zu Einsatz kommt.
 
-- TODO Verweis auf Vokabular
+Das Vokabular wurde teilweise von [[LOM-DEv1.0]] übernommen und wird hier
+in SKOS dargestellt [[OEH-EducationalContext]]
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -1263,6 +1495,9 @@ Das Element beschreibt die Umgebung, in der das Objekt zu Einsatz kommt.
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
   <dd><a>vocabulary</a></dd>
+  <dt>Vokabular</dt>
+  <dd><a><code>source</code></a>: [[OEH-EducationalContext]]</dd>
+  <dd><a><code>value</code></a>: TODO Werte eintragen</dd>
 </dl>
 
 </section>
@@ -1272,6 +1507,8 @@ Das Element beschreibt die Umgebung, in der das Objekt zu Einsatz kommt.
 ## Das Element <dfn><code>typicalagerange</code></dfn>
 
 Das Element beschreibt, wie das Objekt genutzt werden soll.
+Die Spannweite kann in [minimales]-[maximales] Alter angegeben werden.
+"U" kann für "nicht-definiert" gesetzt werden.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -1279,7 +1516,7 @@ Das Element beschreibt, wie das Objekt genutzt werden soll.
   <dt>Verpflichtungsgrad:</dt>
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
-  <dd><a>vocabulary</a></dd>
+  <dd><a>langstring</a></dd>
 </dl>
 
 </section>
@@ -1325,6 +1562,43 @@ Objektes bereitgestellt werden.
 </dl>
 
 </section>
+</section>
+
+<!-- Beispiel -->
+<section>
+
+  ## Beispiel-Eintrag
+
+  <aside class="example" title='educational'>
+    <p>Hier ein Beispiel zur Abbildung in JSON:
+      <pre>
+  {
+    "educational": {
+      "interactivitytype": "active",
+      "learningresourcetype": [
+        "quiz",
+        "educational_game",
+      ],
+      "intendedenduserrole": [
+        "learner"
+      ],
+      "context": [
+        "grundschule",
+        "sekundarstufe_1"
+      ],
+      "typicalagerange": "6-12",
+      "description": {
+        "de": "Ein informatives Quiz über Ameisenbären"
+      },
+      "language": [
+        "de"
+      ]
+    }
+  }
+  </pre>
+  </aside>
+
+</section>
 
 <!-- end of section educational -->
 </section>
@@ -1355,9 +1629,9 @@ bjektes.
   <dd><a>license</a></dd>
 </dl>
 
-<section id="license">
+<section>
 
-## Das Element <dfn><code>license</code></dfn>
+## Das Element <a><code>license</code></a>
 
 Das Element beschreibt die Lizenz des Objektes.
 
@@ -1368,11 +1642,9 @@ Das Element beschreibt die Lizenz des Objektes.
   <dd>Obligatorisch</dd>
   <dt>Datentyp:</dt>
   <dd>/</dd>
-  <dt>Elemente:</dt>
-  <!-- LOMv1.0 6.3 -->
-  <dd><a><code>licenseDescription</code></a></dd>
-  <!-- new Element -->
-  <dd><a><code>licenseIdentifier</code></a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a><code>source</code></a>:<a><code>license</code></a> </dd>
+  <dd><a><code>value</code></a>: </dd>
 </dl>
 
 <section>
@@ -1867,6 +2139,18 @@ auf weiteres nicht unterstützt.
 
   </dd>
 </dl>
+
+</section>
+
+<section data-dfn-for="license">
+
+## Das Element <dfn><code>license</code></dfn>
+
+Beschreibt die Lizenz eines Items.
+
+Soll einen Eintrag aus dem Lizenz-Vokabular der OER-Worlmap enthalten: [[OER-Worldmap-Licenses]]
+
+
 
 </section>
 
