@@ -72,6 +72,11 @@
          href: "http://sodis.de/lom-de/LOM-DE.doc",
          status: "0.9",
        },
+       "LREv4.7": {
+         title: "Learning Resource Exchange Metadata Application Profile Version 4.7",
+         href: "http://lreforschools.eun.org/c/document_library/get_file?p_l_id=10970&folderId=12073&name=DLFE-1.pdf",
+         status: "4.7",
+       },
        "OAI-PMH": {
          title: "Open Archives Initiative Protocol for Metadata Harvesting",
          href: "https://www.openarchives.org/OAI/openarchivesprotocol.html",
@@ -110,7 +115,7 @@
        },
        "OER-Worldmap-Licenses": {
          title: "Lizenz-Vokabular der OER-Worldmap",
-         href: "https://oerworldmap.org/assets/json/licenses.json",
+         href: "https://skohub.io/literarymachine/skos/oerworldmap.org/assets/json/licenses/",
          publisher: "OER Worldmap"
        },
        "ORCID": {
@@ -655,7 +660,7 @@ Enthält den Namen der Person oder Organisation.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
-  <dd>n</dd>
+  <dd>1</dd>
   <dt>Verpflichtungsgrad</dt>
   <dd>Obligatorisch</dd>
   <dt>Datentyp:</dt>
@@ -699,20 +704,23 @@ Das Datum des Beitrags.
         "source": "LOMv1.0",
         "value": "final"
       },
-      "contribute": [{
-      "role": {
-        "source": "https://w3id.org/openeduhub/vocabs/lifecycleContributeRole/",
-        "value": "author"
-      },
-      "name": "Martina Musterfrau",
-      "date": "2020-04-20"
-      },
-      "role": {
-        "source": "https://w3id.org/openeduhub/vocabs/lifecycleContributeRole/",
-        "value": "author"
-      },
-      "name": "Max Mustermann",
-      "date": "2020-04-20"
+      "contribute": [
+        {
+        "role": {
+          "source": "https://w3id.org/openeduhub/vocabs/lifecycleContributeRole/",
+          "value": "author"
+        },
+        "name": "Martina Musterfrau",
+        "date": "2020-04-20"
+        },
+        {
+        "role": {
+          "source": "https://w3id.org/openeduhub/vocabs/lifecycleContributeRole/",
+          "value": "author"
+        },
+        "name": "Max Mustermann",
+        "date": "2020-04-21"
+        }
       ]
     }
   }
@@ -885,7 +893,16 @@ Die Werte wurden [[LOMv1.0]] mit den Übersetzungen aus [[LOM-DEv0.9]] entnommen
 
 ## Das Element <a><code>name</code></a>
 
-Der Name der beitragenden Person oder Organisation.
+Enthält den Namen der Person oder Organisation.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+</dl>
 
 </section>
 
@@ -894,6 +911,15 @@ Der Name der beitragenden Person oder Organisation.
 ## Das Element <a><code>date</code></a>
 
 Das Datum des Beitrags.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>datetime</a></dd>
+</dl>
 
 </section>
 </section
@@ -918,7 +944,7 @@ Nach Möglichkeit als URI.
 
 - "LOM-OEHv0.1"
 - "LOM-DEv0.9"
-- "LREv4.0"
+- "LREv4.7"
 - "https://w3id.org/openeduhub/metadatascheme"
 
   </dd>
@@ -985,19 +1011,33 @@ auf weiteres nicht unterstützt.
   {
     "metametadata": {
       "identifier": {
-        "catalog": "URI"
+        "catalog": "URI",
         "entry": "www.example-url.de/to-metadataentry"
       },
-      "contribute": {
-        "role": {
-          "source": "https://w3id.org/openeduhub/vocabs/lifecycleContributeRole/",
-          "value": "author"
+      "contribute": [
+        {
+          "role": {
+            "source": "https://w3id.org/openeduhub/vocabs/lifecycleContributeRole/",
+            "value": "author"
+          },
+          "name": "Martina Musterfrau",
+          "date": "2020-04-20"
         },
-        "name": "Martina Musterfrau",
-        "date": "2020-04-20"
-      },
+        {
+          "role": {
+            "source": "https://w3id.org/openeduhub/vocabs/lifecycleContributeRole/",
+            "value": "author"
+          },
+          "name": "Max Musterfrau",
+          "date": "2020-04-21"
+        }
+      ],
       "metadatascheme": "https://w3id.org/openeduhub/metadatascheme",
-      "license": "cc0"
+      "license": 
+        {
+          "source": "https://skohub.io/literarymachine/skos/oerworldmap.org/assets/json/licenses/",
+          "value": "cc0"
+        }
     }
   }
   </pre>
@@ -1353,9 +1393,19 @@ Das Element enthält das Bild oder dessen Pfad.
 
 ## Das Element <a><code>license</code></a>
 
-Das Element enthält Informationen über den Urherberrechtshinweis des
-Vorschaubildes. Es ist ein Eintrag aus [[OER-Worldmap-Licenses]].
+Bezeichnet die Lizenz des Elements nach [[OER-Worldmap-Licenses]]
 
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>Vokabular</dd>
+  <dt>Vokabular:</dt>
+  <dd><a><code>source</code></a>: [[OER-Worldmap-Licenses]]</dd>
+  <dd><a><code>value</code></a>: TODO WERTE DES VOKABULARS</dd>
+</dl>
 </section>
 
 </section>
@@ -1369,30 +1419,45 @@ Vorschaubildes. Es ist ein Eintrag aus [[OER-Worldmap-Licenses]].
 <aside class="example" title='technical'>
   <p>Hier ein Beispiel zur Abbildung in JSON:
     <pre>
-{
-  "technical": {
-    "format": "text/docx",
-    "location": [
-      "www.example.org",
-      "www.another-nice-location.org"
-    ],
-    "requirement": [{
-      "orcomposite": {
-        "type": "operating system",
-        "name": "unix"
-      },
-      "orcomposite": {
-        "type": "operating system",
-        "name": "macos"
+  {
+    "technical": {
+      "format": "text/docx",
+      "location": [
+        "www.example.org",
+        "www.another-nice-location.org"
+      ],
+      "requirement": [
+        {
+          "orcomposite": [
+            {
+              "type": "operating system",
+              "name": "unix"
+            },
+            {
+              "type": "operating system",
+              "name": "macos"
+            }
+          ]
+        },
+        {
+          "orcomposite": [
+            {
+              "type": "browser",
+              "name": "any"
+            }
+          ]
+        }
+      ],
+      "duration": "",
+      "thumbnail": {
+        "image": "www.pictures.com/picture1.jpg",
+        "license": {
+            "source": "https://skohub.io/literarymachine/skos/oerworldmap.org/assets/json/licenses/",
+            "value": "cc0"
+        }
       }
-    }],
-    "duration": "",
-    "thumbnail": {
-      "image": "www.pictures.com/picture1.jpg",
-      "license": "cc0"
     }
   }
-}
 </pre>
 </aside>
 
@@ -1474,7 +1539,7 @@ SKOS dargestellt: [[OEH-LearningResourceType]].
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
-  <dd>10</dd>
+  <dd>n</dd>
   <dt>Verpflichtungsgrad:</dt>
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
@@ -1499,7 +1564,7 @@ in SKOS dargestellt [[OEH-IntendedEndUserRole]]
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
-  <dd>7</dd>
+  <dd>n</dd>
   <dt>Verpflichtungsgrad:</dt>
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
@@ -1522,7 +1587,7 @@ in SKOS dargestellt [[OEH-EducationalContext]]
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
-  <dd>12</dd>
+  <dd>n</dd>
   <dt>Verpflichtungsgrad:</dt>
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
@@ -1542,6 +1607,8 @@ Das Element beschreibt, wie das Objekt genutzt werden soll.
 Die Spannweite kann in [minimales]-[maximales] Alter angegeben werden.
 "U" kann für "nicht-definiert" gesetzt werden.
 
+"x-t-lre" steht für "The LRE Token Language" ([[LREv4.7]])
+
 <dl>
   <dt>Maximale Häufigkeit:</dt>
   <dd>1</dd>
@@ -1549,6 +1616,16 @@ Die Spannweite kann in [minimales]-[maximales] Alter angegeben werden.
   <dd>Fakultativ</dd>
   <dt>Datentyp:</dt>
   <dd><a>langstring</a></dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+- "x-t-lre", "U3-6"
+- "x-t-lre", "6-10"
+- "x-t-lre", "9-U"
+- "de", "von 7 bis 12 Jahren"
+
+    </dd>
+
 </dl>
 
 </section>
@@ -1606,24 +1683,45 @@ Objektes bereitgestellt werden.
       <pre>
   {
     "educational": {
-      "interactivitytype": "active",
+      "interactivitytype": {
+        "source": "LOM-DEv0.9",
+        "value": "active"
+      },
       "learningresourcetype": [
-        "quiz",
-        "educational_game",
+        {
+          "source": "https://w3id.org/openeduhub/vocabs/learningResourceType/",
+          "value": "educational_game"
+        },
+        {
+          "source": "https://w3id.org/openeduhub/vocabs/learningResourceType/",
+          "value": "video"
+        }
       ],
       "intendedenduserrole": [
-        "learner"
+        {
+          "source": "https://w3id.org/openeduhub/vocabs/intendedEndUserRole/",
+          "value": "learner"
+        }
       ],
       "context": [
-        "grundschule",
-        "sekundarstufe_1"
+        {
+          "source": "https://w3id.org/openeduhub/vocabs/intendedEndUserRole/",
+          "value": "grundschule"
+        },
+        {
+          "source": "https://w3id.org/openeduhub/vocabs/intendedEndUserRole/",
+          "value": "sekundarstufe_1"
+        }
       ],
-      "typicalagerange": "6-12",
+      "typicalagerange": {
+        "x-t-lre": "6-12"
+      },
       "description": {
         "de": "Ein informatives Quiz über Ameisenbären"
       },
       "language": [
-        "de"
+        "de",
+        "en"
       ]
     }
   }
@@ -1723,10 +1821,10 @@ Dieses Element ist neu und nicht in [[LOM-DEv0.9]] hinterlegt.
   "rights": {
     "cost": {
       "source": "https://w3id.org/openeduhub/vocabs/rightsCost/",
-      "value": "cc0"
+      "value": "yes_for_additional"
     },
     "license": {
-      "source": "https://oerworldmap.org/assets/json/licenses.json",
+      "source": "https://skohub.io/literarymachine/skos/oerworldmap.org/assets/json/licenses/",
       "value": "cc0"
     }
   }
@@ -1767,6 +1865,8 @@ Beschreibt die Relationen zwischen diesem Objekt und anderen Objekten.
 Das Element beschreibt die Art der Relation. 
 
 Das Vokabular stammt aus [[LOM-DEv0.9]]
+
+- TODO in SKOS überführen und verlinken
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -1926,27 +2026,27 @@ genauer beschrieben.
     <p>Hier ein Beispiel zur Abbildung in JSON:
       <pre>
   {
-    "relations": [{
-      "kind": "ispartof",
-      "resource": [{
-        "identifier": {
-          "catalog": "URI",
-          "entry": "www.a-nice-resource.de"
-        },
+    "relations": [
+      {
+        "kind": "ispartof",
+        "resource": [
+          {
+            "identifier": {
+              "catalog": "URI",
+              "entry": "www.a-nice-resource.de"
+            }
+          },
+          {
+            "identifier": {
+              "catalog": "DOI",
+              "entry": "10.1109/5.771073"
+            }
+          }
+        ],
         "description": 
           {"de": "Eine Beschreibung der Relation"}
-      }]
-    },{
-      "kind": "ispartof",
-      "resource": [{
-        "identifier": {
-          "catalog": "URI",
-          "entry": "www.another-nice-resource.de"
-        },
-        "description":
-        {"de": "Eine Beschreibung der Relation"}
-      }]
-    }]
+      }
+    ]
   }
   </pre>
   </aside>
