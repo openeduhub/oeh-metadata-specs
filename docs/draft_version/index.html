@@ -1070,7 +1070,8 @@ Das Element beschreibt die technischen Anforderungen und Eigenschaften des Objek
   <dd><a>format</a></dd>
   <!-- <dd><a>size</a></dd> -->
   <dd><a>location</a></dd>
-  <dd><a>requirement</a></dd>
+  <!-- <dd><a>requirement</a></dd> -->
+  <dd><a>otherplatformrequirements</a></dd>
   <!-- <dd><a>installationremarks</a></dd>
   <dd><a>otherplatformrequirements</a></dd> -->
   <dd><a>duration</a></dd>
@@ -1157,8 +1158,10 @@ Das erste Element in einer Liste gibt den bevorzugten Standort des Elementes an.
 
 </section>
 
+
+
 <!-- requirement -->
-<section data-dfn-for="requirement">
+<!-- <section data-dfn-for="requirement">
 
 ## Das Element <dfn><code>requirement</code></dfn>
 
@@ -1178,10 +1181,10 @@ Konnektor ist "AND".
   <dd>/</dd>
   <dt>Elemente:</dt>
   <dd><a>orcomposite</a></dd>
-</dl>
+</dl> -->
 
 <!-- orcomposite -->
-<section data-dfn-for="orcomposite">
+<!-- <section data-dfn-for="orcomposite">
 
 ## Das Element <dfn><code>orcomposite</code></dfn>
 
@@ -1199,12 +1202,10 @@ erfüllt ist. Der logische Konnektor zwischen diesen Elementen ist "OR".
   <dt>Elemente:</dt>
   <dd><a>type</a></dd>
   <dd><a>name</a></dd>
-  <!-- <dd><a>minimumversion</a></dd>
-  <dd><a>maximumversion</a></dd> -->
-</dl>
+</dl> -->
 
 <!-- type of technical requirement -->
-<section data-dfn-for="type">
+<!-- <section data-dfn-for="type">
 
 ## Das Element <dfn><code>type</code></dfn>
 
@@ -1225,10 +1226,10 @@ TODO - Verweis auf Vokabular (operating system, browser)
     <dd><code>browser</code></dd>
 </dl>
 
-</section>
+</section> -->
 
 <!-- name of technical requirement -->
-<section>
+<!-- <section>
 
 ## Das Element <a>name</a>
 
@@ -1260,7 +1261,7 @@ Das Element beschreibt den Namen der benötigten Technologie.
 
 </dl>
 
-</section>
+</section> -->
 <!-- 
 <section data-dfn-for="minimumversion">
 
@@ -1313,10 +1314,10 @@ technischen Voraaussetzung.
 </section> -->
 
 <!-- end section orcomposite -->
-</section>
+<!-- </section> -->
 
 <!-- end section requirement -->
-</section>
+<!-- </section> -->
 <!-- 
 <section data-dfn-for="installationremarks">
 
@@ -1352,6 +1353,21 @@ Das Element beschreibt weitere Soft- oder Hardware-Voraussetzungen.
 
 </section> -->
 
+<section data-dfn-for="otherplatformrequirements">
+
+## Das Element <dfn><code>otherplatformrequirements</code></dfn>
+
+Das Element wird hier genutzt, um allgemeine Soft- oder Hardwareanforderungen zu beschreiben.
+
+<dl>
+  <dt>Maximale Häufigkeit</dt>
+  <dd>1</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+</dl>
+
+</section>
+
 <!-- duration -->
 <section data-dfn-for="duration">
 
@@ -1370,6 +1386,8 @@ es bei mit der vorgeschriebenen Geschwindigkeit abgespielt wird.
 </dl>
 
 </section>
+
+-->
 
 <!-- thumbnail -->
 <section data-dfn-for="thumbnail">
@@ -1426,28 +1444,9 @@ Bezeichnet die Lizenz des Elements nach [[OER-Worldmap-Licenses]]
         "www.example.org",
         "www.another-nice-location.org"
       ],
-      "requirement": [
-        {
-          "orcomposite": [
-            {
-              "type": "operating system",
-              "name": "unix"
-            },
-            {
-              "type": "operating system",
-              "name": "macos"
-            }
-          ]
-        },
-        {
-          "orcomposite": [
-            {
-              "type": "browser",
-              "name": "any"
-            }
-          ]
-        }
-      ],
+      "otherplatformrequirements": {
+        "de": "Es wird ein Textverabrietungsprogramm für DOCX benötigt."
+      },
       "duration": "",
       "thumbnail": {
         "image": "www.pictures.com/picture1.jpg",
