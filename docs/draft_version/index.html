@@ -144,7 +144,7 @@
        key: "Mitmachen",
         data: [{
           value: "GitHub-Repository",
-          href: "https://github.com/sroertgen/oer-metadata-hub-scheme"
+          href: "https://github.com/openeduhub/oeh-metadata-specs"
         }]
      }],
      specStatus: "unofficial",
@@ -248,9 +248,8 @@ Das Element benennt den Katalog, d.h. das Identifizierungssystem.
 
 ## Das Element <a><code>entry</code></a>
 
-Das Element bezeichnet einen Eintrag in einem Katalog, d. h. einem
-Identifizierungssystem, der dem Objekt zugeordnet ist. Durch den Eintrag soll das
-Objekt von dritter Seite gesucht und gefunden werden können.
+Das Element bezeichnet einen Eintrag in einem
+Identifizierungssystem, der dem Objekt zugeordnet ist. 
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -347,7 +346,7 @@ Beschreibt das Element.
   <dt>Beispielwerte:</dt>
   <dd>
 
-- "en," "In this video clip, the life and works of Leonardo da Vinci are briefly presented. The focus is on his artistic production, most notably the Mona Lisa."
+- "en", "In this video clip, the life and works of Leonardo da Vinci are briefly presented. The focus is on his artistic production, most notably the Mona Lisa."
 
   </dd>
 </dl>
@@ -359,7 +358,8 @@ Beschreibt das Element.
 
 ## Das Element <dfn><code>keyword</code></dfn>
 
-Das Element enthält eine Sammlung von Schlagwörten oder Phrasen, die das Lernobjekt beschreiben.
+Das Element enthält eine Sammlung von Schlagwörten oder Phrasen, 
+die das Lernobjekt beschreiben.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -476,22 +476,32 @@ Abschluss führen
 
 </section> -->
 
+<!-- end of general -->
+</section>
+
 <section>
 
-## Beispiel-Eintrag
+  ## Beispiel-Eintrag
 
-<aside class="example" title='general'>
-  <p>Hier ein Beispiel zur Abbildung in JSON:
-    <pre>
+  <aside class="example" title='general'>
+    <p>Hier ein Beispiel zur Abbildung in JSON:
+      <pre>
   {
     "general": {
-      "identifier": {
+      "identifier": [{
         "catalog": "URI",
         "entry": "https://www.planet-schule.de/sf/php/sendungen.php?sendung=10575"
+      }],
+      "title": {
+        "de": "Sprich los! — Der, die, das"
       },
-      "title": {"de", "Sprich los! — Der, die, das"},
-      "language": "de",
-      "description": {"de": "Eine Beschreibung des Objektes"},
+      "language": [
+        "de",
+        "en"
+      ],
+      "description": {
+        "de": "Eine Beschreibung des Objektes"
+      },
       "keyword": [
         {"de": "Grammatik"},
         {"de": "Deutsch als Fremdsprache"},
@@ -500,11 +510,9 @@ Abschluss führen
     }
   }
   </pre>
-</aside>
+  </aside>
 </section>
 
-<!-- end of general -->
-</section>
 </section> 
 
 
@@ -566,6 +574,8 @@ Das Element bezeichnet die Version des Lernobjektes.
 ## Das Element <dfn><code>status</code></dfn>
 
 Das Element bezeichnet die Status des Lernobjektes.
+
+- TODO in Vokabular übersetzen
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -643,6 +653,15 @@ Die Werte wurden [[LOMv1.0]] mit den Übersetzungen aus [[LOM-DEv0.9]] entnommen
 
 Enthält den Namen der Person oder Organisation.
 
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+</dl>
+
 </section>
 
 <section>
@@ -650,6 +669,15 @@ Enthält den Namen der Person oder Organisation.
 ## Das Element <a><code>date</code></a>
 
 Das Datum des Beitrags.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>datetime</a></dd>
+</dl>
 
 </section>
 </section>
@@ -664,19 +692,28 @@ Das Datum des Beitrags.
     <pre>
   {
     "lifecycle": {
-      "version": {"de": "1.2"},
+      "version": {
+        "de": "1.2"
+      },
       "status": {
         "source": "LOMv1.0",
         "value": "final"
       },
-      "contribute": {
+      "contribute": [{
       "role": {
         "source": "https://w3id.org/openeduhub/vocabs/lifecycleContributeRole/",
         "value": "author"
       },
       "name": "Martina Musterfrau",
       "date": "2020-04-20"
-      }
+      },
+      "role": {
+        "source": "https://w3id.org/openeduhub/vocabs/lifecycleContributeRole/",
+        "value": "author"
+      },
+      "name": "Max Mustermann",
+      "date": "2020-04-20"
+      ]
     }
   }
   </pre>
