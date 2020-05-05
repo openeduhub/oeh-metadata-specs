@@ -67,21 +67,10 @@
          status: "1484.12.1-2002",
          publisher: "IEEE"
        },
-       "LOM-DEv1.0": {
+       "LOM-DEv0.9": {
          title: "Deutches LOM-Applikationsprofil",
          href: "http://sodis.de/lom-de/LOM-DE.doc",
          status: "0.9",
-       },
-       "LOMv1.2": {
-         title: "IMS Learning Resource Meta-data Specification",
-         href: "https://www.imsglobal.org/metadata/index.html",
-         status: "Maintenance Release 1.2.4",
-         publisher: "IMS Global Learning Consortium, Inc."
-       },
-       "MIME": {
-         title: "List of Media Types",
-         href: "http://www.iana.org/assignments/media-types/media-types.xhtml",
-         publisher: "IANA"
        },
        "OAI-PMH": {
          title: "Open Archives Initiative Protocol for Metadata Harvesting",
@@ -110,6 +99,12 @@
        "OEH-IntendedEndUserRole": {
           title: "OEH-Vokabular für Learning Resource Type in SKOS",
           href: "https://w3id.org/openeduhub/vocabs/intendedEndUserRole/",
+          status: "draft",
+          publisher: "Open-Edu-Hub"
+       },
+       "OEH-RightsCost": {
+          title: "OEH-Vokabular für Learning Resource Type in SKOS",
+          href: "https://w3id.org/openeduhub/vocabs/rightsCost/",
           status: "draft",
           publisher: "Open-Edu-Hub"
        },
@@ -615,9 +610,9 @@ einmal ein <code>role</code>-Element und ein <code>name</code>-Element vorkommen
   <dt>Datentyp:</dt>
   <dd>/</dd>
   <dt>Elemente:</dt>
-  <dd><a><code>role</code></a></dd>
-  <dd><a><code>name</code></a></dd>
-  <dd><a><code>date</code></a></dd>
+  <dd><a>role</a></dd>
+  <dd><a>name</a></dd>
+  <dd><a>date</a></dd>
 </dl>
 
 
@@ -626,7 +621,7 @@ einmal ein <code>role</code>-Element und ein <code>name</code>-Element vorkommen
 ## Das Element <a><code>role</code></a>
 
 Die erlaubten Werte für <a>role</a> sind hier definiert: [[OEH-LifecycleContributeRole]]
-Die Werte wurden [[LOMv1.0]] mit den Übersetzungen aus [[LOM-DEv1.0]] entnommen.
+Die Werte wurden [[LOMv1.0]] mit den Übersetzungen aus [[LOM-DEv0.9]] entnommen.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -831,7 +826,7 @@ einmal ein <code>role</code>-Element vorkommen.
 ## Das Element <a><code>role</code></a>
 
 Die erlaubten Werte für <a>role</a> sind hier definiert: [[OEH-LifecycleContributeRole]]
-Die Werte wurden [[LOMv1.0]] mit den Übersetzungen aus [[LOM-DEv1.0]] entnommen.
+Die Werte wurden [[LOMv1.0]] mit den Übersetzungen aus [[LOM-DEv0.9]] entnommen.
 
 
 <dl>
@@ -885,7 +880,7 @@ Nach Möglichkeit als URI.
   <dd>
 
 - "LOM-OEHv0.1"
-- "LOM-DEv1.0"
+- "LOM-DEv0.9"
 - "LREv4.0"
 - "https://w3id.org/openeduhub/metadatascheme"
 
@@ -1156,9 +1151,9 @@ TODO - Verweis auf Vokabular (operating system, browser)
 </section>
 
 <!-- name of technical requirement -->
-<section data-dfn-for="name">
+<section>
 
-## Das Element <dfn><code>name</code></dfn>
+## Das Element <a>name</a>
 
 Das Element beschreibt den Namen der benötigten Technologie.
 
@@ -1417,7 +1412,7 @@ können eingesetzt werden.
   <dt>Datentyp:</dt>
   <dd><a>vocabulary</a></dd>
   <dt>Vokabular:</dt>
-  <dd><a><code>source</code></a>: [[LOM-DEv1.0]]</dd>
+  <dd><a><code>source</code></a>: [[LOM-DEv0.9]]</dd>
   <dd><a><code>value</code></a>: 
 
   - aktiv
@@ -1436,7 +1431,7 @@ können eingesetzt werden.
 Das Element beschreibt die Art des Objektes. Die vorherrschende Art
 wird zuerst genannt.
 
-Das Vokabular wurde von [[LOM-DEv1.0]] übernommen und ist hier in
+Das Vokabular wurde von [[LOM-DEv0.9]] übernommen und ist hier in
 SKOS dargestellt: [[OEH-LearningResourceType]].
 
 
@@ -1461,7 +1456,7 @@ SKOS dargestellt: [[OEH-LearningResourceType]].
 Das Element beschreibt die Zielgruppe für das Lernobjekt. Die vorherrschende
 Zielgruppe wird zuerst genannt.
 
-Das Vokabular wurde von [[LOM-DEv1.0]] übernommen und wird hier
+Das Vokabular wurde von [[LOM-DEv0.9]] übernommen und wird hier
 in SKOS dargestellt [[OEH-IntendedEndUserRole]]
 
 
@@ -1485,7 +1480,7 @@ in SKOS dargestellt [[OEH-IntendedEndUserRole]]
 
 Das Element beschreibt die Umgebung, in der das Objekt zu Einsatz kommt.
 
-Das Vokabular wurde teilweise von [[LOM-DEv1.0]] übernommen und wird hier
+Das Vokabular wurde teilweise von [[LOM-DEv0.9]] übernommen und wird hier
 in SKOS dargestellt [[OEH-EducationalContext]]
 
 <dl>
@@ -1619,21 +1614,25 @@ bjektes.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
-  <dd>1</dd>
+  <dd>n</dd>
   <dt>Verpflichtungsgrad:</dt>
   <dd>Obligatorisch</dd>
   <dt>Datentyp:</dt>
   <dd>/</dd>
   <dt>Elemente:</dt>
+  <dd><a>cost</a></dd>
   <!-- new Element -->
   <dd><a>license</a></dd>
 </dl>
 
-<section>
+<section data-dfn-for="cost">
 
-## Das Element <a><code>license</code></a>
+## Das Element <dfn><code>cost</code></dfn>
 
-Das Element beschreibt die Lizenz des Objektes.
+Das Element beschreibt, ob Kosten bei der Nutzung des Objektes anfallen.
+
+Das Vokabular, mit dem das Element beschrieben wird, wurde um 
+"zusätzliche Inhalte / Features per Kauf möglich" erweitert.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -1643,31 +1642,64 @@ Das Element beschreibt die Lizenz des Objektes.
   <dt>Datentyp:</dt>
   <dd>/</dd>
   <dt>Vokabular:</dt>
-  <dd><a><code>source</code></a>:<a><code>license</code></a> </dd>
-  <dd><a><code>value</code></a>: </dd>
+  <dd><a><code>source</code></a>: [[OEH-RightsCost]]</dd>
+  <dd><a><code>value</code></a>: TODO Values eintragen</dd>
 </dl>
 
-<section>
-
-## Das Element <dfn><code>licenseDescription</code></dfn>
-
-Beschreibt die Lizenz des Objektes.
-
 </section>
 
 <section>
 
-## Das Element <dfn><code>licenseIdentifier</code></dfn>
+## Das Element <a><code>license</code></a>
 
-Hier kann ein Identifikator die Lizenz, bspw. ein Link hinterlegt werden.
+Das Element beschreibt die Lizenz des Objektes.
+Dieses Element ist neu und nicht in [[LOM-DEv0.9]] hinterlegt.
+
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Vokabular:</dt>
+  <dd><a><code>source</code></a>: [[OER-Worldmap-Licenses]]</dd>
+  <dd><a><code>value</code></a>: TODO Values eintragen</dd>
+</dl>
 
 </section>
 
-<!-- end of license -->
+
+
+</section>
+
+<!-- Beispiel -->
+<section>
+
+  ## Beispiel-Eintrag
+
+  <aside class="example" title='rights'>
+    <p>Hier ein Beispiel zur Abbildung in JSON:
+      <pre>
+{
+  "rights": {
+    "cost": {
+      "source": "https://w3id.org/openeduhub/vocabs/rightsCost/",
+      "value": "cc0"
+    },
+    "license": {
+      "source": "https://oerworldmap.org/assets/json/licenses.json",
+      "value": "cc0"
+    }
+  }
+}
+</pre>
+</aside>
+
 </section>
 
 <!-- End of rights section -->
-</section>
 </section>
 
 
@@ -1681,17 +1713,54 @@ Hier kann ein Identifikator die Lizenz, bspw. ein Link hinterlegt werden.
 
 Beschreibt die Relationen zwischen diesem Objekt und anderen Objekten.
 
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Elemente:</dt>
+  <dd>kind</dd>
+  <dd>resource</dd>
+</dl>
+
 <section data-dfn-for="kind">
 
 ## Das Element <dfn><code>kind</code></dfn>
 
 Das Element beschreibt die Art der Relation. 
 
-- TODO Vocabulary verlinken.
+Das Vokabular stammt aus [[LOM-DEv0.9]]
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
   <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a><code>source</code></a>: [[LOM-DEv0.9]]</dd>
+  <dd><a><code>value</code></a>: 
+  
+  - ispartof
+  - haspart
+  - isversionof
+  - hasversion
+  - isformatof
+  - hasformat
+  - references
+  - isreferencedby
+  - isbasedon
+  - isbasisfor
+  - requires
+  - isrequiredby
+  - haspreview
+  - ispreviewof
+  - istranslationof
+  - hastranslation
+  - hasmetadata
+
+  </dd>
 </dl>
 
 </section>
@@ -1700,26 +1769,101 @@ Das Element beschreibt die Art der Relation.
 
 ## Das Element <dfn><code>resource</code></dfn>
 
-Das Element beschreibt die Ziel-Ressource, auf die die Relation zutrifftbundleRenderer.renderToStream
+Das Element beschreibt die Ziel-Ressource, auf die 
+die Relation zutrifft.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
   <dd>1</dd>
+  <dt>Datentyp:</dt>
+  <dl>/</dl>
+  <dt>Elemente</dt>
+  <dd>Identifier</dd>
 </dl>
 
 </section>
 
 <section>
 
-## Das Element <a><code>identifier</code></a>
+## Das Element <a>identifier</a>
 
-Beschreibt einen global eindeutigen Identifikator für das Objekt.
-Das Element wird in <a href="#multiple-occuring-elements">Mehrfach vorkommende Elemente</a>
-genauer beschrieben.
+Das Element besteht aus den Elementen <a>catalog</a> und <a>entry</a>.
+Es dient der eindeutigen Identifizierung des Objektes.
+Das Element kommt mehrfach vor und wird <a href="#dfn-identifier">hier</a>
+definiert.
+
+<dl>
+  <dt>Maximale Häufigkeit: </dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <!-- in LOMv1.0 fakultativ -->
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a href="#dfn-catalog">catalog</a></dd>
+  <dd><a href="#dfn-entry">entry</a></dd>
+
+</dl>
+
+<section>
+
+## Das Element <a><code>catalog</code></a>
+
+Das Element benennt den Katalog, d.h. das Identifizierungssystem.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+    - "`DOI`" - für Digital Object Identifiers [[ISO26324]]
+
+    - "`HDL`" - für Handles [[RFC3650]]
+
+    - "`URI`" - für Uniform Resource Identifiers [[RFC3986]]
+
+  </dd>
+</dl>
 
 </section>
 
 <section>
+
+## Das Element <a><code>entry</code></a>
+
+Das Element bezeichnet einen Eintrag in einem Katalog, d. h. einem
+Identifizierungssystem, der dem Objekt zugeordnet ist. Durch den Eintrag soll das
+Objekt von dritter Seite gesucht und gefunden werden können.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Verpflichtungsgrad</dt>
+  <dd>Obligatorisch</dd>
+  <dt>Datentyp</dt>
+  <dd><a>characterstring</a></dd>
+  <dt>Elemente:</dt>
+  <dd>keine</dd>
+  <dt>Beispielwerte:</dt>
+  <dd>
+
+    - "https://doi.org/10.1109/5.771073"
+
+    - "http://www.ieee.org/documents/1234"
+
+  </dd>
+</dl>
+
+</section>
+</section>
 
 ## Das Element <a><code>description</code></a>
 
@@ -1727,7 +1871,51 @@ Das Element beschrreibt das Zielobjekt der Relation.
 Das Element wird in <a href="#multiple-occuring-elements">Mehrfach vorkommende Elemente</a>
 genauer beschrieben.
 
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Datentyp:</dt>
+  <dd>langstring</dd>
+</dl>
+
 </section>
+
+<!-- Beispiel -->
+<section>
+
+  ## Beispiel-Eintrag
+
+  <aside class="example" title='relations'>
+    <p>Hier ein Beispiel zur Abbildung in JSON:
+      <pre>
+  {
+    "relations": [{
+      "kind": "ispartof",
+      "resource": [{
+        "identifier": {
+          "catalog": "URI",
+          "entry": "www.a-nice-resource.de"
+        },
+        "description": 
+          {"de": "Eine Beschreibung der Relation"}
+      }]
+    },{
+      "kind": "ispartof",
+      "resource": [{
+        "identifier": {
+          "catalog": "URI",
+          "entry": "www.another-nice-resource.de"
+        },
+        "description":
+        {"de": "Eine Beschreibung der Relation"}
+      }]
+    }]
+  }
+  </pre>
+  </aside>
+
+</section>
+
 
 <!-- End of relations -->
 </section>
@@ -1745,13 +1933,31 @@ genauer beschrieben.
 Die Kategorie ermöglicht das Anbringen von Bemerkungen zum pädagogischen
 Einsatz eines Objektes.
 
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Datentyp:</dt>
+  <dd>/</dd>
+  <dt>Elemente:</dt>
+  <dd><a>name</a></dd>
+  <dd><a>date</a></dd>
+  <dd><a>description</a></dd>
+</dl>
+
 <section>
 
-## Das Element <a><code>entity</code></a>
+## Das Element <a><code>name</code></a>
 
 Beschreibt die Person oder Einrichtung, die den Kommentar verfasst hat.
-Das Element wird in <a href="#dfn-entity">hier</a>
+Das Element wird in <a href="#dfn-name">hier</a>
 genauer beschrieben.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+</dl>
 
 </section>
 
@@ -1763,6 +1969,13 @@ Beschreibt das Datum, an dem der Kommentar verfasst wurde.
 Das Element wird in <a href="#dfn-date">hier</a>
 genauer beschrieben.
 
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Datentyp</dt>
+  <dd><a>datetime</a></dd>
+</dl>
+
 </section>
 
 <section>
@@ -1773,10 +1986,41 @@ Beschreibt den Inhalt des Kommentars.
 Das Element wird in <a href="#dfn-description">hier</a>
 genauer beschrieben.
 
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+</dl>
+
 </section>
 
 <!-- End of Annotation -->
 </section>
+
+<!-- Beispiel -->
+<section>
+
+## Beispiel-Eintrag
+
+<aside class="example" title='annotation'>
+  <p>Hier ein Beispiel zur Abbildung in JSON:
+    <pre>
+{
+  "annotation": [{
+    "name": "Martina Musterfrau",
+    "date": "2020-04-20",
+    "description": {
+      "de": "Ein wertvoller Kommentar"
+    }
+  }]
+}
+</pre>
+</aside>
+
+</section>
+
+<!-- End of annotation -->
 </section>
 
 
@@ -1810,13 +2054,30 @@ Objekt und einem oder mehreren Klassifikationssystemen.
 
 Das Element bestimmt die Art der verwendeten Klassifikation.
 
-- TODO Vokabular verlinken
+Die Werte wurden von [[LOM-DEv0.9]] übernommen.
+
+- TODO Vokabular in SKOS abbilden
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
   <dd>1</dd>
   <dt>Datentyp:</dt>
-  <dd>Vokabular</dd>
+  <dd><a>vocabulary</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[LOM-DEv0.9]]</dd>
+  <dd><a>value</a>: 
+  
+  - discipline
+  - idea
+  - prerequisite
+  - educational objective
+  - accessibility restrictions
+  - educational level
+  - skill level
+  - security level
+  - competency
+
+  </dd>
 </dl>
 
 </section>
@@ -1850,7 +2111,7 @@ Das Element beschreibt den Namen des Klassifikationssystems.
   <dt>Verpflichtungsgrad:</dt>
   <dd>Obligatorisch</dd>
   <dt>Datentyp:</dt>
-  <dd><a>characterstring</a></dd>
+  <dd><a>langstring</a></dd>
 </dl>
 
 </section>
@@ -1868,30 +2129,33 @@ Klassifikationssystems (Taxonomie).
   <dt>Datentyp:</dt>
   <dd>/</dd>
   <dt>Elemente:</dt>
-  <dd><a>identifier</a>></dd>
-  <!-- in LOMv1.0 steht entry -->
-  <dd><a>label</a></dd>
+  <dd><a>id</a></dd>
+  <dd><a>entry</a></dd>
 </dl>
 
-<section>
+<section data-dfn-for="id">
 
-## Das Element <a><code>identifier</code></a>
+## Das Element <dfn><code>id</code></dfn>
 
-Das Element beschreibt das Taxon mit einem eindeutigen Identifier
-innerhalb des Klassifikationssystems.
+Der Identifier des Taxons innerhalb der Taxonomie.
+
+Kann auch eine URI sein, wenn bspw. das Curriculum maschinenlesbar
+hinterlegt ist.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
   <dd>1</dd>
   <dt>Verpflichtungsgrad:</dt>
-  <dd>Obligatorisch</dd>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>characterstring</a></dd>
 </dl>
 
 </section>
 
-<section data-dfn-for="label">
+<section>
 
-## Das Element <dfn><code>label</code></dfn>
+## Das Element <a><code>entry</code></a>
 
 Die Beschriftung des Taxons.
 
@@ -1899,7 +2163,9 @@ Die Beschriftung des Taxons.
   <dt>Maximale Häufigkeit:</dt>
   <dd>1</dd>
   <dt>Verplfichtungsgrad:</dt>
-  <dd>Obligatorisch</dd>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
 </dl>
 
 </section>
@@ -1916,6 +2182,13 @@ Die Beschriftung des Taxons.
 
 Beschreibt das Objekt relativ zu dem gewählten Element in <a>purpose</a>.
 
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>1</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+</dl>
+
 </section>
 
 <section>
@@ -1925,10 +2198,58 @@ Beschreibt das Objekt relativ zu dem gewählten Element in <a>purpose</a>.
 Enthält Schlagwörter in Bezug auf das in <a>purpose</a> gewählte
 Klassifikationssystem.
 
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>langstring</a></dd>
+</dl>
+
 </section>
 
 <!-- End of classification -->
 </section>
+
+<!-- Beispiel -->
+<section>
+
+## Beispiel-Eintrag
+
+<aside class="example" title='annotation'>
+  <p>Hier ein Beispiel zur Abbildung in JSON:
+   <pre>
+
+  {
+    "classification": [{
+      "purpose": {
+        "source": "LOM-DEv0.9",
+        "value": "competency"
+      },
+      "taxonpath": [{
+        "source": {
+          "de": "Rahmenlehrplan Bayern"
+        },
+        "taxon": [{
+          "id": "M5",
+          "entry": {
+            "de": "Lernbereich 1: Natürliche Zahlen"
+          }
+        }]
+      }],
+      "description": {
+        "de": "Beschreibung des Lernbereichs"
+      },
+      "keyword": {
+        "de": "Mathmeatik"
+      }
+  }]
+  }
+
+</pre>
+</aside>
+
+</section>
+
 </section>
 
 
@@ -1951,7 +2272,7 @@ Das Element beschreibt die Personen oder Organisationen, die an der Entstehung d
   <dd>/</dd>
   <dt>Elemente:</dt>
   <dd><a>role</a></dd>
-  <dd><a>entity</a></dd>
+  <dd><a>name</a></dd>
   <dd><a>date</a></dd>
 
 </dl>
@@ -1973,11 +2294,12 @@ Das Element bezeichnet die Rolle der Person oder Institution, die zur Ressource 
 
 </section>
 
-<section data-dfn-for="entity">
+<section data-dfn-for="name">
 
-## Das Element <dfn><code>entity</code></dfn>
+## Das Element <dfn><code>name</code></dfn>
 
-Das Element beschreibt die Person und/oder Institution, die zur Ressource beigetragen hat.
+Das Element beschreibt die Person und/oder Institution, 
+die zur Ressource beigetragen hat.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -1985,21 +2307,7 @@ Das Element beschreibt die Person und/oder Institution, die zur Ressource beiget
   <dt>Verpflichtungsgrad:</dt>
   <dd>Obligatorisch</dd>
   <dt>Datentyp:</dt>
-  <dd><a>vcard</a></dd>
-  <dt>Elemente:</dt>
-  <dd>keine</dd>
-  <dt>Beispiel</dt>
-
-<p class="example">
-  BEGIN:VCARD <br>
-  VERSION:3.0 <br>
-  N:Kolb;Annika <br>
-  FN: Annika Kolb <br>
-  URL: https://orcid.org/0000-0003-3456-7812 <br>
-  END:VCARD
-</p>
-
-  </dd>
+  <dd><a>langstring</a></dd>
 </dl>
 
 </section>
@@ -2007,9 +2315,10 @@ Das Element beschreibt die Person und/oder Institution, die zur Ressource beiget
 
 <section data-dfn-for="date">
 
-  ## Das Element <dfn><code>date</code></dfn>
+## Das Element <dfn><code>date</code></dfn>
 
-  Das Element bezeichnet das Datum des Beitrags zur Lernressource nach [[ISO8601]] im Format YYYY-MM-DD.
+Das Element bezeichnet das Datum des Beitrags zur Lernressource 
+nach [[ISO8601]] im Format YYYY-MM-DD.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -2316,36 +2625,6 @@ Dieser Datentyp gibt die Dauer nach dem Format [[ISO8601]] an.
   <dt>Beispiel:</dt>
   <dd>PT1M45S</dd>
 </dl>
-
-</section>
-
-<section data-dfn-for="vcard">
-
-## Das Element <dfn><code>vcard</code></dfn>
-
-Der vCard-Eintrag erfolgt in einfacher Textform und richtet sich nach [[RFC6350]],
-wie in den Beispielen zu sehen. Er beschreibt eine Person oder Organisation.
-
-Anzumerken ist die Möglichkeit, die [[?ORCID]] oder die [[?GND]] -ID der Person
-als Tag `URL` mit anzugeben, die genutzt werden SOLL, wenn die Information zur Verfügung steht.
-Der entsprechende Identifier MUSS bei Angabe als HTTP-URI angegeben werden, z.B.
-`https://orcid.org/0000-0001-9083-7442` oder `https://d-nb.info/gnd/14326723X`.
-
-Für Organisationen gilt ein ähnlicher Vorschlag, hier SOLL als `URL` der URI des
-entsprechenden [[?Wikidata]]-Items genannt werden oder die [[?GND]]-URI,
-also z. B. für die Universität Tübingen `http://www.wikidata.org/entity/Q153978`
-oder `https://d-nb.info/gnd/36187-2`.
-<br>
-Alternativ können auch die IDs der Research Organization Registry [[?ROR]] genutzt
-werden.
-
-<p class="note">[[?ROR]] ist noch relativ neu und Geschäftsmodell und Weg sind noch nicht klar.
-  Bei der Abdeckung konnten stichprobenartig keine deutlichen Unterschiede festgestellt
-  werden. Es muss aber bedacht werden, dass sich [[?ROR]] nur mit
-  Forschungsorganisationen – allerdings im weitesten Sinne – befasst. Mehrere
-  wissenschaftliche Serviceangebote wollen aber allem Anschein nach zukünftig ROR-IDs
-  ebenfalls nutzen, wie [[?Crossref]], [[?DataCite]] und [[?ORCID]]. Das spricht sehr
-  stark für eine Unterstützung.</p>
 
 </section>
 
