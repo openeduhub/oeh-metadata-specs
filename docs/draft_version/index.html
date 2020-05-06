@@ -605,7 +605,7 @@ Das Element bezeichnet die Version des Lernobjektes.
 
 Das Element bezeichnet die Status des Lernobjektes.
 
-- TODO in Vokabular übersetzen
+Das Vokabular wurde [[LOMv1.0]] mit den Übersetzungen aus [[LOM-DEv0.9]] entnommen.
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -621,10 +621,10 @@ Das Element bezeichnet die Status des Lernobjektes.
   <dd><a>source</a>: [[LOMv1.0]]</dd>
   <dd><a>value</a>: 
 
-- draft 
-- final
-- revised
-- unavailable
+- "Entwurfversion" (draft)
+- "Endversion" (final)
+- "Endversion (geprüft)" (revised)
+- "nicht verfügbar" (unavailable)
 
   </dd>
 </dl>
@@ -674,22 +674,22 @@ Die Werte wurden [[LOMv1.0]] mit den Übersetzungen aus [[LOM-DEv0.9]] entnommen
   <dd><a><code>source</code></a>: [[OEH-LifecycleContributeRole]]</dd>
   <dd><a><code>value</code></a>: 
 
-  - Autor*in (author)
-  - Herausgeber*in (publisher)
-  - unbekannt (unknown)
-  - Initiator*in (initiator)
-  - Beendung der Verfügbarkeit (terminator)
-  - Abnahme (validator)
-  - Redaktion (editor)
-  - grafisches Design (graphical_designer)
-  - Programmierung (technical_implementer)
-  - Materialbereitstellung (content_provider)
-  - Programmierung (technical_implementor)
-  - technische Prüfung (technical_validator)
-  - pädagogische Prüfung (educational_validator)
-  - Skript/Drehbuch (script_writer)
-  - pädagogisches Konzept (instructional_designer)
-  - Fachberatung (subject_matter_expert)
+  - "Autor*in" (author)
+  - "Herausgeber*in" (publisher)
+  - "unbekannt" (unknown)
+  - "Initiator*in" (initiator)
+  - "Beendung der Verfügbarkeit" (terminator)
+  - "Abnahme" (validator)
+  - "Redaktion" (editor)
+  - "grafisches Design" (graphical_designer)
+  - "Programmierung" (technical_implementer)
+  - "Materialbereitstellung" (content_provider)
+  - "Programmierung" (technical_implementor)
+  - "technische Prüfung" (technical_validator)
+  - "pädagogische Prüfung" (educational_validator)
+  - "Skript/Drehbuch" (script_writer)
+  - "pädagogisches Konzept" (instructional_designer)
+  - "Fachberatung" (subject_matter_expert)
 
   </dd>
 </dl>
@@ -914,8 +914,7 @@ einmal ein <code>role</code>-Element vorkommen.
 
 ## Das Element <a><code>role</code></a>
 
-Die erlaubten Werte für <a>role</a> sind hier definiert: [[OEH-LifecycleContributeRole]]
-Die Werte wurden [[LOMv1.0]] mit den Übersetzungen aus [[LOM-DEv0.9]] entnommen.
+Die erlaubten Werte für <a>role</a> sind [[LOM-DEv0.9]] entnommen.
 
 
 <dl>
@@ -926,25 +925,13 @@ Die Werte wurden [[LOMv1.0]] mit den Übersetzungen aus [[LOM-DEv0.9]] entnommen
   <dt>Datentyp:</dt>
   <dd>Vokabular</dd>
   <dt>Vokabular:</dt>
-  <dd><a><code>source</code></a>: [[OEH-LifecycleContributeRole]]</dd>
+  <dd><a><code>source</code></a>: [LOM-DEv0.9]]</dd>
   <dd><a><code>value</code></a>: 
 
-  - Autor*in (author)
-  - Herausgeber*in (publisher)
-  - unbekannt (unknown)
-  - Initiator*in (initiator)
-  - Beendung der Verfügbarkeit (terminator)
-  - Abnahme (validator)
-  - Redaktion (editor)
-  - grafisches Design (graphical_designer)
-  - Programmierung (technical_implementer)
-  - Materialbereitstellung (content_provider)
-  - Programmierung (technical_implementor)
-  - technische Prüfung (technical_validator)
-  - pädagogische Prüfung (educational_validator)
-  - Skript/Drehbuch (script_writer)
-  - pädagogisches Konzept (instructional_designer)
-  - Fachberatung (subject_matter_expert)
+  - "Erstellung" (creator)
+  - "Bearbeitung" (enricher)
+  - "Bereitstellung" (provider)
+  - "Abnahme" (validator)
 
   </dd>
 </dl>
@@ -1097,16 +1084,16 @@ auf weiteres nicht unterstützt.
       "contribute": [
         {
           "role": {
-            "source": "https://w3id.org/openeduhub/vocabs/lifecycleContributeRole/",
-            "value": "author"
+            "source": "LOM-DEv0.9",
+            "value": "creator"
           },
           "name": "Martina Musterfrau",
           "date": "2020-04-20"
         },
         {
           "role": {
-            "source": "https://w3id.org/openeduhub/vocabs/lifecycleContributeRole/",
-            "value": "author"
+            "source": "LOM-DEv0.9",
+            "value": "enricher"
           },
           "name": "Max Musterfrau",
           "date": "2020-04-21"
@@ -1467,7 +1454,6 @@ es bei mit der vorgeschriebenen Geschwindigkeit abgespielt wird.
 
 </section>
 
--->
 
 <!-- thumbnail -->
 <section data-dfn-for="thumbnail">
@@ -1646,43 +1632,43 @@ Eigene Ergänzungen sind als solche gekennzeichnet.
   <dd><a><code>source</code></a>: [[OEH-LearningResourceType]]</dd>
   <dd><a><code>value</code></a>: 
   
-  - Anwendnung/Software (application)
-  - Lernkontrolle (assessment)
-  - Audiovisuelles Medium (audiovisual_medium)
-  - Radio/TV (broadcast)
-  - Fallstudie (case_study)
-  - Kurs (course)
-  - Veranschaulichung (demonstration)
-  - Übung (drill_and_practice)
-  - Lenrspiel (educational_game)
-  - Recherche-Auftrag (enquiry_oriented_activity)
-  - Experiment (experiment)
-  - Entdeckendes Lernen (exploration)
-  - Glossar (glossary)
-  - Handbuch (guide)
-  - Audio (audio)
-  - Daten (data)
-  - Bild (image)
-  - Karte (map)
-  - Modell (model)
-  - Foto (photograph)
-  - Text (text)
-  - Video (video)
-  - Anderes Material (other_asset_type)
-  - Unterrichtsplanung (lesson_plan)
-  - Offene Aktivität (open_activity)
-  - Präsentation (presentation)
-  - Projekt (project)
-  - Primärmaterial / Quelle (reference)
-  - Rollenspiel (role_play)
-  - Simulation (simulation)
-  - Unterrichtsbaustein (teaching_module) (eigenes Element)
-  - Weblog (weblog)
-  - Website (web_page)
-  - Wiki (wiki)
-  - Andere Web Ressource (other_web_reosurce)
-  - Anderer Ressourcentyp (other)
-  - Arbeitsblatt (worksheet)
+  - "Anwendnung/Software" (application)
+  - "Lernkontrolle" (assessment)
+  - "Audiovisuelles" Medium (audiovisual_medium)
+  - "Radio/TV" (broadcast)
+  - "Fallstudie" (case_study)
+  - "Kurs" (course)
+  - "Veranschaulichung" (demonstration)
+  - "Übung" (drill_and_practice)
+  - "Lenrspiel" (educational_game)
+  - "Recherche"-Auftrag (enquiry_oriented_activity)
+  - "Experiment" (experiment)
+  - "Entdeckendes" Lernen (exploration)
+  - "Glossar" (glossary)
+  - "Handbuch" (guide)
+  - "Audio" (audio)
+  - "Daten" (data)
+  - "Bild" (image)
+  - "Karte" (map)
+  - "Modell" (model)
+  - "Foto" (photograph)
+  - "Text" (text)
+  - "Video" (video)
+  - "Anderes Material" (other_asset_type)
+  - "Unterrichtsplanung" (lesson_plan)
+  - "Offene Aktivität" (open_activity)
+  - "Präsentation" (presentation)
+  - "Projekt" (project)
+  - "Primärmaterial" / Quelle (reference)
+  - "Rollenspiel" (role_play)
+  - "Simulation" (simulation)
+  - "Unterrichtsbaustein" (teaching_module) (eigenes Element)
+  - "Weblog" (weblog)
+  - "Website" (web_page)
+  - "Wiki" (wiki)
+  - "Andere Web Ressource" (other_web_reosurce)
+  - "Anderer Ressourcentyp" (other)
+  - "Arbeitsblatt" (worksheet)
   
   </dd>
 </dl>
@@ -1711,13 +1697,13 @@ in SKOS dargestellt [[OEH-IntendedEndUserRole]]
   <dd><a>source</a>: [[OEH-IntendedEndUserRole]]</dd>
   <dd><a>value</a>: 
   
-  - Autor*in (author)
-  - Berater*in (counsellor)
-  - Lerner*in (learner)
-  - Verwaltung (manager)
-  - Eltern (parent)
-  - Lehrer*in (teacher)
-  - andere (other)
+  - "Autor*in" (author)
+  - "Berater*in" (counsellor)
+  - "Lerner*in" (learner)
+  - "Verwaltung (manager)
+  - "Eltern" (parent)
+  - "Lehrer*in" (teacher)
+  - "andere" (other)
 
   </dd>
 </dl>
@@ -1744,12 +1730,12 @@ in SKOS dargestellt [[OEH-EducationalContext]].
   <dd><a><code>source</code></a>: [[OEH-EducationalContext]]</dd>
   <dd><a><code>value</code></a>: 
   
-  - Allgemeinbildende Schule (allgemeinbildende_schule)
-  - Grundschule (grundschule)
-  - Sekundarstufe I (sekundarstufe_1)
-  - Sekundarstufe II (sekundarstufe_2)
-  - Berufliche Bildung (berufliche_bildung)
-  - Erwachsenenbildung (erwachsenenbildung)
+  - "Allgemeinbildende Schule" (allgemeinbildende_schule)
+  - "Grundschule" (grundschule)
+  - "Sekundarstufe I" (sekundarstufe_1)
+  - "Sekundarstufe II" (sekundarstufe_2)
+  - "Berufliche Bildung" (berufliche_bildung)
+  - "Erwachsenenbildung" (erwachsenenbildung)
   
   </dd>
 </dl>
@@ -2626,17 +2612,17 @@ Die ID des Elements steht in der Klammer.
   <dd><a>source</a>: [[OEH-SourceContentType]]</dd>
   <dd><a>value</a>: 
   
-  - Bilder-Datenbank (001)
-  - Video-Datenbank (002)
-  - Audio-Datenbank (003)
-  - Bildungsmaterial-Datenbank (004)
-  - Tool-Datenbank (005)
-  - Enzyklopädien, Lexika, Wörterbücher (006)
-  - Lernportal (007)
-  - Methoden & Unterrichtsideen (008)
-  - Angebot der Bundesländer (009)
-  - Lehrkräftefortbildung (010)
-  - Hardware (011)
+  - "Bilder-Datenbank" (001)
+  - "Video-Datenbank" (002)
+  - "Audio-Datenbank" (003)
+  - "Bildungsmaterial-Datenbank" (004)
+  - "Tool-Datenbank" (005)
+  - "Enzyklopädien, Lexika, Wörterbücher" (006)
+  - "Lernportal" (007)
+  - "Methoden & Unterrichtsideen" (008)
+  - "Angebot der Bundesländer" (009)
+  - "Lehrkräftefortbildung" (010)
+  - "Hardware" (011)
 
   </dd>
 </dl>
@@ -2663,9 +2649,9 @@ noch nicht maschinenlesbar vor.
   <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
   <dd><a>value</a>:
 
-  - alles OER
-  - teils OER
-  - kein OER
+  - "alles OER"
+  - "teils OER"
+  - "kein OER"
 
   </dd>
 </dl>
@@ -2692,8 +2678,8 @@ noch nicht maschinenlesbar vor.
   <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
   <dd><a>value</a>:
 
-  - ja
-  - nein
+  - "ja"
+  - "nein"
 
   </dd>
 </dl>
@@ -2721,8 +2707,8 @@ noch nicht maschinenlesbar vor.
   <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
   <dd><a>value</a>:
 
-  - ja
-  - nein
+  - "ja"
+  - "nein"
 
   </dd>
 </dl>
@@ -2750,9 +2736,9 @@ noch nicht maschinenlesbar vor.
   <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
   <dd><a>value</a>:
 
-  - DSGVO konform
-  - nicht DSGVO konform
-  - DSGVO unklar
+  - "DSGVO konform"
+  - "nicht DSGVO konform"
+  - "DSGVO unklar"
 
   </dd>
 </dl>
@@ -2779,9 +2765,9 @@ noch nicht maschinenlesbar vor.
   <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
   <dd><a>value</a>:
 
-  - barrierearm
-  - nicht barrierearm
-  - Barrierefreiheit unklar
+  - "barrierearm"
+  - "nicht barrierearm"
+  - "Barrierefreiheit unklar"
 
   </dd>
 </dl>
@@ -2809,23 +2795,23 @@ noch nicht maschinenlesbar vor.
   <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
   <dd><a>value</a>:
 
-  - Baden-Württemberg
-  - Bayern
-  - Berlin
-  - Brandenburg
-  - Bremen
-  - Hamburg
-  - Hessen
-  - Mecklenburg-Vorpommern
-  - Niedersachsen
-  - Nordrhein-Westfalen
-  - Rheinland-Pfalz
-  - Saarland
-  - Sachsen
-  - Sachsen-Anhalt
-  - Schleswig-Holstein
-  - Thüringen
-  - Bundesweites Angebot
+  - "Baden-Württemberg"
+  - "Bayern"
+  - "Berlin"
+  - "Brandenburg"
+  - "Bremen"
+  - "Hamburg"
+  - "Hessen"
+  - "Mecklenburg-Vorpommern"
+  - "Niedersachsen"
+  - "Nordrhein-Westfalen"
+  - "Rheinland-Pfalz"
+  - "Saarland"
+  - "Sachsen"
+  - "Sachsen-Anhalt"
+  - "Schleswig-Holstein"
+  - "Thüringen"
+  - "Bundesweites Angebot"
 
   </dd>
 </dl>
@@ -2849,8 +2835,8 @@ Das Element beschreibt die Schnittstelle des Elements.
   <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
   <dd><a>value</a>:
 
-  - API (api)
-  - LTI (lti)
+  - "API" (api)
+  - "LTI" (lti)
 
   </dd>
 </dl>
@@ -2875,9 +2861,9 @@ Exportmöglichkeit verfügt.
   <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
   <dd><a>value</a>:
 
-  - nur Export möglich (non_editable_export)
-  - Export in bearbeitbarem Format möglich (editable_export)
-  - im Tool (no_export)
+  - "nur Export möglich" (non_editable_export)
+  - "Export in bearbeitbarem Format möglich" (editable_export)
+  - "im Tool" (no_export)
 
   </dd>
 </dl>
@@ -2965,7 +2951,7 @@ nach [[ISO8601]] im Format YYYY-MM-DD.
   <dt>Beispielwert:</dt>
   <dd>
 
-- 2020-04-20
+- "2020-04-20"
 
   </dd>
 </dl>
@@ -3100,7 +3086,7 @@ Die ID der Lizenz steht in Klammern.
   <dt>Datentyp:</dt>
   <dd><a>vocabulary</a></dd>
   <dt>Elemente</dt>
-  <dd><a>source</a>: https://skohub.io/literarymachine/skos/oerworldmap.org/assets/json/licenses/</dd>
+  <dd><a>source</a>: [[OER-Worldmap-Licenses]]</dd>
   <dd><a>value</a>: 
   
   - "Creative Commons Attribution Non-Commercial" (by-nc)
@@ -3122,7 +3108,6 @@ Die ID der Lizenz steht in Klammern.
 </dl>
 
 </section>
-
 </section>
 
 
@@ -3270,7 +3255,7 @@ Dieser Datentyp gibt das Datum nach dem Format JJJJ-MM-TT an. Er richtet sich na
 
 <dl>
   <dt>Beispiel:</dt>
-  <dd>2020-04-20</dd>
+  <dd>"2020-04-20"</dd>
 </dl>
 
 </section>
@@ -3283,7 +3268,7 @@ Dieser Datentyp gibt die Dauer nach dem Format [[ISO8601]] an.
 
 <dl>
   <dt>Beispiel:</dt>
-  <dd>PT1M45S</dd>
+  <dd>"PT1M45S"</dd>
 </dl>
 
 </section>
