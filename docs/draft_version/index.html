@@ -72,6 +72,11 @@
          href: "http://sodis.de/lom-de/LOM-DE.doc",
          status: "0.9",
        },
+       "LOM-OEHv0.1": {
+         title: "LOM-Applikationsprofil des OpenEduHub-Projektes",
+         href: "https://openeduhub.github.io/oeh-metadata-specs/draft_version/index.html",
+         status: "0.1",
+       },
        "LREv4.7": {
          title: "Learning Resource Exchange Metadata Application Profile Version 4.7",
          href: "http://lreforschools.eun.org/c/document_library/get_file?p_l_id=10970&folderId=12073&name=DLFE-1.pdf",
@@ -110,6 +115,12 @@
        "OEH-RightsCost": {
           title: "OEH-Vokabular für Learning Resource Type in SKOS",
           href: "https://w3id.org/openeduhub/vocabs/rightsCost/",
+          status: "draft",
+          publisher: "Open-Edu-Hub"
+       },
+       "OEH-SourceContentType": {
+          title: "OEH-Vokabular für Source Content Type in SKOS",
+          href: "https://w3id.org/openeduhub/vocabs/sourceContentType/",
           status: "draft",
           publisher: "Open-Edu-Hub"
        },
@@ -647,7 +658,30 @@ Die Werte wurden [[LOMv1.0]] mit den Übersetzungen aus [[LOM-DEv0.9]] entnommen
   <dd>Vokabular</dd>
   <dt>Vokabular:</dt>
   <dd><a><code>source</code></a>: [[OEH-LifecycleContributeRole]]</dd>
-  <dd><a><code>value</code></a>: TODO WERTE DES VOKABULARS verlinken</dd>
+  <dd><a><code>value</code></a>: 
+  
+
+  - Autor*in (author)
+  - Herausgeber*in (publisher)
+  - unbekannt (unknown)
+  - Initiator*in (initiator)
+  - Beendung der Verfügbarkeit (terminator)
+  - Abnahme (validator)
+  - Redaktion (editor)
+  - grafisches Design (graphical_designer)
+  - Programmierung (technical_implementer)
+  - Materialbereitstellung (content_provider)
+  - Programmierung (technical_implementor)
+  - technische Prüfung (technical_validator)
+  - pädagogische Prüfung (educational_validator)
+  - Skript/Drehbuch (script_writer)
+  - pädagogisches Konzept (instructional_designer)
+  - Fachberatung (subject_matter_expert)
+
+
+
+  
+  TODO WERTE DES VOKABULARS verlinken</dd>
 </dl>
 
 </section>
@@ -1487,7 +1521,7 @@ des Objektes.
   <dt>Datentyp:</dt>
   <dd>/</dd>
   <dt>Elemente:</dt>
-  <dd><a>interactivitytype</a></dd>
+  <!-- <dd><a>interactivitytype</a></dd> -->
   <dd><a>learningresourcetype</a></dd>
   <dd><a>intendedenduserrole</a></dd>
   <dd><a>context</a></dd>
@@ -1496,7 +1530,7 @@ des Objektes.
   <dd><a><code>language</code></a></dd>
 </dl>
 
-
+<!-- 
 <section data-dfn-for="interactivitytype">
 
 ## Das Element <dfn><code>interactivitytype</code></dfn>
@@ -1523,7 +1557,7 @@ können eingesetzt werden.
   </dd>
 </dl>
 
-</section>
+</section> -->
 
 <section data-dfn-for="learningresourcetype">
 
@@ -1535,6 +1569,8 @@ wird zuerst genannt.
 Das Vokabular wurde von [[LOM-DEv0.9]] übernommen und ist hier in
 SKOS dargestellt: [[OEH-LearningResourceType]].
 
+Eigene Ergänzungen sind als solche gekennzeichnet.
+
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -1545,7 +1581,47 @@ SKOS dargestellt: [[OEH-LearningResourceType]].
   <dd><a>vocabulary</a></dd>
   <dt>Vokabular</dt>
   <dd><a><code>source</code></a>: [[OEH-LearningResourceType]]</dd>
-  <dd><a><code>value</code></a>: TODO Werte eintragen</dd>
+  <dd><a><code>value</code></a>: 
+  
+  - Anwendnung/Software (application)
+  - Lernkontrolle (assessment)
+  - Audiovisuelles Medium (audiovisual_medium)
+  - Radio/TV (broadcast)
+  - Fallstudie (case_study)
+  - Kurs (course)
+  - Veranschaulichung (demonstration)
+  - Übung (drill_and_practice)
+  - Lenrspiel (educational_game)
+  - Recherche-Auftrag (enquiry_oriented_activity)
+  - Experiment (experiment)
+  - Entdeckendes Lernen (exploration)
+  - Glossar (glossary)
+  - Handbuch (guide)
+  - Audio (audio)
+  - Daten (data)
+  - Bild (image)
+  - Karte (map)
+  - Modell (model)
+  - Foto (photograph)
+  - Text (text)
+  - Video (video)
+  - Anderes Material (other_asset_type)
+  - Unterrichtsplanung (lesson_plan)
+  - Offene Aktivität (open_activity)
+  - Präsentation (presentation)
+  - Projekt (project)
+  - Primärmaterial / Quelle (reference)
+  - Rollenspiel (role_play)
+  - Simulation (simulation)
+  - Unterrichtsbaustein (teaching_module) (eigenes Element)
+  - Weblog (weblog)
+  - Website (web_page)
+  - Wiki (wiki)
+  - Andere Web Ressource (other_web_reosurce)
+  - Anderer Ressourcentyp (other)
+  - Arbeitsblatt (worksheet)
+  
+  </dd>
 </dl>
 
 </section>
@@ -1569,8 +1645,18 @@ in SKOS dargestellt [[OEH-IntendedEndUserRole]]
   <dt>Datentyp:</dt>
   <dd><a>vocabulary</a></dd>
   <dt>Vokabular</dt>
-  <dd><a><code>source</code></a>: [[OEH-IntendedEndUserRole]]</dd>
-  <dd><a><code>value</code></a>: TODO Werte eintragen</dd>
+  <dd><a>source</a>: [[OEH-IntendedEndUserRole]]</dd>
+  <dd><a>value</a>: 
+  
+  - Autor*in (author)
+  - Berater*in (counsellor)
+  - Lerner*in (learner)
+  - Verwaltung (manager)
+  - Eltern (parent)
+  - Lehrer*in (teacher)
+  - andere (other)
+
+  </dd>
 </dl>
 
 </section>
@@ -1582,7 +1668,7 @@ in SKOS dargestellt [[OEH-IntendedEndUserRole]]
 Das Element beschreibt die Umgebung, in der das Objekt zu Einsatz kommt.
 
 Das Vokabular wurde teilweise von [[LOM-DEv0.9]] übernommen und wird hier
-in SKOS dargestellt [[OEH-EducationalContext]]
+in SKOS dargestellt [[OEH-EducationalContext]].
 
 <dl>
   <dt>Maximale Häufigkeit:</dt>
@@ -1593,7 +1679,16 @@ in SKOS dargestellt [[OEH-EducationalContext]]
   <dd><a>vocabulary</a></dd>
   <dt>Vokabular</dt>
   <dd><a><code>source</code></a>: [[OEH-EducationalContext]]</dd>
-  <dd><a><code>value</code></a>: TODO Werte eintragen</dd>
+  <dd><a><code>value</code></a>: 
+  
+  - Allgemeinbildende Schule (allgemeinbildende_schule)
+  - Grundschule (grundschule)
+  - Sekundarstufe I (sekundarstufe_1)
+  - Sekundarstufe II (sekundarstufe_2)
+  - Berufliche Bildung (berufliche_bildung)
+  - Erwachsenenbildung (erwachsenenbildung)
+  
+  </dd>
 </dl>
 
 </section>
@@ -1777,7 +1872,13 @@ Das Vokabular, mit dem das Element beschrieben wird, wurde um
   <dd>/</dd>
   <dt>Vokabular:</dt>
   <dd><a><code>source</code></a>: [[OEH-RightsCost]]</dd>
-  <dd><a><code>value</code></a>: TODO Values eintragen</dd>
+  <dd><a><code>value</code></a>: 
+  
+    - ja (yes)
+    - zusätzliche Inhalte / Features per Kauf möglich (yes_for_additional)
+    - nein (no)
+    
+    </dd>
 </dl>
 
 </section>
@@ -2405,6 +2506,301 @@ Klassifikationssystem.
 
 </section>
 
+</section>
+
+
+<section id="openeduhub">
+
+## OpenEduHub
+
+<!-- OpenEduHub-Elemente -->
+<section data-dfn-for="openeduhub">
+
+## Das Element <dfn><code>openeduhub</code></dfn>
+
+Hier werden die Elemente gesammelt, die spezifisch 
+für die Anforderungen des OpenEduHubs erstellt wurden.
+
+<section data-dfn-for="sourcecontenttype">
+
+## Das Element <dfn><code>sourcecontenttype</code></dfn>
+
+Das Element wurde erstellt, um die Art der Seite zu definieren, 
+von der das Material stammt.
+
+Das Vokabular wurde für das OpenEduHub-Projekt erstellt.
+Die ID des Elements steht in der Klammer.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[OEH-SourceContentType]]</dd>
+  <dd><a>value</a>: 
+  
+  - Bilder-Datenbank (001)
+  - Video-Datenbank (002)
+  - Audio-Datenbank (003)
+  - Bildungsmaterial-Datenbank (004)
+  - Tool-Datenbank (005)
+  - Enzyklopädien, Lexika, Wörterbücher (006)
+  - Lernportal (007)
+  - Methoden & Unterrichtsideen (008)
+  - Angebot der Bundesländer (009)
+  - Lehrkräftefortbildung (010)
+  - Hardware (011)
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="nutzungsrechte">
+
+## Das Element <dfn><code>nutzungsrechte</code></dfn>
+
+Das Element ist als gröberes <a>license</a>-Element aufzufassen.
+
+Das Vokabular ist wie unten beschrieben definiert und liegt
+noch nicht maschinenlesbar vor.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
+  <dd><a>value</a>:
+
+  - alles OER
+  - teils OER
+  - kein OER
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="werbung">
+
+## Das Element <dfn><code>werbung</code></dfn>
+
+Das Element beschreibt, ob Werbung an dem Objekt zu finden ist.
+
+Das Vokabular ist wie unten beschrieben definiert und liegt
+noch nicht maschinenlesbar vor.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
+  <dd><a>value</a>:
+
+  - ja
+  - nein
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="anmeldung">
+
+## Das Element <dfn><code>anmeldung</code></dfn>
+
+Das Element beschreibt, ob eine Anmeldung erforderlich ist, 
+um das Objekt nutzen zu können.
+
+Das Vokabular ist wie unten beschrieben definiert und liegt
+noch nicht maschinenlesbar vor.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
+  <dd><a>value</a>:
+
+  - ja
+  - nein
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="dsgvo-konform">
+
+## Das Element <dfn><code>dsgvo-konform</code></dfn>
+
+Das Element beschreibt, ob das Objekt den Regelungen der DSGVO
+genügt.
+
+Das Vokabular ist wie unten beschrieben definiert und liegt
+noch nicht maschinenlesbar vor.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
+  <dd><a>value</a>:
+
+  - DSGVO konform
+  - nicht DSGVO konform
+  - DSGVO unklar
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="barrierefreiheit">
+
+## Das Element <dfn><code>barrierefreiheit</code></dfn>
+
+Das Element beschreibt die Barrierefreiheit des Objektes.
+
+Das Vokabular ist wie unten beschrieben definiert und liegt
+noch nicht maschinenlesbar vor.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
+  <dd><a>value</a>:
+
+  - barrierearm
+  - nicht barrierearm
+  - Barrierefreiheit unklar
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="angebot-der-bundeslaender">
+
+## Das Element <dfn><code>angebot-der-bundeslaender</code></dfn>
+
+Das Element beschreibt, ob das Objekt aus einem Angebot der
+Bundesländer stammt.
+
+Das Vokabular ist wie unten beschrieben definiert und liegt
+noch nicht maschinenlesbar vor.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
+  <dd><a>value</a>:
+
+  - Baden-Württemberg
+  - Bayern
+  - Berlin
+  - Brandenburg
+  - Bremen
+  - Hamburg
+  - Hessen
+  - Mecklenburg-Vorpommern
+  - Niedersachsen
+  - Nordrhein-Westfalen
+  - Rheinland-Pfalz
+  - Saarland
+  - Sachsen
+  - Sachsen-Anhalt
+  - Schleswig-Holstein
+  - Thüringen
+  - Bundesweites Angebot
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="schnittstelle">
+
+## Das Element <dfn><code>schnittstelle</code></dfn>
+
+Das Element beschreibt die Schnittstelle des Elements.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
+  <dd><a>value</a>:
+
+  - API (api)
+  - LTI (lti)
+
+  </dd>
+</dl>
+
+</section>
+
+<section data-dfn-for="export">
+
+## Das Element <dfn><code>export</code></dfn>
+
+Das Element beschreibt, ob das Element über eine 
+Exportmöglichkeit verfügt.
+
+<dl>
+  <dt>Maximale Häufigkeit:</dt>
+  <dd>n</dd>
+  <dt>Verpflichtungsgrad:</dt>
+  <dd>Fakultativ</dd>
+  <dt>Datentyp:</dt>
+  <dd><a>vocabulary</a></dd>
+  <dt>Vokabular:</dt>
+  <dd><a>source</a>: [[LOM-OEHv0.1]]</dd>
+  <dd><a>value</a>:
+
+  - nur Export möglich (non_editable_export)
+  - Export in bearbeitbarem Format möglich (editable_export)
+  - im Tool (no_export)
+
+  </dd>
+</dl>
+
+</section>
+
+</section>
 </section>
 
 
