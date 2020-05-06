@@ -124,6 +124,12 @@
           status: "draft",
           publisher: "Open-Edu-Hub"
        },
+       "OEH-ToolCategory": {
+          title: "OEH-Vokabular für Tool Categroy in SKOS",
+          href: "https://w3id.org/openeduhub/vocabs/toolCategory/",
+          status: "draft",
+          publisher: "Open-Edu-Hub"
+       },
        "OER-Worldmap-Licenses": {
          title: "Lizenz-Vokabular der OER-Worldmap",
          href: "https://skohub.io/literarymachine/skos/oerworldmap.org/assets/json/licenses/",
@@ -2325,7 +2331,9 @@ Objekt und einem oder mehreren Klassifikationssystemen.
 
 Das Element bestimmt die Art der verwendeten Klassifikation.
 
-Die Werte wurden von [[LOM-DEv0.9]] übernommen.
+Die Werte wurden von [[LOM-DEv0.9]] übernommen und um "category" erweitert.
+Wenn <code><a>learningresourcetype</a> == tool </code> kann mit 
+dem Vokabular [[OEH-ToolCategory]] die Kategorie des Tools definiert werden.
 
 - TODO Vokabular in SKOS abbilden
 
@@ -2347,6 +2355,8 @@ Die Werte wurden von [[LOM-DEv0.9]] übernommen.
   - skill level
   - security level
   - competency
+
+  - category (eigen)
 
   </dd>
 </dl>
